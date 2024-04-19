@@ -1,5 +1,7 @@
 import polars as pl
 import config.connections as conn
+from src.PaisRemesas import Pais
+
 
 postgres_connection = conn.postgresql_connection()
 mssql_connection = conn.msserver_connection()
@@ -39,5 +41,7 @@ def get_cantones():
     
     print(df)
 
-if __name__ == '__main__' :
-    get_municipios()
+
+if __name__ == '__main__' :   
+    #Pais.Pais().load()
+    pass
