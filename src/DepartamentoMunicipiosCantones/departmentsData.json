@@ -1,0 +1,3947 @@
+[
+    {
+        "IdDepto": 1,
+        "Departamento": "AHUACHAPAN",
+        "Municipios": [
+            {
+                "IdMunicipio": 1,
+                "Municipio":"AHUACHAPAN",
+                "Cantones":[
+                    "AREA URBANA",
+                    "ASHAPUCO",
+                    "CUYANAUSUL",
+                    "CHANCUYO",
+                    "CHIPILAPA",
+                    "EL ANONAL",
+                    "EL BARRO",
+                    "EL JUNQUILLO",
+                    "EL ROBLE",
+                    "EL TIGRE",
+                    "GUAYALTEPEC",
+                    "LA COYOTERA",
+                    "LA DANTA",
+                    "MONTAÑITA",
+                    "LAS CHINAMAS",
+                    "LOS HUATALES",
+                    "LOS MAGUEYES",
+                    "LOS TOLES",
+                    "LOMA DE LA GLORIA",
+                    "LLANO DE LA LAGUNA",
+                    "LLANO DE DOÑA MARIA",
+                    "NEJAPA",
+                    "PALO PIQUE",
+                    "RIO FRIO",
+                    "SAN LAZARO",
+                    "SAN RAMON",
+                    "SANTA CRUZ",
+                    "SANTA ROSA ACACALCO",
+                    "SUNTECUMAT",
+                    "TACUBITA"
+                ]
+            },
+            {
+                "IdMunicipio": 2,
+                "Municipio":"APANECA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "PALO VERDE",
+                    "EL SAITILLAL",
+                    "QUEZALAPA",
+                    "SAN RAMON",
+                    "TALTAPANCA",
+                    "TIZAPA",
+                    "TULAPA"
+
+                ]
+            },  
+            {
+                "IdMunicipio": 3,
+                "Municipio":"ATIQUIZAYA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "JOYA DEL PLATANAR",
+                    "EL CHAYAL",
+                    "EL IZCAQUILIO",
+                    "JOYA DEL ZAPOTE",
+                    "LA ESPERANZA",
+                    "LOMAS DE ALARCON",
+                    "PEPENANCE",
+                    "RINCON GRANDE",
+                    "SALITRERO",
+                    "SAN JUAN EL ESPINO",
+                    "SANTA RITA",
+                    "TAPACUN",
+                    "EL TORTUGUERO",
+                    "ZUNCA"
+                ]
+            },  
+            {
+                "IdMunicipio": 4,
+                "Municipio":"CONCEPCION DE ATACO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ARCO",
+                    "EL LIMO",
+                    "EL MOLINO",
+                    "EL NARANJITO",
+                    "EL TRONCONAL",
+                    "LA CEIBA",
+                    "JOYA DE LOS APANTES",
+                    "LOS TABLONES",
+                    "SAN JOSE",
+                    "SHUCUTITAN",
+                    "TEXUXIN CHIRIZO"
+                ]
+            },  
+            {
+                "IdMunicipio": 5,
+                "Municipio":"EL REFUGIO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "COMAPA",
+                    "EL ROSARIO",
+                    "SAN ANTONIO"
+                ]
+            },  
+            {
+                "IdMunicipio": 6,
+                "Municipio":"GUAYMANGO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CAUTA ABAJO",
+                    "CAUTA ARRIBA",
+                    "EL CARMEN",
+                    "EL ESCALON",
+                    "EL ROSARIO",
+                    "EL ZARZAL",
+                    "IZTAGAPAN",
+                    "LA ESPERANZA",
+                    "LA PAZ",
+                    "LOS PLATANARES",
+                    "LOS PUENTECITOS",
+                    "MORRO GRANDE",
+                    "SAN ANDRES",
+                    "SAN MARTIN"
+                ]
+            },  
+            {
+                "IdMunicipio": 7,
+                "Municipio":"JUJUTLA" ,    
+                "Cantones":[
+                    "AREA URBANA",
+                    "BARRA DE SANTIAGO",
+                    "EL DIAMANTE",
+                    "FAYA",
+                    "GUAYAPA ABAJO",
+                    "GUAYAPA ARRIBA",
+                    "LAS MESAS",
+                    "LOS AMATES",
+                    "ROSARIO ABAJO",
+                    "ROSARIO ARRIBA",
+                    "SAN ANTONIO",
+                    "SAN JOSE EL NARANJO",
+                    "TIHUICHA",
+                    "ZAPUA"
+                ]
+            }, 
+            {
+                "IdMunicipio": 8,
+                "Municipio":"SAN FRANCISCO MENENDEZ"  , 
+                "Cantones":[
+                    "AREA URBANA",
+                    "CARA SUCIA",
+                    "EL COROZO",
+                    "EL JOCOTILLO",
+                    "EL SACRAMENTO",
+                    "EL ZAPOTE",
+                    "GARITA PALMERA",
+                    "LA CEIBA",
+                    "LA HACHADURA",
+                    "SAN BENITO"
+
+                ]
+            }, 
+            {
+                "IdMunicipio": 9,
+                "Municipio":"SAN LORENZO" ,     
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CONACASTE",
+                    "EL JICARAL",
+                    "EL PORTILLO",
+                    "LA GUASCOTA",
+                    "LAS POZAS",
+                    "SAN JUAN BUENA VISTA"
+                ]
+            }, 
+            {
+                "IdMunicipio": 10,
+                "Municipio": "SAN PEDRO PUXTLA"    ,       
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CORTEZ",
+                    "EL DURAZNO",
+                    "GUACHIPILIN",
+                    "LA CONCEPCION",
+                    "PULULAPA",
+                    "TEXISPULCO"
+                ]
+            }, 
+            {
+                "IdMunicipio": 11,
+                "Municipio":"TACUBA" ,             
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA FRIA",
+                    "EL CHAGUITE",
+                    "EL JICARO",
+                    "EL NISPERO",
+                    "EL RODEO",
+                    "EL ROSARIO",
+                    "EL SINCUYO",
+                    "LOMA LARGA",
+                    "LA MONTAÑA",
+                    "LA PANDEADURA",
+                    "LA PUERTA",
+                    "MONTE HERMOSO",
+                    "SAN JUAN",
+                    "SAN RAFAEL"
+                ]
+            }, 
+            {
+                "IdMunicipio": 12,
+                "Municipio": "TURIN" ,     
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL JOBO",
+                    "EL PARAISO"
+                ]
+            }
+        ]
+    },
+    {
+        "IdDepto": 2,
+        "Departamento": "SANTA ANA",
+        "Municipios":[ 
+            {
+                "IdMunicipio": 13,
+                "Municipio": "CANDELARIA DE LA FRONTERA",  
+                "Cantones":[
+                    "AREA URBANA",
+                    "CASAS DE TEJA",
+                    "EL JUTE",
+                    "ZACAMIL",
+                    "LA CRIBA",
+                    "LA PARADA",
+                    "MONTE VERDE",
+                    "PIEDRAS AZULES",
+                    "SAN JERONIMO",
+                    "SAN VICENTE",
+                    "TIERRA BLANCA"
+                ]
+            },
+            {
+                "IdMunicipio": 14,
+                "Municipio": "COATEPEQUE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "LA JOYA",
+                    "LAS PILETAS",
+                    "PALO NEGRO",
+                    "EL RESBALADERO",
+                    "SAN FELIPE",
+                    "SAN JACINTO",
+                    "SIETE PRINCIPES",
+                    "SOLIMAN",
+                    "EL ZACATAL",
+                    "SOLIMAR EL POTOSI",
+                    "CAÑA BRAVA",
+                    "CONACASTE",
+                    "CONCEPCION",
+                    "EL CERRO",
+                    "EL TINTERAL",
+                    "EL JOCOTON",
+                    "EL JUNQUILLO"
+                ]
+            },
+            {
+                "IdMunicipio": 15,
+                "Municipio": "CHALCHUAPA",    
+                "Cantones":[
+                    "AREA URBANA",
+                    "AYUTEPEQUE",
+                    "BUENOS AIRES",
+                    "EL DURAZNILLO",
+                    "EL ARADO",
+                    "EL COCO",
+                    "EL CUJE",
+                    "EL PASTE",
+                    "EL TANQUE",
+                    "GALEANO",
+                    "GUACHIPILIN",
+                    "LA LIBERTAD",
+                    "MAGDALENA",
+                    "LAS CRUCES",
+                    "LAS FLORES",
+                    "OJO DE AGUA",
+                    "PIEDRA RAJADA",
+                    "PORVENIR JOCOTILLO",
+                    "SAN JOSE",
+                    "SAN SEBASTIAN",
+                    "ZACAMIL"
+                ]
+            },
+            {
+                "IdMunicipio": 16,
+                "Municipio": "EL CONGO",             
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL PEZOTE",
+                    "EL RODEO",
+                    "EL GUINEO",
+                    "LOS PINOS",
+                    "LA PRESA",
+                    "LA LAGUNA",
+                    "MONTEBELLO",
+                    "SAN JOSE LAS FLORES"
+                ]
+            },
+            {
+                "IdMunicipio": 17,
+                "Municipio": "EL PORVENIR",    
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ROSARIO",
+                    "SAN JUAN CHIQUITO",
+                    "SAN CRISTOBAL",
+                    "SANTA ROSA SENCA"
+                ]
+            },
+            {
+                "IdMunicipio": 18,
+                "Municipio": "MASAHUAT",        
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CARMEN",
+                    "HONDURITAS",
+                    "LA JOYA",
+                    "LA RUDA",
+                    "SAN SEBASTIAN"
+                ]
+            },
+            {
+                "IdMunicipio": 19,
+                "Municipio": "METAPAN",    
+                "Cantones":[
+                    "AREA URBANA",
+                    "ALDEA ZAPOTE",
+                    "BELEN GUIJAT",
+                    "SAN JOSE CAMULIANI",
+                    "CAÑAS DULCES",
+                    "EL CAPULIN",
+                    "EL CARRIZALILLO",
+                    "CUYUISCAT",
+                    "EL BRUJO",
+                    "EL LIMO",
+                    "MAL PASO",
+                    "EL PANAL",
+                    "EL ROSARIO",
+                    "EL SHISTE",
+                    "LA CEIBITA",
+                    "LA ISLA",
+                    "LA JOYA",
+                    "LAS PAVAS",
+                    "LAS PIEDRAS",
+                    "MATALAPA",
+                    "MONTENEGRO",
+                    "SAN ANTONIO LA JUNTA",
+                    "SAN ANTONIO MASAHUAT",
+                    "SAN JERONIMO",
+                    "SAN JOSE INGENIO",
+                    "SAN JUAN LAS MINAS",
+                    "SAN MIGUEL INGENIO",
+                    "SANTA RITA",
+                    "TAHUILAPA",
+                    "TECOMAPA"
+                ]
+            },
+            {
+                "IdMunicipio": 20,
+                "Municipio": "SAN ANTONIO PAJONAL",     
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL TABLON",
+                    "LA PIEDRONA",
+                    "EL ANGEL"
+                ]
+            },
+            {
+                "IdMunicipio": 21,
+                "Municipio": "SAN SEBASTIAN SALITRILLO",  
+                "Cantones":[
+                    "AREA URBANA",
+                    "LOS AMATES",
+                    "SAN LUIS",
+                    "SANTA BARBARA",
+                    "SANTA ROSA"
+                ]
+            },
+            {
+                "IdMunicipio": 22,
+                "Municipio": "SANTA ANA",  
+                "Cantones":[
+                    "AREA URBANA",
+                    "AYUTA",
+                    "CALZONTES ABAJO",
+                    "CALZONTES ARRIBA",
+                    "CUTUMAY CAMONES",
+                    "EL PORTEZUELO",
+                    "FLOR AMARILLA ABAJO",
+                    "FLOR AMARILLA ARRIBA",
+                    "LA EMPALIZADA",
+                    "LA MONTAÑITA",
+                    "LAS ARADAS",
+                    "LOMAS DE SAN MARCELINO",
+                    "LOS APOYOS",
+                    "MONTE LARGO",
+                    "NANCINTEPEQUE",
+                    "NATIVIDAD",
+                    "OCHUPSE ABAJO",
+                    "OCHUPSE ARRIBA",
+                    "PALO DE CAMPANA",
+                    "PINALITO",
+                    "PINALON",
+                    "PLANES DE LA LAGUNA",
+                    "POTRERILLOS DE LA LAGUNA",
+                    "POTRERILLOS DEL MATAZANO",
+                    "POTRERO GRANDE ABAJO",
+                    "POTRERO GRANDE ARRIBA",
+                    "PRIMAVERA",
+                    "RANCHADOR",
+                    "SAN JUAN BUENA VISTA",
+                    "VALLE DEL MATAZANO",
+                    "TABLON DEL MATAZANO"
+                ]
+            },
+            {
+                "IdMunicipio": 23,
+                "Municipio": "SANTA ROSA GUACHIPILIN",    
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL DESPOBLADO",
+                    "EL MATAZANO",
+                    "PALO GALAN",
+                    "LLANO DE LAS MAJADAS",
+                    "SAN FRANCISCO APANTA",
+                    "SAN JOSE CAPULIN"
+                ]
+            },
+            {
+                "IdMunicipio": 24,
+                "Municipio": "SANTIAGO DE LA FRONTERA",    
+                "Cantones":[
+                    "AREA URBANA",
+                    "GUACAMAYAS",
+                    "LA DANTA",
+                    "EL FLOR",
+                    "LAS PILETAS",
+                    "CHILAMATES",
+                    "SANTA CRUZ"
+                ]
+            },
+            {
+                "IdMunicipio": 25,
+                "Municipio":  "TEXISTEPEQUE" ,   
+                "Cantones":[
+                    "AREA URBANA",
+                    "COSTA RICA",
+                    "CUJUCUYO",
+                    "EL JUTE",
+                    "SAN MIGUEL",
+                    "SANTO TOMAS",
+                    "CHILCUYO"
+                ]
+            }          
+        ]
+    },
+    {
+        "IdDepto": 3,
+        "Departamento": "SONSONATE",
+        "Municipios":[
+            {
+                "IdMunicipio": 26,
+                "Municipio":   "ACAJUTLA",   
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL COYOL",
+                    "EL SALAMO",
+                    "EL SUNCITA",
+                    "METALIO",
+                    "MORRO GRANDE",
+                    "PUNTA REMEDIOS",
+                    "SAN JULIAN",
+                    "VALLE NUEVO"
+                ]
+            },
+            {
+                "IdMunicipio": 27,
+                "Municipio":  "ARMENIA",  
+                "Cantones":[
+                    "AREA URBANA",
+                    "AZACUALPA",
+                    "EL CERRO",
+                    "EL GUAYABO",
+                    "EL ROSARIO",
+                    "LA PUERTA",
+                    "LAS CRUCITAS",
+                    "LOS MANGOS",
+                    "TRES CEIBAS",
+                    "VALLE NUEVO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 28,
+                "Municipio":  "CALUCO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA CALIENTE",
+                    "SUQUIAT",
+                    "EL CASTAÑO",
+                    "LAS FLORES",
+                    "AMAYO",
+                    "LOS GRAMALES",
+                    "EL ZAPOTE",
+                    "CERRO ALTO"
+                ]
+            },
+            {
+                "IdMunicipio": 29,
+                "Municipio":  "CUISNAHUAT",
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUASHUCA",
+                    "APANCOYO",
+                    "COQUIAMA",
+                    "EL BALSAMAR",
+                    "SAN LUCAS"
+                ]
+            },
+            {
+                "IdMunicipio": 30,
+                "Municipio":  "SANTA ISABEL ISHUATAN",  
+                "Cantones":[
+                    "AREA URBANA",
+                    "ACACHAPA",
+                    "APANCOYO",
+                    "ATILUYA",
+                    "EL COROZAL",
+                    "EL PARAISO",
+                    "LAS PIEDRAS",
+                    "MIRAMAR",
+                    "PASO DE CANOAS"
+                ]
+            },
+            {
+                "IdMunicipio": 31,
+                "Municipio":   "IZALCO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANGREJERA",
+                    "CEIBA DEL CHARCO",
+                    "CRUZ GRANDE",
+                    "CUNTAN",
+                    "CUYAGUALO",
+                    "CHORRO ABAJO",
+                    "CHORRO ARRIBA",
+                    "EL SUNZA",
+                    "HUISCOYOLATE",
+                    "JOYA DE CEREN",
+                    "LA CHAPINA",
+                    "QUEBRADA ESPAÑOLA",
+                    "LAS HIGUERAS",
+                    "LAS LAJAS",
+                    "LAS MARIAS",
+                    "PIEDRAS PACHAS",
+                    "SAN ISIDRO",
+                    "SAN LUIS",
+                    "SHO SHON",
+                    "TALCOMUNCA",
+                    "TAPALSHUCUT",
+                    "TECUMA",
+                    "TESHCAL",
+                    "TRES CEIBAS",
+                    "LOS TUNALMILES"
+                ]
+            },
+            {
+                "IdMunicipio": 32,
+                "Municipio":   "JUAYUA", 
+                "Cantones":[
+                    "AREA URBANA",
+                    "BUENOS AIRES",
+                    "LA PUENTE",
+                    "LA UNION",
+                    "LOS APANTES",
+                    "LOS CAÑALES",
+                    "LOS NARANJOS",
+                    "OJO DE AGUA",
+                    "SAN JOSE LA MAJADA",
+                    "SAN JUAN DE DIOS",
+                    "VALLE NUEVO"
+                ]
+            },   
+            {
+                "IdMunicipio": 33,
+                "Municipio":  "NAHUIZALCO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "ANAL ABAJO",
+                    "ANAL ARRIBA",
+                    "CUSAMALUCO",
+                    "LOS ARENALES",
+                    "EL CANELO",
+                    "EL CARRIZAL",
+                    "EL CERRITO",
+                    "EL CHAPARRON",
+                    "LA GUACAMAYA",
+                    "PUSHTAN",
+                    "SABANA GRANDE",
+                    "SABANA SAN JUAN ABAJO",
+                    "SABANA SAN JUAN ARRIBA",
+                    "SISIMITEPEC",
+                    "TAJCUILUJLAN"
+                ]
+            },  
+            {
+                "IdMunicipio": 34,
+                "Municipio":  "NAHULINGO",   
+                "Cantones":[
+                    "AREA URBANA",
+                    "ALEMAN",
+                    "CONACASTE HERRADO",
+                    "EL GUAYABO",
+                    "PIEDRA DE MOLER"
+                ]
+            },  
+            {
+                "IdMunicipio": 35,
+                "Municipio":  "SALCOATITAN",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL PUENTE",
+                    "LO ANISALES"
+                ]
+            },  
+            {
+                "IdMunicipio": 36,
+                "Municipio":  "SAN ANTONIO DEL MONTE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA SANTA",
+                    "CUYUAPA ABAJO",
+                    "CUYUAPA ARRIBA",
+                    "EL CASTAÑO",
+                    "LAS HOJAS",
+                    "SAN RAMON"
+                ]
+            },  
+            {
+                "IdMunicipio": 37,
+                "Municipio":  "SAN JULIAN", 
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUASHUCA",
+                    "CHILATA",
+                    "EL ACHIOTAL",
+                    "EL BEBEDERO",
+                    "LOS LAGARTOS",
+                    "PALO VERDE",
+                    "PEÑA BLANCA",
+                    "PETACAS",
+                    "TIERRA COLORADA"
+                ]
+            },  
+            {
+                "IdMunicipio": 38,
+                "Municipio":  "SANTA CATARINA MASAHUAT",   
+                "Cantones":[
+                    "AREA URBANA",
+                    "CUYUAPA",
+                    "EL MATAZANO",
+                    "LAS PEÑAS",
+                    "SAN RAFAEL"
+                ]
+            },   
+            {
+                "IdMunicipio": 39,
+                "Municipio":  "SANTO DOMINGO DE GUZMAN",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CARRIZAL",
+                    "EL CAULOTE",
+                    "EL ZARZAL",
+                    "EL ZOPE"
+                ]
+            },  
+            {
+                "IdMunicipio": 40,
+                "Municipio":  "SONSONATE",  
+                "Cantones":[
+                    "AREA URBANA",
+                    "CHIQUIHUAT",
+                    "EL CACAO",
+                    "EL EDEN",
+                    "EL PRESIDIO",
+                    "LA ENSENADA",
+                    "LAS DELICIAS",
+                    "LAS TABLAS",
+                    "LOMA DEL MUERTO",
+                    "MIRAVALLE",
+                    "SALINAS DE AYACACHAPA",
+                    "SANTA EMILIA",
+                    "TONALA"
+                ]
+            },  
+            {
+                "IdMunicipio": 41,
+                "Municipio":   "SONZACATE" ,   
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ALMENDRO"
+                ]
+            }
+        ]
+    },{
+        "IdDepto": 4,
+        "Departamento":"CHALATENANGO",
+        "Municipios":[
+            {
+                "IdMunicipio": 42,
+                "Municipio":   "AGUA CALIENTE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUAFRIA",
+                    "AGUA ZARCA",
+                    "CERRO GRANDE",
+                    "ENCUMBRADO",
+                    "OBRAJUELA",
+                    "OJOS DE AGUA",
+                    "SANTA ROSA"
+                ]
+            },  
+            {
+                "IdMunicipio": 43,
+                "Municipio":  "ARCATAO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CERRO GRANDE",
+                    "LOS SITIOS",
+                    "TEQUEQUE",
+                    "GUALCIMACA",
+                    "LAS VEGAS",
+                    "LOS FILOS",
+                    "TEOSINTE"
+                ]
+            },  
+            {
+                "IdMunicipio": 44,
+                "Municipio":  "AZACUALPA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CUESTAMARINA",
+                    "EL LLANO"
+                ]
+            },  
+            {
+                "IdMunicipio": 45,
+                "Municipio":   "CITALA",
+                "Cantones":
+                [
+                    "AREA URBANA",
+                    "CUALCHO",
+                    "LAGUNETAS",
+                    "LOS PLANES",
+                    "LLANO DE LA VIRGEN",
+                    "SAN FRANCISCO",
+                    "SAN LORENZO",
+                    "SAN RAMON",
+                    "TALQUEZALAR"
+                ]
+            },  
+            {
+                "IdMunicipio": 46,
+                "Municipio": "COMALAPA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANDELARIA",
+                    "EL MORRO",
+                    "GUACHIPILIN",
+                    "LA JUNTA"
+                ]
+            },  
+            {
+                "IdMunicipio": 47,
+                "Municipio":  "CONCEPCION QUEZALTEPEQUE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CONACASTE",
+                    "EL JOCOTILLO",
+                    "LLANO GRANDE",
+                    "EL ROSARIO",
+                    "MONTE REDONDO",
+                    "OLOSINGO"
+                ]
+            },  
+            {
+                "IdMunicipio": 48,
+                "Municipio":  "CHALATENANGO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CHIAPAS",
+                    "GUARJILA",
+                    "LAS MINAS",
+                    "SAN BARTOLO",
+                    "SAN JOSE",
+                    "UPATORO"
+                ]
+            },  
+            {
+                "IdMunicipio": 49,
+                "Municipio":  "DULCE NOMBRE DE MARIA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CUEVITAS",
+                    "CHORRO BLANCO",
+                    "EL COMUN",
+                    "EL OCOTAL",
+                    "EL ROSARIO",
+                    "LOS GUTIERREZ",
+                    "LOS ACHIOTES",
+                    "LOS ENCUENTROS",
+                    "LOS SITIOS"
+                ]
+            },  
+            {
+                "IdMunicipio": 50,
+                "Municipio": "EL CARRIZAL",
+                "Cantones":[
+                    "AREA URBANA",
+                    "LA TRINIDAD",
+                    "PETAPAS",
+                    "POTRERILLOS",
+                    "VAINILLAS"
+                ]
+            },  
+            {
+                "IdMunicipio": 51,
+                "Municipio":  "EL PARAISO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL TABLON",
+                    "SANTA BARBARA",
+                    "VALLE NUEVO"
+                ]
+            },  
+            {
+                "IdMunicipio": 52,
+                "Municipio": "LA LAGUNA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "LAS PACAYAS",
+                    "LOS PRADOS",
+                    "PLAN VERDE",
+                    "SAN JOSE",
+                    "LA CUCHILLA"
+                ]
+            },  
+            {
+                "IdMunicipio": 53,
+                "Municipio": "LA PALMA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL AGUACATAL",
+                    "EL GRAMAL",
+                    "LAS GRANADILLAS",
+                    "LOS HORCONES",
+                    "LOS PLANES",
+                    "SAN JOSE SACARE",
+                    "SAN JOSE CALERAS",
+                    "EL TUNEL"
+                ]
+            },  
+            {
+                "IdMunicipio": 54,
+                "Municipio": "LA REINA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL PEPETO",
+                    "EL TIGRE",
+                    "LAS CAÑAS",
+                    "LAS PEÑAS",
+                    "LOS TECOMATES",
+                    "TALCHALUYA",
+                    "TILAPA"
+                ]
+            },  
+            {
+                "IdMunicipio": 55,
+                "Municipio":  "LAS VUELTAS",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CONACASTE",
+                    "SICAHUITE",
+                    "LA CEIBA",
+                    "LA LAGUNA",
+                    "LOS NARANJOS",
+                    "SAN JOSE"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 56,
+                "Municipio": "NOMBRE DE JESUS",
+                "Cantones":[
+                    "AREA URBANA",
+                    "ESCALANTE",
+                    "LOS HENRIQUEZ",
+                    "PATAMERA",
+                    "PLAZUELAS",
+                    "POTRERIOS",
+                    "QUIPURE"
+                ]
+            },  
+            {
+                "IdMunicipio": 57,
+                "Municipio":   "NUEVA CONCEPCION",
+                "Cantones":[
+                    "AREA URBANA",
+                    "LOS CHILAMATES",
+                    "EL GAVILAN",
+                    "EL ZAPOTE",
+                    "LAGUNA SECA",
+                    "LAS TABLAS",
+                    "POTENCIANA",
+                    "POTRERO SULA",
+                    "SANTA RITA CIMARRON",
+                    "SANTA ROSA",
+                    "SUNAPA"
+                ]
+            },  
+            {
+                "IdMunicipio": 58,
+                "Municipio":   "NUEVA TRINIDAD",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CARASQUE",
+                    "EL SITIO",
+                    "EL ZACAMIL",
+                    "HACIENDA VIEJA",
+                    "JAHUATAYA",
+                    "HUIZUCAR",
+                    "SAN ANTONIO MANAQUIL"
+                ]
+            },  
+            {
+                "IdMunicipio": 59,
+                "Municipio":   "OJOS DE AGUA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL COYOLAR",
+                    "EL PORTILLO",
+                    "EL SITIO",
+                    "EL TABLON",
+                    "EL ZAPOTAL",
+                    "LA MONTAÑITA",
+                    "YURIQUE"
+                ]
+            },  
+            {
+                "IdMunicipio": 60,
+                "Municipio":   "POTONICO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CORRAL FALSO",
+                    "LA MONTAÑA",
+                    "MONTE REDONDO",
+                    "SANTA TERESA",
+                    "PLAN DE LAS POZAS"
+                ]
+            },  
+            {
+                "IdMunicipio": 61,
+                "Municipio": "SAN ANTONIO DE LA CRUZ",
+                "Cantones":[
+                    "AREA URBANA",
+                    "COPALIO",
+                    "EL ZAPOTE",
+                    "SAN BENITO",
+                    "SANTA ANA"
+                ]
+            },  
+            {
+                "IdMunicipio": 62,
+                "Municipio":  "SAN ANTONIO LOS RANCHOS",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL GRAMAL"
+                ]
+            },  
+            {
+                "IdMunicipio": 63,
+                "Municipio":   "SAN FERNANDO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "JOCOTAN",
+                    "LOS LLANITOS",
+                    "NUEVO SAN FERNANDO O ROBLAR",
+                    "SAN JUAN DE LA CRUZ",
+                    "VALLE DE JESUS"
+                ]
+            },  
+            {
+                "IdMunicipio": 64,
+                "Municipio":   "SAN FRANCISCO LEMPA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "LOS MENJIVAR",
+                    "LOS ZEPEDA"
+                ]
+            },  
+            {
+                "IdMunicipio": 65,
+                "Municipio":  "SAN FRANCISCO MORAZAN",
+                "Cantones":[
+                    "AREA URBANA",
+                    "HIGUERAL",
+                    "LAS CAÑITAS",
+                    "LAS PARVITAS",
+                    "LOS NARANJOS",
+                    "PLAN DEL HORNO",
+                    "SAN MIGUELITO",
+                    "ZUMPUL DE AVELAR",
+                    "ZUMPUL DE CHACON",
+                    "TEOSINTE",
+                    "TREMEDAL"
+                ]
+            },
+            {
+                "IdMunicipio": 66,
+                "Municipio":  "SAN IGNACIO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CARMEN",
+                    "EL CENTRO",
+                    "EL PINAR",
+                    "RIO CHIQUITO",
+                    "SANTA ROSA",
+                    "EL ROSARIO",
+                    "LAS PILAS"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 67,
+                "Municipio":   "SAN ISIDRO LABRADOR",
+                "Cantones":[
+                    "AREA URBANA",
+                    "ALVARENGA",
+                    "EL MOJON",
+                    "SICAHUITAL",
+                    "SAN JOSE DE LA MONTAÑA",
+                    "LOS AMATES"                    
+                ]
+            },    
+            {
+                "IdMunicipio": 68,
+                "Municipio":  "CANCASQUE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANDELARIA",
+                    "CONCEPCION",
+                    "LOS GUILLEN",
+                    "PORTILLO DEL NORTE"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 69,
+                "Municipio":  "LAS FLORES", 
+                "Cantones":[
+                    "AREA URBANA",
+                    "ALDEA VIEJA",
+                    "HACIENDA",
+                    "HACIENDA VIEJA",
+                    "LA LAGUNETA",
+                    "LAS LIMAS",
+                    "LLANO VERDE"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 70,
+                "Municipio":  "SAN LUIS DEL CARMEN", 
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL PITAL",
+                    "EL SITIO",
+                    "LOS NARANJOS",
+                    "SANTA CRUZ"
+                ]
+            },  
+            {
+                "IdMunicipio": 71,
+                "Municipio":  "SAN MIGUEL DE MERCEDES",  
+                "Cantones":[
+                    "AREA URBANA",
+                    "CERRO DE LA CRUZ",
+                    "EL MATAZANO",
+                    "EL SALITRE",
+                    "LOS GUARDADO",
+                    "PIEDRAS GORDAS"
+                ]
+            },   
+            {
+                "IdMunicipio": 72,
+                "Municipio":   "SAN RAFAEL",
+                "Cantones":[
+                    "AREA URBANA",
+                    "LOS DESAMPARADOS",
+                    "OJOS DE AGUA",
+                    "SAN ANTONIO BUENA VISTA",
+                    "SAN JOSE LOS SITIOS"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 73,
+                "Municipio":  "SANTA RITA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "BARILLAS",
+                    "EL CHILAMATE",
+                    "SAN MIGUEL TOBIAS",
+                    "SAN NICOLAS PIEDRAS GORDAS"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 74,
+                "Municipio":   "TEJUTLA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUAJE ESCONDIDO",
+                    "ALDEITA",
+                    "LOS APOSENTOS",
+                    "CONCEPCION",
+                    "EL CARRIZAL",
+                    "EL CERRON",
+                    "EL SALITRE",
+                    "EL TRANSITO",
+                    "ESTANZUELAS",
+                    "SAN JOSE",
+                    "LOS MARTINEZ",
+                    "QUITASOL",
+                    "RIO GRANDE DE ALVARADO",
+                    "RIO GRANDE DE CARDOZA",
+                    "EL IZOTAL"                    
+                ]
+            }
+        ]
+    },
+    {
+        "IdDepto": 5,
+        "Departamento":"LA LIBERTAD",
+        "Municipios":[
+            {
+                "IdMunicipio": 75,
+                "Municipio":   "ANTIGUO CUSCATLAN",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ESPINO",
+                    "LA LABRANZA",
+                    "SOLEDAD"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 76,
+                "Municipio":   "CIUDAD ARCE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CONACASTE",
+                    "LA ESPERANZA",
+                    "LA JOYITA",
+                    "LA REFORMA",
+                    "LAS CRUCES",
+                    "LOMAS DE ANDALUCIA",
+                    "LOS ACOSTA",
+                    "SAN ANDRES",
+                    "SANTA LUCIA",
+                    "SANTA ROSA",
+                    "VERACRUZ",
+                    "ZAPOTITAN"                    
+                ]
+            },  
+             {
+                "IdMunicipio": 77,
+                "Municipio":  "COLON",
+                "Cantones":[
+                    "AREA URBANA",
+                    "BOTONCILLAL",
+                    "EL CAPULIN",
+                    "EL COBANAL",
+                    "EL LIMON",
+                    "EL MANGUITO",
+                    "ENTRE RIOS",
+                    "HACIENDA NUEVA",
+                    "LAS ANGOSTURAS",
+                    "LAS BRISAS",
+                    "LAS MORAS",
+                    "LOURDES"                    
+                ]
+            },
+            {
+                "IdMunicipio": 78,
+                "Municipio":   "COMASAGUA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CONACASTE",
+                    "EL FARO",
+                    "EL MATAZANO",
+                    "EL PEÑON",
+                    "EL ROSARIO",
+                    "LA SHILA",
+                    "SAN ANTONIO",
+                    "SAN FRANCISCO POTRERON"                    
+                ]
+            },
+            {
+                "IdMunicipio": 79,
+                "Municipio":  "CHILTIUPAN",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CUERVO ABAJO",
+                    "CUERVO ARRIBA",
+                    "EL REGADILLO",
+                    "EL ZONTE",
+                    "JULUPE",
+                    "LAS FLORES",
+                    "LAS TERMOPILAS",
+                    "SANTA LUCIA",
+                    "SANTA MARTA",
+                    "SIBERIA",
+                    "TAQUILLO"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 80,
+                "Municipio":   "HUIZUCAR ",
+                "Cantones":[
+                    "AREA URBANA",
+                    "AMAQUILCO",
+                    "LA LIMA",
+                    "NAZARETH",
+                    "OJOS DE AGUA",
+                    "SAN JUAN BUENAVISTA",
+                    "TILAPA"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 81,
+                "Municipio":  "JAYAQUE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "JUAN HIGINIO O LA CUMBRE",
+                    "LAS FLORES",
+                    "LAS MINAS",
+                    "LA LABOR"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 82,
+                "Municipio":  "JICALAPA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "LA ARGENTINA",
+                    "LA PERLA",
+                    "SAN JOSE TABLON",
+                    "EL NISPERO",
+                    "EL CARRIZO"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 83,
+                "Municipio":  "LA LIBERTAD",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANGREJERA",
+                    "EL CIMARRON",
+                    "EL MAJAHUAL",
+                    "MELARA",
+                    "SAN ALFREDO",
+                    "SAN DIEGO",
+                    "SAN RAFAEL",
+                    "SANTA CRUZ",
+                    "TEPEAGUA",
+                    "TECOLUCA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 84,
+                "Municipio":  "NUEVO CUSCATLAN",
+                "Cantones":[
+                    "AREA URBANA",
+                    "AREA RURAL"
+                ]
+            },    
+            {
+                "IdMunicipio": 85,
+                "Municipio":  "SANTA TECLA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "ALVAREZ",
+                    "AYAGUALO",
+                    "BUENA VISTA",
+                    "EL LIMON",
+                    "EL MATAZANO",
+                    "EL PROGRESO",
+                    "QUEQUEISQUE",
+                    "EL TRIUNFO",
+                    "EL SACAZIL",
+                    "LAS GRANADILLAS",
+                    "LOMA LARGA",
+                    "LOS AMATES",
+                    "LOS PAJALES",
+                    "VICTORIA"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 86,
+                "Municipio":  "QUEZALTEPEQUE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL PUENTE",
+                    "EL SEï¿½OR",
+                    "GIRON",
+                    "LAS MERCEDES",
+                    "MACANCE",
+                    "PRIMAVERA",
+                    "PLATANILLOS",
+                    "SAN JUAN LOS PLANES",
+                    "SAN FRANCISCO",
+                    "SANTA ROSA",
+                    "SEGURA",
+                    "SITIO DE LOS NEJAPA",
+                    "TACACHICO"                    
+                ]
+            },  {
+                "IdMunicipio": 87,
+                "Municipio":   "SACACOYO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "ATEOS",
+                    "BUENA VISTA",
+                    "LA MONTAÑITA"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 88,
+                "Municipio": "SAN JOSE VILLANUEVA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ESCALON",
+                    "MATAZANO",
+                    "EL PALOMAR",
+                    "LAS DISPENSAS",
+                    "TULA"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 89,
+                "Municipio":   "SAN JUAN OPICO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA ESCONDIDA",
+                    "BARRANCA HONDA",
+                    "BUENA VISTA",
+                    "CHANMICO",
+                    "CHANTUSNENE",
+                    "EL ANGEL TALCUALUYA",
+                    "EL CASTILLO",
+                    "EL JABALI",
+                    "EL MATAZANO",
+                    "JOYA DE CEREN",
+                    "LA NUEVA ENCARNACION",
+                    "LAS DELICIAS",
+                    "GRANADILLAS",
+                    "LOS AMATES",
+                    "MINAS DE PLOMO",
+                    "NOMBRE DE DIOS",
+                    "PITICHORRO",
+                    "SAN ANTONIO",
+                    "SAN FELIPE",
+                    "SAN JOSE LA CUEVA",
+                    "SAN NICOLAS LOS ENCUENTROS",
+                    "SAN NICOLAS LA ENCARNACION",
+                    "SAN PEDRO MARTIR",
+                    "SAN PEDRO ORIENTE",
+                    "SITIO DEL NIÑO",
+                    "SITIO GRANDE",
+                    "TEHUICHO"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 90,
+                "Municipio":  "SAN MATIAS",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL JICARO",
+                    "EL JOCOTE",
+                    "LA PUEBLA",
+                    "LAS ANONAS",
+                    "MASAJAPA",
+                    "SAN PEDRO LAS FLORES",
+                    "SANTA ROSA",
+                    "SANTA TERESA"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 91,
+                "Municipio":  "SAN PABLO TACACHICO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "ATIOCOYO",
+                    "CAMPANA",
+                    "EL TRANSITO",
+                    "SAN JUAN MESAS",
+                    "MOGOTES",
+                    "MONCAGUA",
+                    "OBRAJE NUEVO",
+                    "SAN ISIDRO"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 92,
+                "Municipio":  "TAMANIQUE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "BUENOS AIRES",
+                    "EL CUERVO",
+                    "EL PALMAR",
+                    "EL PINAL",
+                    "EL SUNZAL",
+                    "SAN ALFONSO",
+                    "SAN BENITO",
+                    "SAN EMILIO",
+                    "SAN ISIDRO",
+                    "SANTA LUCIA",
+                    "TARPEYA",
+                    "SAN ANTONIO"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 93,
+                "Municipio":  "TALNIQUE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL TRANSITO",
+                    "LAS QUEBRADAS",
+                    "LOS CIPRESES",
+                    "LOS LAURELES",
+                    "SAN CARLOS",
+                    "SAN JOSE LOS SITIOS",
+                    "SANTA LUCIA"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 94,
+                "Municipio":   "TEOTEPEQUE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ANGEL",
+                    "LOS IZOTES",
+                    "EL MATAZANO",
+                    "MIZATA",
+                    "SAN BENITO",
+                    "SAN ISIDRO",
+                    "SAN MARCOS",
+                    "SANTA MARIA MIZATA",
+                    "SIHUAPILAPA"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 95,
+                "Municipio":  "TEPECOYO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CARRIZO",
+                    "EL GUAMO",
+                    "EL MOJON",
+                    "EL ZACAMIL",
+                    "LA JAVIA",
+                    "LAS FLORES",
+                    "LOS ALPES",
+                    "LOS LAURELES",
+                    "SAN ANTONIO",
+                    "TIERRA COLORADA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 96,
+                "Municipio":  "ZARAGOZA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL BARILLO",
+                    "GUADALUPE",
+                    "SAN FRANCISCO",
+                    "SAN SEBASTIAN"                    
+                ]
+            }
+        ]
+    },
+    {
+        "IdDepto": 6,
+        "Departamento": "SAN SALVADOR",   
+        "Municipios":[
+            {
+                "IdMunicipio": 97,
+                "Municipio":   "AGUILARES",
+                "Cantones":[
+                    "AREA URBANA",
+                    "LA FLORIDA",
+                    "LAS TUNAS",
+                    "LOS MANGOS",
+                    "PIÑALITOS",
+                    "PISHISHAPA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 98,
+                "Municipio": "APOPA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "GUADALUPE",
+                    "EL ANGEL",
+                    "JOYA GALANA",
+                    "JOYA GRANDE",
+                    "LAS DELICIAS",
+                    "SAN NICOLAS",
+                    "SUCHINANGO",
+                    "TRES CEIBAS"                    
+                ]
+            },
+            {
+                "IdMunicipio": 99,
+                "Municipio":  "AYUTUXTEPEQUE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ZAPOTE",
+                    "LOS LLANITOS"                    
+                ]
+            },
+            {
+                "IdMunicipio": 100,
+                "Municipio":  "CUSCATANCINGO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN LUIS MARIONA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 101,
+                "Municipio":  "EL PAISNAL",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL JICARON",
+                    "EL MATAZANO",
+                    "EL TRONADOR",
+                    "LA CABAÑA",
+                    "SAN ANTONIO GRANDE",
+                    "SAN DIEGO",
+                    "SAN RAFAEL",
+                    "POTRERO GRANDE",
+                    "LAS DELICIAS",
+                    "LAS VENTANAS",
+                    "SAN FRANCISCO LOS DOS CERROS",
+                    "NATIVIDAD"                    
+                ]
+            },
+            {
+                "IdMunicipio": 102,
+                "Municipio":  "GUAZAPA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CALLE NUEVA",
+                    "LOMA DE RAMOS",
+                    "NANCE VERDE",
+                    "SAN CRISTOBAL",
+                    "SAN JERONIMO",
+                    "SAN LUCAS",
+                    "SANTA BARBARA",
+                    "EL ZACAMIL"                    
+                ]
+            },
+            {
+                "IdMunicipio": 103,
+                "Municipio":   "ILOPANGO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CHANGALLO",
+                    "DOLORES APULO",
+                    "SAN BARTOLO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 104,
+                "Municipio":  "MEJICANOS",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CHANCALA",
+                    "SAN MIGUEL",
+                    "SAN ROQUE"                    
+                ]
+            },
+           
+            {
+                "IdMunicipio": 105,
+                "Municipio":  "NEJAPA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "ALDEA MERCEDES",
+                    "EL BONETE",
+                    "CAMOTEPEQUE",
+                    "CONACASTE",
+                    "EL SALITRE",
+                    "GALERA QUEMADA",
+                    "SAN JERONIMO LOS PLANES",
+                    "TUTULTEPEQUE"                    
+                ]
+            },
+            
+            {
+                "IdMunicipio": 106,
+                "Municipio":  "PANCHIMALCO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "AMAYON",
+                    "AZACUALPA",
+                    "EL CEDRO",
+                    "EL DIVISADERO",
+                    "EL GUAYABO",
+                    "LOMA Y MEDIA",
+                    "LOS PAJALES",
+                    "LOS PALONES",
+                    "LOS TRONCONES",
+                    "PANCHIMALQUITO",
+                    "PLANES DE RENDEROS",
+                    "QUEZALAPA",
+                    "SAN ISIDRO",
+                    "LAS CRUCITAS"                    
+                ]
+            },
+            {
+                "IdMunicipio": 107,
+                "Municipio":  "ROSARIO DE MORA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CERCO DE PIEDRA",
+                    "EL CARRIZAL",
+                    "EL JUTILLO",
+                    "LAS BARROSAS",
+                    "PALO GRANDE",
+                    "PLAN DEL MANGO",
+                    "SAN RAMON"                    
+                ]
+            },
+            {
+                "IdMunicipio": 108,
+                "Municipio":   "SAN MARCOS",
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUACATITAN",
+                    "CASA DE PIEDRA",
+                    "EL PEPETO",
+                    "GUADALUPE EL MANGO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 109,
+                "Municipio":   "SAN MARTIN",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ROSARIO",
+                    "EL SAUCE",
+                    "LA FLOR",
+                    "LA PALMA",
+                    "LAS ANIMAS",
+                    "LAS DELICIAS",
+                    "SAN JOSE PRIMERO",
+                    "SAN JOSE SEGUNDO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 110,
+                "Municipio":  "SAN SALVADOR",
+                "Cantones":[
+                    "AREA URBANA"
+                ]
+            },
+            {
+                "IdMunicipio": 111,
+                "Municipio":   "SANTIAGO TEXACUANGOS",
+                "Cantones":[
+                    "AREA URBANA",
+                    "ASINO",
+                    "EL MORRO",
+                    "JOYA GRANDE",
+                    "LA CUCHILLA",
+                    "SHALTIPA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 112,
+                "Municipio":   "SANTO TOMAS",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CAÑA BRAVA",
+                    "CUAPA",
+                    "CHALTEPE",
+                    "EL CARMEN",
+                    "EL CIPRES",
+                    "EL GUAJE",
+                    "EL PORVENIR",
+                    "LAS CASITAS",
+                    "POTRERILLOS"                    
+                ]
+            },
+            {
+                "IdMunicipio": 113,
+                "Municipio":  "SOYAPANGO",
+                "Cantones":[
+                    "AREA URBANA"
+                ]
+            },
+            {
+                "IdMunicipio": 114,
+                "Municipio":  "TONACATEPEQUE",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ROSARIO",
+                    "EL SAUCE",
+                    "EL TRANSITO",
+                    "LA FUENTE",
+                    "LA UNION",
+                    "LAS FLORES",
+                    "MALACOF",
+                    "VERACRUZ"                    
+                ]
+            },
+            {
+                "IdMunicipio": 115,
+                "Municipio":   "CIUDAD DELGADO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "CALLE REAL",
+                    "EL ARENAL",
+                    "EL CALLEJON",
+                    "LA CABAÑA",
+                    "PLAN DEL PINO",
+                    "SAN JOSE CORTEZ",
+                    "SAN LAUREANO"                    
+                ]
+            }
+        ]
+    },
+    {
+        "IdDepto": 7,
+        "Departamento":"CUSCATLAN",
+        "Municipios":[
+            {
+                "IdMunicipio": 116,
+                "Municipio":  "CANDELARIA" ,     
+                "Cantones":[
+                    "AREA URBANA",
+                    "CONCEPCION",
+                    "EL ROSARIO",
+                    "SAN JUAN MIRAFLORES ARRIBA",
+                    "SAN ANTONIO",
+                    "SAN JOSE LA CEIBA",
+                    "SAN JUAN MIRAFLORES ABAJO",
+                    "SAN RAFAEL LA LOMA",
+                    "NANCE VERDE"                    
+                ]
+            },
+            {
+                "IdMunicipio": 117,
+                "Municipio":   "COJUTEPEQUE"   ,      
+                "Cantones":[
+                    "AREA URBANA",
+                    "CUJUAPA",
+                    "EL CARRIZAL",
+                    "JIÑUCO",
+                    "LA PALMA",
+                    "LOS NARANJOS",
+                    "OJOS DE AGUA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 118,
+                "Municipio":  "EL CARMEN" ,   
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANDELARIA",
+                    "CONCEPCION",
+                    "EL CARMEN",
+                    "LA PAZ",
+                    "SAN ANTONIO",
+                    "SAN SEBASTIAN",
+                    "SANTA LUCIA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 119,
+                "Municipio":   "EL ROSARIO"  ,   
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL AMATILLO",
+                    "EL CALVARIO",
+                    "SAN MARTIN",
+                    "VERACRUZ"                    
+                ]
+            },
+            {
+                "IdMunicipio": 120,
+                "Municipio":   "MONTE SAN JUAN" ,       
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANDELARIA",
+                    "CONCEPCION",
+                    "EL CARMEN",
+                    "EL ROSARIO",
+                    "SAN ANDRES",
+                    "SAN ANTONIO",
+                    "SAN JOSE",
+                    "SAN MARTIN",
+                    "SAN NICOLAS",
+                    "LA SOLEDAD"                    
+                ]
+            },
+            {
+                "IdMunicipio": 121,
+                "Municipio": "ORATORIO DE CONCEPCION"   ,
+                "Cantones":[
+                    "AREA URBANA",
+                    "TACANAGUA",
+                    "PALACIOS"                    
+                ]
+            },
+            {
+                "IdMunicipio": 122,
+                "Municipio":  "SAN BARTOLOME PERULAPIA",
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL TRIUNFO",
+                    "LAS LOMAS"                    
+                ]
+            },
+            {
+                "IdMunicipio": 123,
+                "Municipio":   "SAN CRISTOBAL"   ,        
+                "Cantones":[
+                    "AREA URBANA",
+                    "LA VIRGEN",
+                    "SAN ANTONIO",
+                    "SAN FRANCISCO",
+                    "SAN JOSE",
+                    "SANTA ANITA",
+                    "SANTA CRUZ"                    
+                ]
+            },
+            {
+                "IdMunicipio": 124,
+                "Municipio":  "SAN JOSE GUAYABAL"  ,     
+                "Cantones":[
+                    "AREA URBANA",
+                    "ANIMAS",
+                    "EL SALITRE",
+                    "LA CRUZ",
+                    "LLANO GRANDE",
+                    "LOS MELENDEZ",
+                    "PALACIOS",
+                    "PIEDRA LABRADA",
+                    "RAMIREZ",
+                    "LOS RODRIGUEZ"                    
+                ]
+            },
+            {
+                "IdMunicipio": 125,
+                "Municipio":   "SAN PEDRO PERULAPAN"  ,    
+                "Cantones":[
+                    "AREA URBANA",
+                    "BUENA VISTA",
+                    "BUENOS AIRES",
+                    "EL CARMEN",
+                    "EL ESPINO",
+                    "EL LIMON",
+                    "EL PARAISO",
+                    "EL RODEO",
+                    "HUISILTEPEQUE",
+                    "ISTAGUA",
+                    "LA CRUZ",
+                    "LA ESPERANZA",
+                    "LA LOMA",
+                    "MIRAFLORES",
+                    "SAN AGUSTIN",
+                    "SAN FRANCISCO",
+                    "TECOMATEPEQUE",
+                    "TECOLUCO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 126,
+                "Municipio":  "SAN RAFAEL CEDROS"  ,      
+                "Cantones":[
+                    "AREA URBANA",
+                    "CERRO COLORADO",
+                    "EL COPINOL",
+                    "EL ESPINAL",
+                    "JIBOA",
+                    "PALACIOS",
+                    "LA SOLEDAD"                    
+                ]
+            },
+            {
+                "IdMunicipio": 127,
+                "Municipio":   "SAN RAMON"          ,      
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN AGUSTIN",
+                    "SAN PABLO",
+                    "SAN PEDRO",
+                    "SANTA ISABEL"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 128,
+                "Municipio":   "SANTA CRUZ ANALQUITO" ,    
+                "Cantones":[
+                    "AREA URBANA",
+                    "BARRIO ABAJO"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 129,
+                "Municipio":  "SANTA CRUZ MICHAPA" ,     
+                "Cantones":[
+                    "AREA URBANA",
+                    "LAS ANIMAS",
+                    "BUENA VISTA",
+                    "EL CENTRO",
+                    "DELICIAS",
+                    "ROSALES",
+                    "MICHAPA"                    
+                ]
+            },         
+            {
+                "IdMunicipio": 130,
+                "Municipio":   "SUCHITOTO"  ,          
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUACAYO",
+                    "BUENA VISTA",
+                    "EL CAULOTE",
+                    "COLIMA",
+                    "CONSOLACION",
+                    "COPAPAYO",
+                    "COROZAL",
+                    "LAS DELICIAS",
+                    "PLATANAR",
+                    "EL ROBLE",
+                    "ESTANZUELAS",
+                    "GUADALUPE",
+                    "HACIENDITA",
+                    "ICHANQUEZO",
+                    "LA BERMUDA",
+                    "EL MOLINO",
+                    "MONTEPEQUE",
+                    "MILINGO",
+                    "MIRANDILLA",
+                    "PALACIOS",
+                    "PALO GRANDE",
+                    "PEPESHTENANGO",
+                    "SAN CRISTOBAL",
+                    "SAN LUCAS",
+                    "TENANGO",
+                    "EL ZAPOTE"                    
+                ]
+            },       
+            {
+                "IdMunicipio": 131,
+                "Municipio":  "TENANCINGO",
+                "Cantones":[
+                    "AREA URBANA",
+                    "AJULUCO",
+                    "CORRAL VIEJO",
+                    "COPALCHAN",
+                    "EL PEPETO",
+                    "HUISILTEPEQUE",
+                    "JIÑUCO",
+                    "ROSARIO PERICO",
+                    "ROSARIO TABLON",
+                    "SANTA ANITA"                    
+                ]
+            }
+        ]
+    },
+    {
+        "IdDepto": 8,
+        "Departamento": "LA PAZ",
+        "Municipios":[
+            {
+                "IdMunicipio": 132,
+                "Municipio":   "CUYULTITAN",           
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN ANTONIO",
+                    "SAN ISIDRO"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 133,
+                "Municipio":    "EL ROSARIO" ,       
+                "Cantones":[
+                    "AREA URBANA",
+                    "AMATEPEC",
+                    "EL CERRO",
+                    "EL PEDREGAL",
+                    "TILAPA"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 134,
+                "Municipio":   "JERUSALEN"  ,              
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CONACASTE",
+                    "EL ESPINO",
+                    "LOS ROMERO",
+                    "VERACRUZ"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 135,
+                "Municipio":   "MERCEDES LA CEIBA" ,           
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN ANTONIO",
+                    "SAN LUIS"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 136,
+                "Municipio":   "OLOCUILTA"    ,                
+                "Cantones":[
+                    "AREA URBANA",
+                    "CUPINCO",
+                    "GUACHIPILINES",
+                    "JAYUCA",
+                    "EL CHILAMATE",
+                    "JOYA DE GIRON",
+                    "LA ESPERANZA",
+                    "PLANES DE LAS DELICIAS",
+                    "SAN ANTONIO GIRON",
+                    "SAN JOSE BUENA VISTA",
+                    "SAN SEBASTIAN",
+                    "SANTA LUCIA LA BARRANCA",
+                    "SANTA FE",
+                    "SANTO TOMAS"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 137,
+                "Municipio":    "PARAISO DE OSORIO",              
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL COPINOL",
+                    "LOS ZACATALES"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 138,
+                "Municipio":  "SAN ANTONIO MASAHUAT",          
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL SOCORRO",
+                    "SAN ANTONIO LA LOMA",
+                    "SAN JOSE LA INSTANCIA",
+                    "BELEN",
+                    "SAN JOSE LOS SOLARES"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 139,
+                "Municipio":   "SAN EMIGDIO"   ,          
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN JOSE COSTA RICA",
+                    "CONCEPCION LOURDES"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 140,
+                "Municipio":    "SAN FRANCISCO CHINAMECA"  ,  
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANDELARIA",
+                    "CONCEPCION LOS PLANES",
+                    "SAN ANTONIO PACHIMILAMA",
+                    "SAN JOSE LA MONTAÑA",
+                    "SANTA CRUZ LA VEGA"                    
+                ]
+            },        
+            {
+                "IdMunicipio": 141,
+                "Municipio":  "SAN JUAN NONUALCO"  ,       
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CHILE",
+                    "EL GOLFO",
+                    "EL PAJAL",
+                    "EL SALTO",
+                    "LA LAGUNETA",
+                    "LAS PIEDRONAS",
+                    "LAS DELICIAS",
+                    "LA LONGANIZA",
+                    "LOS ZACATILLOS",
+                    "TEHUISTE ABAJO",
+                    "TEHUISTE ARRIBA",
+                    "TIERRA COLORADA"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 142,
+                "Municipio":   "SAN JUAN TALPA"  ,           
+                "Cantones":[
+                    "AREA URBANA",
+                    "COMALAPA",
+                    "TOBALON",
+                    "VERACRUZ"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 143,
+                "Municipio":  "SAN JUAN TEPEZONTES"  ,       
+                "Cantones":[
+                    "AREA URBANA",
+                    "LA CRUZ",
+                    "LA ESPERANZA",
+                    "LOS LAURELES"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 144,
+                "Municipio":   "SAN LUIS TALPA"  ,        
+                "Cantones":[
+                    "AREA URBANA",
+                    "AMATECAMPO",
+                    "CUCHILLA DE COMALAPA",
+                    "EL PORVENIR",
+                    "NUEVO EDEN",
+                    "EL PIMENTAL",
+                    "SAN FRANCISCO AMATEPEC",
+                    "TECUALUYA",
+                    "ZAMBOMBERA"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 145,
+                "Municipio":   "SAN MIGUEL TEPEZONTES" ,        
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN BARTOLO",
+                    "SOLEDAD LAS FLORES"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 146,
+                "Municipio":  "SAN PEDRO MASAHUAT" ,
+                "Cantones":[ 
+                    "AREA URBANA",
+                    "BUENA VISTA",
+                    "BARAHONA",
+                    "EL SICAHUITE",
+                    "DULCE NOMBRE",
+                    "EL ANGEL",
+                    "EL ACHIOTAL",
+                    "EL CARMEN",
+                    "SANTA LUCIA EL PAREDON",
+                    "EL PIMIENTAL",
+                    "EL PORVENIR",
+                    "LAS DELICIAS",
+                    "LAS FLORES",
+                    "LAS HOJAS",
+                    "LAS ISLETAS",
+                    "MARCELINO",
+                    "SANTA MARIA LA SABANA",
+                    "SAN JOSE LUNA"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 147,
+                "Municipio":   "SAN PEDRO NONUALCO"  ,          
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL LAZARETO",
+                    "EL ROBLE",
+                    "HACIENDA VIEJA",
+                    "LA CARBONERA",
+                    "LA COMUNIDAD",
+                    "NAHUISTEPEQUE",
+                    "SAN RAMON"                    
+                ]
+            },    
+            {
+                "IdMunicipio": 148,
+                "Municipio":    "SAN RAFAEL OBRAJUELO" ,             
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CARAO",
+                    "LA LONGANIZA",
+                    "LA PALMA",
+                    "SAN JERONIMO",
+                    "SAN JOSE OBRAJUELO",
+                    "SAN PEDRO MARTIR",
+                    "SAN MIGUEL OBRAJUELO"                    
+                ]
+            },       
+            {
+                "IdMunicipio": 149,
+                "Municipio":   "SANTA MARIA OSTUMA",        
+                "Cantones":[
+                    "AREA URBANA",
+                    "CONCEPCION",
+                    "EL CHAPERNO",
+                    "EL TRANSITO",
+                    "LOMA LARGA",
+                    "SAN ANTONIO",
+                    "SAN ISIDRO",
+                    "SAN JOSE CARRIZAL"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 150,
+                "Municipio":   "SANTIAGO NONUALCO"   ,           
+                "Cantones":[
+                    "AREA URBANA",
+                    "AMULUNCO",
+                    "CONCEPCION JALPONGA",
+                    "CHANCUYO",
+                    "EL SAUCE",
+                    "SAN LUIS JALPONGUITA",
+                    "LA CRUZ DEL MOJON",
+                    "LAS ANIMAS",
+                    "LAS GUARUMAS",
+                    "SAN ANTONIO ABAJO",
+                    "SAN ANTONIO ARRIBA",
+                    "SAN FRANCISCO EL PORFIADO",
+                    "SAN FRANCISCO LA HACIENDA",
+                    "SAN ANTONIO",
+                    "SAN JOSE LOMA",
+                    "SAN JOSE OBRAJITO",
+                    "SAN SEBASTIAN ABAJO",
+                    "SAN SEBASTIAN ARRIBA",
+                    "SANTA CRUZ LA LOMA",
+                    "SANTA RITA ALMENDRO",
+                    "SANTA TERESA",
+                    "SANTA CRUZ CHACASTAL"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 151,
+                "Municipio":   "TAPALHUACA"    ,          
+                "Cantones":[
+                    "AREA URBANA",
+                    "LA BASA",
+                    "LAS LAJAS",
+                    "SAN PEDRO LA PALMA"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 152,
+                "Municipio":  "ZACATECOLUCA",        
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUAZARCA",
+                    "AMAYO",
+                    "ANIMAS ABAJO",
+                    "ANIMAS ARRIBA",
+                    "AZACUALPA",
+                    "BUENA VISTA ABAJO",
+                    "BUENA VISTA ARRIBA",
+                    "BUENA VISTA ARRINCONADO",
+                    "EL AMATE",
+                    "EL CALLEJON",
+                    "EL CARMEN",
+                    "EL COPINOL",
+                    "EL DESPOBLADO",
+                    "EL ESPINO ABAJO",
+                    "EL ESPINO ARRIBA",
+                    "EL MENEADERO",
+                    "EL SOCORRO",
+                    "EL ZAPOTE",
+                    "HATO DE LOS REYES",
+                    "JOSECITO",
+                    "LA JOYA",
+                    "LA LUCHA",
+                    "LAS ISLETAS",
+                    "LAS TABLAS",
+                    "LIEVANO",
+                    "PENITENTE ABAJO",
+                    "PENITENTE ARRIBA",
+                    "PIEDRA GRANDE ABAJO",
+                    "PIEDRA GRANDE ARRIBA",
+                    "PINEDA",
+                    "PLATANARES",
+                    "SAN FRANCISCO LOS REYES",
+                    "SAN JOSE LA MONTAï¿½A",
+                    "SAN LUCAS",
+                    "SAN MARCOS LA CRUZ",
+                    "SAN RAFAEL",
+                    "SAN SEBASTIAN LA ZORRA",
+                    "SANTA LUCIA",
+                    "TEPECHAME",
+                    "TIERRA BLANCA",
+                    "ULAPA"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 153,
+                "Municipio":   "SAN LUIS LA HERRADURA" ,         
+                "Cantones":[
+                    "AREA URBANA",
+                    "CORDONCILLO",
+                    "EL ESCOBAL",
+                    "EL LLANO",
+                    "EL ZAPOTE",
+                    "GUADALUPE LA ZORRA",
+                    "LA ANONA",
+                    "LA CALZADA",
+                    "SAN ANTONIO LOS BLANCOS",
+                    "SAN SEBASTIAN EL CHINGO",
+                    "SAN RAFAEL TASAJERA"                    
+                ]
+            }
+        ]
+    },
+    {
+        "IdDepto": 9,
+        "Departamento":"CABAÑAS",
+        "Municipios":[
+            {
+                "IdMunicipio": 154,
+                "Municipio":  "CINQUERA"   ,      
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CACAO",
+                    "GUILIGUISTE",
+                    "DULCE NOMBRE O LA ESCOPETA",
+                    "SAN ANTONIO",
+                    "SAN BENITO",
+                    "SAN JOSE EL TULE",
+                    "SAN NICOLAS",
+                    "VALLE NUEVO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 155,
+                "Municipio":   "GUACOTECTI"  ,          
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA ZARCA",
+                    "EL BAÑADERO",
+                    "TEMPISQUE"                    
+                ]
+            },
+            {
+                "IdMunicipio": 156,
+                "Municipio":  "ILOBASCO"  ,        
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA ZARCA",
+                    "AZACUALPA",
+                    "SAN JOSE CALERA",
+                    "CERRO COLORADO",
+                    "EL MESTIZO",
+                    "EL POTRERO",
+                    "LA LABOR",
+                    "LAS HUERTAS",
+                    "LOS HOYOS",
+                    "LOS LLANITOS",
+                    "MAQUILISHUAT",
+                    "NANASTEPEQUE",
+                    "ORATORIO",
+                    "SAN FRANCISCO DEL MONTE",
+                    "SAN FRANCISCO IRAHETA",
+                    "SAN JOSE EL MESTIZO",
+                    "SANTA CRUZ",
+                    "SITIO VIEJO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 157,
+                "Municipio":  "JUTIAPA"   ,            
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL PLATANAR",
+                    "SAN SEBASTIAN",
+                    "CALERAS",
+                    "SANTA BARBARA",
+                    "LLANO LARGO",
+                    "PALACIOS",
+                    "CAROLINA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 158,
+                "Municipio":   "SAN ISIDRO"    ,            
+                "Cantones":[
+                    "AREA URBANA",
+                    "IZCATAL",
+                    "EL AMATE",
+                    "POTRERO DE BATRES",
+                    "LLANO DE LA HACIENDA",
+                    "LOS JOBOS",
+                    "SAN FRANCISCO",
+                    "POTRERO Y TABLA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 159,
+                "Municipio":  "SENSUNTEPEQUE"   ,       
+                "Cantones":[
+                    "AREA URBANA",
+                    "COPINOLAPA",
+                    "CUNCHIQUE",
+                    "CUYANTEPEQUE",
+                    "EL CHUNTE",
+                    "EL AGUACATE",
+                    "EL VOLCAN",
+                    "LAS MARIAS",
+                    "LA TRINIDAD",
+                    "LOS LLANITOS",
+                    "LLANO GRANDE",
+                    "PIE DE LA CUESTA",
+                    "RIO GRANDE",
+                    "ROJAS",
+                    "SAN GREGORIO",
+                    "SAN LORENSO",
+                    "SAN MARCOS",
+                    "SAN MATIAS",
+                    "SAN NICOLAS",
+                    "SANTA ROSA LA MARAÑA",
+                    "TEMPISQUE",
+                    "NOMBRE DE DIOS",
+                    "TRONALAGUA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 160,
+                "Municipio":  "TEJUTEPEQUE"  ,         
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN FRANCISCO ECHEVERRIA",
+                    "EL ZAPOTE",
+                    "SANTA RITA",
+                    "SANTA OLAYA",
+                    "CONCEPCION",
+                    "SAN ANTONIO BUENAVISTA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 161,
+                "Municipio": "VICTORIA"   ,             
+                "Cantones":[
+                    "AREA URBANA",
+                    "AZACUALPA",
+                    "EL CARACOL",
+                    "EL ZAPOTE",
+                    "LA BERMUDA",
+                    "LA UVILLA",
+                    "PARATAO",
+                    "PEÑA BLANCA",
+                    "ROJITAS",
+                    "SAN ANTONIO",
+                    "SAN PEDRO",
+                    "SANTA MARTA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 162,
+                "Municipio":   "DOLORES", 
+                "Cantones":[
+                    "AREA URBANA",
+                    "CAÑAFISTULA",
+                    "CURAREN",
+                    "CHAPELCORO",
+                    "EL RINCON",
+                    "NIQUERESQUE",
+                    "SAN CARLOS"                    
+                ]
+            }
+        ]
+    },
+    {
+        "IdDepto": 10,
+        "Departamento":"SAN VICENTE",
+        "Municipios":[
+            {
+                "IdMunicipio": 163,
+                "Municipio": "APASTEPEQUE",              
+                "Cantones":[
+                    "AREA URBANA",
+                    "CALDERAS",
+                    "CUTUMAYO",
+                    "EL GUAYABO",
+                    "LAS MINAS",
+                    "SAN FELIPE",
+                    "SAN JACINTO",
+                    "SAN JOSE LOS ALMENDROS",
+                    "SAN JUAN DE MERINO",
+                    "SAN NICOLAS",
+                    "SAN PEDRO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 164,
+                "Municipio":  "GUADALUPE",              
+                "Cantones":[
+                    "AREA URBANA",
+                    "JOYA DE MUNGUIA",
+                    "SAN ANTONIO LOS RANCHOS",
+                    "SAN BENITO PIEDRAS GORDAS",
+                    "SAN EMIGDIO EL TABLON",
+                    "SAN FRANCISCO AGUA AGRIA",
+                    "SAN JOSE CARBONERA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 165,
+                "Municipio": "SAN CAYETANO ISTEPEQUE",             
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANDELARIA",
+                    "CERRO GRANDE"                    
+                ]
+            },
+            {
+                "IdMunicipio": 166,
+                "Municipio": "SANTA CLARA",                
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA HELADA",
+                    "EL ROSARIO",
+                    "EL TORTUGUERO",
+                    "SAN JERONIMO",
+                    "SAN JUAN DE MERINO",
+                    "SANTA ROSA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 167,
+                "Municipio": "SANTO DOMINGO",               
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL REFUGIO",
+                    "IZCANALES",
+                    "LOS RODRIGUEZ",
+                    "LOS TALPETATES"                    
+                ]
+            },
+            {
+                "IdMunicipio": 168,
+                "Municipio": "SAN ESTEBAN CATARINA",            
+                "Cantones":[
+                    "AREA URBANA",
+                    "AMATITAN ABAJO",
+                    "AMATITAN ARRIBA",
+                    "CERRO DE SAN PEDRO",
+                    "SAN ESTEBAN",
+                    "SAN ILDEFONSO",
+                    "SAN JACINTO LA BURRERA",
+                    "SANTA CATARINA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 169,
+                "Municipio": "SAN ILDEFONSO",            
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANDELARIA LEMPA",
+                    "GUACHIPILIN",
+                    "LAJAS Y CANOAS",
+                    "SAN FRANCISCO",
+                    "SAN LORENZO",
+                    "SAN PABLO CAÑALES"                    
+                ]
+            },
+            {
+                "IdMunicipio": 170,
+                "Municipio": "SAN LORENZO",             
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN FRANCISCO",
+                    "LA CRUZ",
+                    "LAS ANIMAS",
+                    "SANTA LUCIA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 171,
+                "Municipio":  "SAN SEBASTIAN",             
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL PARAISO",
+                    "EL PORVENIR AGUACAYO",
+                    "LA ESPERANZA",
+                    "LAS ROSAS",
+                    "LOS LAURELES",
+                    "SAN FRANCISCO",
+                    "SAN JOSE LA LABOR",
+                    "SANTA ELENA",
+                    "SANTA TERESA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 172,
+                "Municipio": "SAN VICENTE",                   
+                "Cantones":[
+                    "AREA URBANA",
+                    "ANTON FLORES",
+                    "SAN FRANCISCO CHAMOCO",
+                    "CHUCUYO",
+                    "DOS QUEBRADAS",
+                    "EL CARACOL",
+                    "EL MARQUEZADO",
+                    "EL OBRAJUELO LEMPA",
+                    "EL REBELDE",
+                    "LA JOYA",
+                    "LA SOLEDAD",
+                    "LEON DE PIEDRA",
+                    "LOS LAURELES",
+                    "LOS POZOS",
+                    "LLANOS DE ACHICHILCO",
+                    "PARRAS LEMPA",
+                    "SAN ANTONIO ACHICHILQUITO",
+                    "SAN ANTONIO CAMINOS",
+                    "SAN ANTONIO TRAS EL CERRO",
+                    "SAN BARTOLO ICHANMICO",
+                    "SAN DIEGO",
+                    "SAN JACINTO",
+                    "SAN JOSE RIO FRIO",
+                    "SAN JUAN BUENA VISTA",
+                    "SAN RAFAEL SAN DIEGO",
+                    "SANTA GERTRUDIS",
+                    "VOLCAN OPICO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 173,
+                "Municipio": "TECOLUCA",                    
+                "Cantones":[
+                    "AREA URBANA",
+                    "BARRIO NUEVO",
+                    "EL ARCO",
+                    "EL CAMPANARIO",
+                    "EL CARAO",
+                    "EL COYOLITO",
+                    "EL PACUN",
+                    "EL PALOMAR",
+                    "EL PERICAL",
+                    "EL PUENTE",
+                    "EL SOCORRO",
+                    "LA ESPERANZA",
+                    "LAS ANONAS",
+                    "SAN CARLOS",
+                    "SAN FERNANDO",
+                    "SAN FRANCISCO ANGULO",
+                    "SAN JOSE LLANO GRANDE",
+                    "SAN NICOLAS LEMPA",
+                    "SAN RAMON GRIFAL",
+                    "SANTA BARBARA",
+                    "EL PORRILLO",
+                    "LAS MESAS",
+                    "SAN ANDRES LOS ACHIOTES",
+                    "SAN BENITO",
+                    "SANTA CRUZ"                   
+                ]
+            },
+            {
+                "IdMunicipio": 174,
+                "Municipio": "TEPETITAN",                     
+                "Cantones":[
+                    "AREA URBANA",
+                    "CONCEPCION DE CAÑAS",
+                    "LA VIRGEN",
+                    "LOMA ALTA"
+                ]
+            },
+            {
+                "IdMunicipio": 175,
+                "Municipio":  "VERAPAZ",                   
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CARMEN",
+                    "MOLINEROS",
+                    "SAN ANTONIO JIBOA",
+                    "SAN ISIDRO",
+                    "SAN JERONIMO LIMON",
+                    "SAN JOSE BORJA",
+                    "SAN JUAN BUENAVISTA",
+                    "SAN PEDRO AGUA CALIENTE"                    
+                ]
+            }                                
+        ]
+    },
+    {
+        "IdDepto": 11,
+        "Departamento":"USULUTAN",
+        "Municipios":[
+            {
+                "IdMunicipio": 176,
+                "Municipio": "ALEGRIA"  ,                   
+                "Cantones":[
+                    "AREA URBANA",
+                    "APASTEPEQUE",
+                    "EL QUEBRACHO",
+                    "ZAPOTILLO",
+                    "YOMO",
+                    "LA PEï¿½A",
+                    "SAN JUAN",
+                    "LAS CASITAS",
+                    "SAN JOSE LA MONTAï¿½ITA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 177,
+                "Municipio": "BERLIN"  ,                        
+                "Cantones":[
+                    "AREA URBANA",
+                    "COLON",
+                    "CONCEPCION",
+                    "EL COROZAL",
+                    "EL TABLON",
+                    "LAS DELICIAS",
+                    "LAS PILETAS",
+                    "TALPETATES",
+                    "SAN FELIPE",
+                    "SAN FRANCISCO",
+                    "SAN ISIDRO",
+                    "SAN JOSE",
+                    "SAN JUAN LOMA ALTA",
+                    "SAN LORENZO",
+                    "SANTA CRUZ",
+                    "VIRGINIA",
+                    "LA UNION"                    
+                ]
+            },
+            {
+                "IdMunicipio": 178,
+                "Municipio": "CALIFORNIA"     ,                    
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL POZON"                    
+                ]
+            },
+            {
+                "IdMunicipio": 179,
+                "Municipio": "CONCEPCION BATRES" ,                        
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CAï¿½AL",
+                    "EL PARAISAL",
+                    "EL PORVENIR",
+                    "HACIENDA NUEVA",
+                    "LA ANCHILA",
+                    "LA DANTA",
+                    "SAN FELIPE",
+                    "SAN ILDEFONSO",
+                    "SAN ANTONIO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 180,
+                "Municipio":  "EL TRIUNFO" ,                      
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL PALON",
+                    "EL JICARITO",
+                    "SAN ANTONIO",
+                    "LAS PALMERAS"                    
+                ]
+            },
+            {
+                "IdMunicipio": 181,
+                "Municipio": "EREGUAYQUIN"  ,                     
+                "Cantones":[
+                    "AREA URBANA",
+                    "ANALCO",
+                    "LA CEIBA",
+                    "LOS ENCUENTROS",
+                    "MACULIS",
+                    "PIEDRA ANCHA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 182,
+                "Municipio": "ESTANZUELAS",                      
+                "Cantones":[
+                    "AREA URBANA",
+                    "CONDADILLO",
+                    "EL CARAGUAL",
+                    "EL OJUSHTE",
+                    "EL TECOMATAL",
+                    "EL ESCARBADERO",
+                    "LA CRUZ",
+                    "POTRERO DE JOBO",
+                    "SAN PEDRO",
+                    "SITIO DE SAN ANTONIO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 183,
+                "Municipio": "JIQUILISCO"  ,                      
+                "Cantones":[
+                    "AREA URBANA",
+                    "BOLIVAR",
+                    "CABOS NEGROS",
+                    "CALIFORNIA",
+                    "EL CARMEN",
+                    "CEIBA GACHA",
+                    "LAS DELICIAS",
+                    "EL CARRIZAL",
+                    "EL CASTAï¿½O",
+                    "EL COYOLITO",
+                    "EL PARAISO",
+                    "HULE CHACHO",
+                    "ISLA DE MENDEZ",
+                    "LA CANOA",
+                    "LA CONCORDIA",
+                    "CRUZADILLA DE SAN JUAN",
+                    "LA MONTAï¿½A",
+                    "LA NORIA",
+                    "LAS FLORES",
+                    "LA TIRANA",
+                    "LOS CAMPOS",
+                    "LAS MESITAS",
+                    "LOS LIMONES",
+                    "LOS TRES CHORROS",
+                    "NUEVA CALIFORNIA",
+                    "PUERTO AVALOS",
+                    "EL ROQUINTE",
+                    "SALINAS EL POTRERO",
+                    "SALINAS DE SISIGUAYO",
+                    "ZAMORAN",
+                    "SAN ANTONIO POTRERILLOS",
+                    "SAN JOSE O LA CARRERA",
+                    "SAN JUAN DEL GOZO",
+                    "SAN JUDAS",
+                    "SAN MARCOS LEMPA",
+                    "SAN PEDRO",
+                    "TABURETE LOS CLAROS",
+                    "TABURETE JAGUAL",
+                    "TIERRA BLANCA O NUEVA ESPERANZA",
+                    "EL MARILLO",
+                    "SAN JUAN DE LETRAN",
+                    "AGUACAYO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 184,
+                "Municipio": "JUCUAPA"  ,                          
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL AMATON",
+                    "EL CHAGUITE",
+                    "EL NISPERO",
+                    "LLANO EL CHILAMATE",
+                    "LLANO GRANDE DE LAS PIEDRAS",
+                    "PLAN GRANDE",
+                    "LOMA DE LA CRUZ",
+                    "TAPESQUILLO BAJO",
+                    "TAPESQUILLO ALTO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 185,
+                "Municipio":  "JUCUARAN"  ,                    
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL JICARO",
+                    "EL JUTAL",
+                    "EL LLANO",
+                    "EL PROGRESO",
+                    "EL ZAPOTE",
+                    "LA CRUZ",
+                    "SAMURIA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 186,
+                "Municipio":  "MERCEDES UMAÑA" ,                     
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CAULOTE",
+                    "EL JICARO",
+                    "EL JOCOTILLO",
+                    "TALNETES",
+                    "LA PUERTA",
+                    "LOS HORCONES",
+                    "LA MONTAï¿½ITA",
+                    "SAN BENITO",
+                    "SANTA ANITA"                    
+                ]
+            },
+            {
+                "IdMunicipio": 187,
+                "Municipio":  "NUEVA GRANADA",                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "AZACUALPIA DE GUALCHO",
+                    "AZAZCUALPIA DE JOCO",
+                    "EL AMATILLO",
+                    "JOCOMONTIQUE",
+                    "LA ISLETA",
+                    "LAS LLAVES",
+                    "LA PALOMILLA",
+                    "LE PAZ",
+                    "NUEVO CARRIZAL",
+                    "POTRERO DE JOCO",
+                    "SAN JOSE"                    
+                ]
+            },
+            {
+                "IdMunicipio": 188,
+                "Municipio": "OZATLAN" ,                     
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL DELIRIO",
+                    "EL PALMITAL",
+                    "JOYA DEL PILAR",
+                    "LA BREï¿½A",
+                    "LA POZA",
+                    "LAS TRANCAS"                    
+                ]
+            },
+            {
+                "IdMunicipio": 189,
+                "Municipio": "PUERTO EL TRIUNFO"  ,                          
+                "Cantones":[
+                    "AREA URBANA",
+                    "CORRAL DE MULAS",
+                    "EL ESPIRITU SANTO",
+                    "EL SITIO SANTA LUCIA",
+                    "MADRESAL"                    
+                ]
+            },
+            {
+                "IdMunicipio": 190,
+                "Municipio":  "SAN AGUSTIN" ,                      
+                "Cantones":[
+                    "AREA URBANA",
+                    "LOS ARROZALES",
+                    "EL CEDRO",
+                    "EL COROZO",
+                    "EL JICARO",
+                    "EL JOCOTE",
+                    "GALINGAGUA",
+                    "JOBAL ARROZALES",
+                    "LA CEIBA",
+                    "LA MORA",
+                    "LA QUESERA",
+                    "LINARES CAULOTAL",
+                    "BUENOS AIRES",
+                    "LOS PLANES",
+                    "NOMBRE DE DIOS",
+                    "LAS TRES CALLES",
+                    "EUCALIPTO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 191,
+                "Municipio": "SAN BUENA VENTURA"  ,                      
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ACEITUNO",
+                    "EL SEMILLERO",
+                    "LA CARIDAD",
+                    "LA TRONCONADA",
+                    "LAS CHARCAS",
+                    "LOS ESPINOS"                    
+                ]
+            },
+            {
+                "IdMunicipio": 192,
+                "Municipio": "SAN DIONISIO",                     
+                "Cantones":[
+                    "AREA URBANA",
+                    "MUNDO NUEVO",
+                    "IGLESIA VIEJA",
+                    "SAN FRANCISCO"                    
+                ]
+            },
+            {
+                "IdMunicipio": 193,
+                "Municipio":  "SANTA ELENA",                      
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL NANZAL",
+                    "EL NISPERAL",
+                    "EL REBALSE",
+                    "EL VOLCAN",
+                    "JOYA ANCHA ABAJO",
+                    "JOYA ANCHA ARRIBA",
+                    "LAS CRUCES",
+                    "EL AMATE",
+                    "PIEDRA DE AGUA"                    
+                ]
+            },       
+            {
+                "IdMunicipio": 194,
+                "Municipio": "SAN FRANCISCO JAVIER",                      
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL PALMO",
+                    "EL TABLON",
+                    "EL ZUNGANO",
+                    "JOBAL HORNOS",
+                    "LA CRUZ",
+                    "LA PEï¿½A",
+                    "LOS HORCONES",
+                    "LOS HORNOS",
+                    "LOS RIOS"                    
+                ]
+            },            
+            {
+                "IdMunicipio": 195,
+                "Municipio": "SANTA MARIA" ,                     
+                "Cantones":[
+                    "AREA URBANA",
+                    "MEJICAPA",
+                    "SAN FRANCISCO"                    
+                ]
+            },         
+            {
+                "IdMunicipio": 196,
+                "Municipio": "SANTIAGO DE MARIA"  ,                   
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL MARQUEZADO",
+                    "EL TIGRE",
+                    "LAS FLORES",
+                    "PLAYITAS",
+                    "LOMA LOS GONZALES",
+                    "LOS BATRES"                    
+                ]
+            },
+            {
+                "IdMunicipio": 197,
+                "Municipio":  "TECAPAN"  ,                       
+                "Cantones":[
+                    "AREA URBANA",
+                    "CERRO VERDE",
+                    "EL JICARO",
+                    "PASO DE GUALACHE",
+                    "LOS CHAPETONES",
+                    "LOS HORCONES"                    
+                ]
+            },          
+            {
+                "IdMunicipio": 198,
+                "Municipio": "USULUTAN",                     
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CERRITO",
+                    "TALPETATE",
+                    "EL TRILLO",
+                    "EL OJUSHTE",
+                    "LAS SALINAS",
+                    "LA PRESA",
+                    "LA LAGUNA",
+                    "JOYA DEL TOMASITO",
+                    "LA PEï¿½A",
+                    "PALO GALAN",
+                    "CAPITAN LAZO",
+                    "LOS DESMONTES",
+                    "OBRAJUELO",
+                    "SANTA BARBARA",
+                    "OJO DE AGUA"                    
+                ]
+            }   
+        ]
+    },
+    {
+        "IdDepto": 12,
+        "Departamento":"SAN MIGUEL",
+        "Municipios":[
+            {
+                "IdMunicipio": 199,
+                "Municipio":  "CAROLINA"  ,                      
+                "Cantones":[
+                    "AREA URBANA",
+                    "LA CEIBITA",
+                    "LA ORILLA",
+                    "MIRACAPA",
+                    "ROSAS NACASPILO",
+                    "SOLEDAD TERRERA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 200,
+                "Municipio":  "CIUDAD BARRIOS"  ,                       
+                "Cantones":[
+                    "AREA URBANA",
+                    "BELEN",
+                    "GUANACASTE",
+                    "LLANO EL ANGEL",
+                    "NUEVO PORVENIR",
+                    "SAN CRISTOBAL",
+                    "SAN JUAN",
+                    "SAN LUISITO",
+                    "LA MONTAï¿½ITA",
+                    "SAN MATIAS",
+                    "TEPONAHUASTE",
+                    "LAS TORRECILLAS"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 201,
+                "Municipio":  "COMACARAN" ,                        
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL HORMIGUERO",
+                    "EL COLORADO",
+                    "EL JICARAL",
+                    "CANDELARIA",
+                    "PLATANARILLO"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 202,
+                "Municipio":   "CHAPELTIQUE"  ,                             
+                "Cantones":[
+                    "AREA URBANA",
+                    "CERCAS DE PIEDRA",
+                    "GUALAMA",
+                    "LA TRINIDAD",
+                    "SAN JERONIMO",
+                    "SAN PEDRO",
+                    "LOS AMATES"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 203,
+                "Municipio":  "CHINAMECA" ,                      
+                "Cantones":[
+                    "AREA URBANA",
+                    "BOQUERON",
+                    "CONACASTAL",
+                    "COPINOL PRIMERO",
+                    "COPINOL SEGUNDO",
+                    "EL JOCOTE",
+                    "JOCOTE DULCE",
+                    "LA CRUZ PRIMERA",
+                    "LA CRUZ SEGUNDA",
+                    "LA PEï¿½A",
+                    "LAS MESAS",
+                    "LOS PLANES PRIMERO",
+                    "LOS PLANES TERCERO",
+                    "OJO DE AGUA",
+                    "OROMONTIQUE",
+                    "SAN ANTONIO",
+                    "SAN PEDRO ARENALES",
+                    "ZARAGOZA",
+                    "LAS MARIAS",
+                    "CHAMBALA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 204,
+                "Municipio":  "CHIRILAGUA" ,                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CAPULIN",
+                    "CHILANGUERA",
+                    "GUADALUPE",
+                    "HOJA DE SAL",
+                    "LA ESTRECHURA",
+                    "NUEVA CONCEPCION",
+                    "SAN JOSE GUALOZO",
+                    "SAN PEDRO",
+                    "TIERRA BLANCA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 205,
+                "Municipio":  "EL TRANSITO" ,                        
+                "Cantones":[
+                    "AREA URBANA",
+                    "CALLE NUEVA",
+                    "LLANO DEL COYOL",
+                    "PRIMAVERA",
+                    "MOROPALA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 206,
+                "Municipio":   "LOLOTIQUE" ,                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "AMAYA",
+                    "CONCEPCION",
+                    "EL JICARO",
+                    "EL NANCITO",
+                    "EL PALON",
+                    "LAS VENTAS",
+                    "SAN FRANCISCO",
+                    "SANTA BARBARA",
+                    "VALENCIA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 207,
+                "Municipio":  "MONCAGUA"  ,                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CERRO",
+                    "EL JOBO",
+                    "EL PAPALON",
+                    "EL PLATANAR",
+                    "EL RODEO",
+                    "LA ESTANCIA",
+                    "LA FRAGUA",
+                    "LOS EJIDOS",
+                    "SALAMAR",
+                    "SANTA BARBARA",
+                    "TONGOLONA",
+                    "VALLE ALEGRE"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 208,
+                "Municipio":  "NUEVA GUADALUPE"  ,                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "LOS PLANES DE SAN SEBASTIAN",
+                    "SAN LUIS",
+                    "LOS PLANES PRIMERO",
+                    "LOS PLANES SEGUNDO",
+                    "LOS PLANES TERCERO"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 209,
+                "Municipio":  "NUEVO EDEN DE SAN JUAN",                          
+                "Cantones":[
+                    "AREA URBANA",
+                    "CUCURUCHO",
+                    "JARDIN",
+                    "LOS LAURELES",
+                    "MONTECILLOS",
+                    "OJEO",
+                    "QUESERAS",
+                    "SAN SEBASTIAN"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 210,
+                "Municipio":  "QUELEPA"   ,                      
+                "Cantones":[
+                    "AREA URBANA",
+                    "OBRAJUELO",
+                    "EL TAMBORAL",
+                    "SAN JOSE",
+                    "SAN ANTONIO"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 211,
+                "Municipio":   "SAN ANTONIO" ,                              
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN DIEGO",
+                    "SAN MARCOS"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 212,
+                "Municipio": "SAN GERARDO" ,                       
+                "Cantones":[
+                    "AREA URBANA",
+                    "LA LAGUNA",
+                    "LA JOYA",
+                    "EL QUEBRACHO",
+                    "SAN JERONIMO"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 213,
+                "Municipio":   "SAN JORGE" ,                          
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANDELARIA",
+                    "JOYA DE VENTURA",
+                    "LA CEIBA",
+                    "LA MORITA",
+                    "SAN JULIAN"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 214,
+                "Municipio":  "SAN LUIS DE LA REINA" ,                       
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL JUNQUILLO",
+                    "EL OSTUCAL",
+                    "SAN ANTONIO",
+                    "SAN JUAN"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 215,
+                "Municipio":  "SAN MIGUEL"  ,                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "ALTOMIRO",
+                    "ANCHICO",
+                    "CERRO BONITO",
+                    "CONCEPCION COROZAL",
+                    "EL HABILLAL",
+                    "EL JUTE",
+                    "EL NIï¿½O",
+                    "EL PAPALON",
+                    "EL PROGRESO",
+                    "EL SITIO",
+                    "EL TECOMATAL",
+                    "EL VOLCAN",
+                    "HATO NUEVO",
+                    "JALACATAL",
+                    "LA CONOA",
+                    "LA PUERTA",
+                    "LA TRINIDAD",
+                    "LAS DELICIAS",
+                    "LAS LOMITAS",
+                    "MIRAFLORES",
+                    "MONTE GRANDE",
+                    "SAN ANDRES",
+                    "SAN ANTONIO CHAVEZ",
+                    "SAN CARLOS",
+                    "SAN JACINTO",
+                    "SANTA INES",
+                    "EL AMATE",
+                    "EL BRAZO",
+                    "EL DELIRIO",
+                    "EL DIVISADERO",
+                    "EL ZAMORAN",
+                    "SAN ANTONIO SILVA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 216,
+                "Municipio":  "SAN RAFAEL ORIENTE"  ,                     
+                "Cantones":[
+                    "AREA URBANA",
+                    "LOS ZELAYA",
+                    "PIEDRA AZUL",
+                    "RODEO DE PIEDRON",
+                    "SANTA CLARA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 217,
+                "Municipio":  "SESORI"   ,                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "CHARLACA",
+                    "EL ESPIRITU SANTO",
+                    "EL TABLON",
+                    "LAS MESAS",
+                    "MANAGUARA",
+                    "MAZATEPEQUE",
+                    "MINITAS",
+                    "PETACONES",
+                    "SAN JACINTO",
+                    "SAN SEBASTIAN",
+                    "SANTA ROSA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 218,
+                "Municipio":   "ULUAZAPA"      ,                       
+                "Cantones":[
+                    "AREA URBANA",
+                    "JUAN YANEZ",
+                    "LOS PILONES",
+                    "RIO VARGAS"                    
+                ]
+            }
+        ] 
+    },
+    {
+        "IdDepto": 13,
+        "Departamento":"MORAZAN",
+        "Municipios":[
+            {
+                "IdMunicipio": 219,
+                "Municipio":  "ARAMBALA" ,                           
+                "Cantones":[
+                    "AREA URBANA",
+                    "TIERRA COLORADA",
+                    "PUEBLO VIEJO"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 220,
+                "Municipio":  "CACAOPERA"  ,                          
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA BLANCA",
+                    "CALAVERA",
+                    "GUACHIPILIN",
+                    "JUNQUILLO",
+                    "LA ESTANCIA",
+                    "OCOTILLO",
+                    "SUNSULAPA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 221,
+                "Municipio":   "CORINTO",                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "CORRALITO",
+                    "HONDABLE",
+                    "LA LAGUNA",
+                    "SAN FELIPE",
+                    "VARILLA NEGRA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 222,
+                "Municipio":  "CHILANGA"  ,                           
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CHAPARRAL",
+                    "EL PEDERNAL",
+                    "PIEDRA PARADA",
+                    "JOYA DEL MATAZANO",
+                    "LAJITAS"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 223,
+                "Municipio":   "DELICIAS DE CONCEPCION" ,                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL VOLCAN",
+                    "LA CUCHILLA"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 224,
+                "Municipio": "EL DIVISADERO"  ,                        
+                "Cantones":[
+                    "AREA URBANA",
+                    "LOMA LARGA",
+                    "VILLA MODELO",
+                    "LOMA TENDIDA",
+                    "LLANO DE SANTIAGO",
+                    "SAN PEDRO RIO SECO",
+                    "SANTA ANITA",
+                    "NOMBRE DE JESUS"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 225,
+                "Municipio":  "EL ROSARIO",                     
+                "Cantones":[
+                    "AREA URBANA",
+                    "OJO DE AGUA",
+                    "LA LAGUNA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 226,
+                "Municipio":  "GUALOCOCTI"  ,                             
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN LUCAS",
+                    "LA JOYA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 227,
+                "Municipio":   "GUATAJIAGUA"  ,                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN BARTOLO",
+                    "MAIGUERA",
+                    "EL VOLCAN",
+                    "SIRIGUAL",
+                    "PAJIGUA",
+                    "LOS ABELINES"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 228,
+                "Municipio": "JOATECA"   ,                          
+                "Cantones":[
+                    "AREA URBANA",
+                    "PATURLA",
+                    "VOLCANCILLO",
+                    "EL ZAPOTAL"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 229,
+                "Municipio":  "JOCOAITIQUE" ,                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL RODEO",
+                    "EL VOLCANCILLO"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 230,
+                "Municipio":  "JOCORO"   ,                            
+                "Cantones":[
+                    "AREA URBANA",
+                    "LAS MARIAS",
+                    "SAN JOSE",
+                    "LOS LAURELES",
+                    "LAGUNETAS",
+                    "SAN JUAN",
+                    "SAN FELIPE",
+                    "GUACHIPILIN",
+                    "FLAMENCO"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 231,
+                "Municipio":   "LOLOTIQUILLO" ,                          
+                "Cantones":[
+                    "AREA URBANA",
+                    "GUALINDO",
+                    "LA MANZANILLA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 232,
+                "Municipio":  "MEANGUERA"  ,                              
+                "Cantones":[
+                    "AREA URBANA",
+                    "CERRO PANDO",
+                    "LA JOYA",
+                    "SOLEDAD",
+                    "GUACAMAYA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 233,
+                "Municipio":  "OSCICALA"   ,                        
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA ZARCA",
+                    "CERRO COYOL",
+                    "HUILIHUISTE",
+                    "LA MONTAï¿½A",
+                    "LLANO ALEGRE"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 234,
+                "Municipio": "PERQUIN" ,                          
+                "Cantones":[
+                    "AREA URBANA",
+                    "CASA BLANCA",
+                    "EL CARRIZAL",
+                    "SABANETAS"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 235,
+                "Municipio": "SAN CARLOS"  ,                       
+                "Cantones":[
+                    "AREA URBANA",
+                    "SAN DIEGO",
+                    "LA JAGUA",
+                    "SAN MARCOS",
+                    "VALLE NUEVO"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 236,
+                "Municipio":  "SAN FERNANDO"   ,                          
+                "Cantones":[
+                    "AREA URBANA",
+                    "AZACUALPA",
+                    "CAï¿½AVERALES"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 237,
+                "Municipio":  "SAN FRANCISCO GOTERA"    ,                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "CACAHUATALEJO",
+                    "EL NORTE",
+                    "EL ROSARIO",
+                    "EL TRIUNFO",
+                    "SAN FRANCISQUITO",
+                    "SAN JOSE"                    
+                ]
+            },           
+            {
+                "IdMunicipio": 238,
+                "Municipio":   "SAN ISIDRO"  ,                           
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ROSARIO",
+                    "PIEDRA PARADA"                    
+                ]
+            },          
+            {
+                "IdMunicipio": 239,
+                "Municipio":  "SAN SIMON" ,                            
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL CARRIZAL",
+                    "EL CERRO",
+                    "LAS QUEBRADAS",
+                    "POTRERO ADENTRO",
+                    "VALLE GRANDE"                    
+                ]
+            },               
+            {
+                "IdMunicipio": 240,
+                "Municipio":  "SENSEMBRA" ,                          
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL LIMON",
+                    "EL RODEO"                    
+                ]
+            },           
+            {
+                "IdMunicipio": 241,
+                "Municipio":  "SOCIEDAD",                             
+                "Cantones":[
+                    "AREA URBANA",
+                    "ANIMAS",
+                    "EL BEJUCAL",
+                    "CAPULES",
+                    "CANDELARIA",
+                    "EL PEï¿½ON",
+                    "EL TABLON",
+                    "LABRANZA",
+                    "LA JOYA"                    
+                ]
+            }, 
+            {
+                "IdMunicipio": 242,
+                "Municipio":  "TOROLA"  ,                             
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA ZARCA",
+                    "CERRITOS",
+                    "EL PROGRESO",
+                    "TIJERETAS"                    
+                ]
+            },     
+            {
+                "IdMunicipio": 243,
+                "Municipio":  "YAMABAL"  ,                              
+                "Cantones":[
+                    "AREA URBANA",
+                    "JOYA DEL MATAZANO",
+                    "LOMA DEL CHILE",
+                    "SAN FRANCISQUITO",
+                    "SAN JUAN DE LA CRUZ"                    
+                ]
+            },           
+            {
+                "IdMunicipio": 244,
+                "Municipio":   "YOLOAIQUIN"     ,                         
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL ACEITUNO",
+                    "EL VOLCAN"                    
+                ]
+            }                            
+        ]       
+    },
+    {
+        "IdDepto": 14,
+        "Departamento":"LA UNION",
+        "Municipios":[
+            {
+                "IdMunicipio": 245,
+                "Municipio":  "ANAMOROS"  ,                                  
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA BLANCA",
+                    "CORDONCILLO",
+                    "CARBONAL",
+                    "EL CEDRO",
+                    "HUERTAS VIEJAS",
+                    "TERRERITOS",
+                    "TIZATE",
+                    "TULIMA"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 246,
+                "Municipio":   "BOLIVAR" ,                              
+                "Cantones":[
+                    "AREA URBANA",
+                    "ALBORNOZ",
+                    "CANDELARIA ALBORNOZ",
+                    "EL TRANSITO",
+                    "GUADALUPE",
+                    "LA PAZ",
+                    "LA RINCONADA",
+                    "NUEVA GUADALUPE",
+                    "SANTA LUCIA"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 247,
+                "Municipio":  "CONCEPCION DE ORIENTE" ,                               
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL MOLINO",
+                    "EL ZAPOTE",
+                    "EL GUAYABO",
+                    "GUARIPE"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 248,
+                "Municipio": "CONCHAGUA" ,                                
+                "Cantones":[
+                    "AREA URBANA",
+                    "CONCHAGUITA",
+                    "EL CACAO",
+                    "CERRO EL JIOTE",
+                    "EL CIPRES",
+                    "EL FARO",
+                    "GUISQUIL",
+                    "EL PILON",
+                    "EL TAMARINDO",
+                    "LOS ANGELES",
+                    "LLANO DE LOS PATOS",
+                    "MAQUIGUE",
+                    "PIEDRA BLANCA",
+                    "PIEDRA RAYADA",
+                    "YOLOGUAL"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 249,
+                "Municipio":   "EL CARMEN" ,                            
+                "Cantones":[
+                    "AREA URBANA",
+                    "ALTO EL ROBLE",
+                    "EL CAULOTILLO",
+                    "EL GAVILAN",
+                    "EL PICHE",
+                    "EL TEJAR",
+                    "EL ZAPOTAL",
+                    "LA CAï¿½ADA",
+                    "LAS PITAS",
+                    "LOS CONEJOS",
+                    "OLOMEGA",
+                    "SALALAGUA"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 250,
+                "Municipio":  "EL SAUCE" ,                              
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANAIRE",
+                    "EL RINCON",
+                    "SAN JUAN GUALARE",
+                    "SANTA ROSITA",
+                    "EL TALPETATE"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 251,
+                "Municipio":  "INTIPUCA"  ,                                 
+                "Cantones":[
+                    "AREA URBANA",
+                    "CHICHIPATE",
+                    "EL CARAO",
+                    "LA LEONA"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 252,
+                "Municipio":   "LA UNION"  ,                             
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA CALIENTE",
+                    "AGUA ESCONDIDA",
+                    "AMAPALITA",
+                    "EL COYOLITO",
+                    "EL JICARO",
+                    "ISLA ZACATILLO",
+                    "LA QUEZADILLA",
+                    "LAS CHACHAS",
+                    "LOMA LARGA",
+                    "SIRAMA",
+                    "TIHUILOTAL",
+                    "ISLA PERICO"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 253,
+                "Municipio":  "LISLIQUE" ,                               
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA FRIA",
+                    "EL DERRUMBADO",
+                    "GUAJINIQUIL",
+                    "EL TERRERO",
+                    "HIGUERAS",
+                    "LAS PILAS"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 254,
+                "Municipio":  "MEANGUERA DEL GOLFO"  ,                               
+                "Cantones":[
+                    "AREA URBANA",
+                    "CONACASTAL O GUANACASTAL",
+                    "EL COROZAL",
+                    "EL SALVADOR O EL ZAMBULLIDO",
+                    "GUERRERO O EL MAJAHUAL",
+                    "ISLA CONCHAGUITA",
+                    "ISLA MEANGUERITA",
+                    "LA NEGRA",
+                    "LA PERIQUERA"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 255,
+                "Municipio":  "NUEVA ESPARTA" ,                                    
+                "Cantones":[
+                    "AREA URBANA",
+                    "EL PORTILLO",
+                    "HONDURITAS",
+                    "LAS MARIAS",
+                    "MONTECA",
+                    "OCOTILLO",
+                    "TALPETATE"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 256,
+                "Municipio":  "PASAQUINA" ,                             
+                "Cantones":[
+                    "AREA URBANA",
+                    "CERRO PELON",
+                    "EL REBALSE",
+                    "EL TABLON",
+                    "HORCONES",
+                    "PIEDRAS BLANCAS",
+                    "SAN EDUARDO",
+                    "SAN FELIPE",
+                    "SANTA CLARA",
+                    "VALLE AFUERA"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 257,
+                "Municipio":  "POLOROS"  ,                            
+                "Cantones":[
+                    "AREA URBANA",
+                    "BOQUIN",
+                    "CARPINTERO",
+                    "LAJITAS",
+                    "MALA LAJA",
+                    "EL OCOTE",
+                    "EL PUEBLO",
+                    "EL RODEO"                    
+                ]
+            },   
+            {
+                "IdMunicipio": 258,
+                "Municipio":   "SAN ALEJO" ,                              
+                "Cantones":[
+                    "AREA URBANA",
+                    "AGUA FRIA",
+                    "BOBADILLA",
+                    "CEIBILLAS",
+                    "CERCO DE PIEDRA",
+                    "EL COPALIO",
+                    "EL CARAGON",
+                    "EL TAMARINDO",
+                    "EL TIZATILLO",
+                    "HATO NUEVO",
+                    "LAS QUESERAS",
+                    "LOS JIOTES",
+                    "MOGOTILLO",
+                    "SAN JERONIMO",
+                    "SANTA CRUZ",
+                    "TERRERO BLANCO"                    
+                ]
+            },      
+            {
+                "IdMunicipio": 259,
+                "Municipio":   "SAN JOSE",                                
+                "Cantones":[
+                    "AREA URBANA",
+                    "CHAGUITILLO",
+                    "EL ZAPOTE",
+                    "LA JOYA",
+                    "EL SOMBRERITO"                    
+                ]
+            },            
+            {
+                "IdMunicipio": 260,
+                "Municipio":  "SANTA ROSA DE LIMA"  ,                              
+                "Cantones":[
+                    "AREA URBANA",
+                    "COPETILLOS",
+                    "EL ALGODON",
+                    "EL PORTILLO",
+                    "LA CHORRERA",
+                    "LAS CAï¿½AS",
+                    "LOS MOJONES",
+                    "PASAQUINITA",
+                    "SAN SEBASTIAN"                    
+                ]
+            },  
+            {
+                "IdMunicipio": 261,
+                "Municipio":  "YAYANTIQUE"  ,                             
+                "Cantones":[
+                    "AREA URBANA",
+                    "CENTENO",
+                    "EL PASTOR",
+                    "LOS AMATES",
+                    "EL SOCORRO"                    
+                ]
+            },           
+            {
+                "IdMunicipio": 262,
+                "Municipio":   "YUCUAIQUIN"  ,                              
+                "Cantones":[
+                    "AREA URBANA",
+                    "CANDELARIA",
+                    "CIRICUARIO",
+                    "LA CAï¿½ADA",
+                    "LAS MARIAS",
+                    "LOS HATILLOS",
+                    "TEPEMECHIN",
+                    "VALLE NUEVO",
+                    "EL CARMEN",
+                    "LAS CRUCES"                    
+                ]
+            }           
+        ]
+    }
+]
