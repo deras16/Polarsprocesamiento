@@ -11,6 +11,12 @@ CREATE TABLE [Municipio] (
   [IdDepto] integer not null
 )
 GO
+CREATE TABLE [Canton] (
+  [IdCanton] integer PRIMARY KEY,
+  [Canton] nvarchar(255) not null,
+  [IdMunicipio] integer not null
+)
+GO
 CREATE TABLE [Semilla] (
 	[Idsemilla] int PRIMARY KEY not null,	
 	[Semilla] nvarchar(50)
@@ -188,6 +194,10 @@ FOREIGN KEY(IdGrano) REFERENCES GranosBasicos(IdGrano)
 ALTER TABLE Municipio
 ADD CONSTRAINT FK_DeptoMunicipio
 FOREIGN KEY(IdDepto) REFERENCES Departamento(IdDepto)
+
+ALTER TABLE Canton
+ADD CONSTRAINT FK_MunicipioCanton
+FOREIGN KEY(IdMunicipio) REFERENCES Municipio(IdMunicipio)
 
 ALTER TABLE CausaSiembra
 ADD CONSTRAINT FK_CausasCausaSiembra
