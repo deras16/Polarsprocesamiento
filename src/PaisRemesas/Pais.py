@@ -1,12 +1,10 @@
 import polars as pl
-import config.connections as conn
+from utils.Model import Model
 
-class Pais():
+class Pais(Model):
 
     def __init__(self):
-        self.postgres_connection = conn.postgresql_connection()
-        self.mssql_connection = conn.msserver_connection()
-
+        super().__init__(table_name="PaisRemesas")
 
     def extract(self) -> pl.DataFrame:
         query = """      
@@ -32,7 +30,7 @@ class Pais():
         df_load = self.__validateData(self.transform())
 
         if df_load.shape[0] > 0:
-            df_load.write_database(table_name="PaisRemesas", connection=self.mssql_connection, if_table_exists="append")
+            df_load.write_database(table_name=self.table_name, connection=self.mssql_connection, if_table_exists="append")
             print('PaisesRemesas Data loaded')
         else:
             print('No data to load')
