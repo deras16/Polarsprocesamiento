@@ -11,12 +11,6 @@ CREATE TABLE [Municipio] (
   [IdDepto] integer not null
 )
 GO
-CREATE TABLE [Canton] (
-  [IdCanton] integer PRIMARY KEY,
-  [Canton] nvarchar(255) not null,
-  [IdMunicipio] integer not null
-)
-GO
 CREATE TABLE [Semilla] (
 	[Idsemilla] int PRIMARY KEY not null,	
 	[Semilla] nvarchar(50)
