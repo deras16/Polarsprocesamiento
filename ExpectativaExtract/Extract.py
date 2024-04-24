@@ -139,3 +139,35 @@ class Extract():
         dfCausasSiembra = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgreConn, engine='connectorx'))
         return dfCausasSiembra
 
+    def ExtGranoBasico():
+        gb = pl.DataFrame(
+            {'IdGrano': [1,2,3,4], 'Grano':['Maiz','Frijol','Sorgo','Arroz']}
+        )
+        return gb
+    
+    def ExtSemilla():
+        semilla = pl.DataFrame(
+            {'IdSemilla':[101,102,103],'Semilla':['Semilla Nacional', 'Semilla Hibrida','Semilla Segregada']}
+
+        )
+        return semilla
+    
+    def ExtEpoca():
+        epoca = pl.DataFrame(
+            {'IdEpoca':[1,2,3],'Epoca':['Invierno','Postrera','Apante']}
+        )
+        return epoca
+    
+    def ExtIntervaloRemesa():
+        intervalo = pl.DataFrame(
+            {'IdIntervalo':[1,2,3,4,5],'Intervalo':['50-250','251-500','501-750','751-1000','1001-o mas']}
+        )
+        return intervalo
+    
+    def ExtOrigenCredito():
+        OrgCredito = pl.DataFrame(
+            {'IdOrigenCredito':[1,2,3,4,5,6,7,8,9],'NombOrigen':['Banca privada','Banco de Fomento Agropecuario','Banco Hipotecario',
+                                                                 'Bandesal','Cooperativa',"ONG'S",'Otras financieras',
+                                                                 'Prestamista local (Usurero)','Otro']}
+        )
+        return OrgCredito
