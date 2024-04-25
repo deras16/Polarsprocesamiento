@@ -7,19 +7,19 @@ import json
 class Departamento(Model):
     def __init__(self):
         super().__init__(table_name="Departamento")
-
-    """ select r.value IdDepartamento,r."text" departamento  from ws_dea.reusablecategoricaloptions r 
-       where categoriesid  = 'eba0ae33-2c7c-458e-9b99-d2ca85729cee' and  questionnaireid ='f3be9695-9847-4dfc-9f7d-b64790b029cf' """
+      
     def extract(self) -> pl.DataFrame:
-        path = os.path.join(os.path.dirname(__file__), 'data/departmentsData.json')
-        data = json.load(open(path))
-        
-        #getting only idDepto and Departamento
-        df_departamento = pl.DataFrame(data).select("IdDepto", "Departamento")
-        return df_departamento
+        query  = """ 
+            select r.value IdDepartamento,r."text" departamento  from ws_dea.reusablecategoricaloptions r 
+                where categoriesid  = 'eba0ae33-2c7c-458e-9b99-d2ca85729cee' and  questionnaireid ='f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+        """
+        df = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgres_connection, engine='connectorx'))
+        df = df.sort("iddepartamento")
+        return df
     
     def transform(self) -> pl.DataFrame:
         df_extract = self.extract()
+        df_extract  = df_extract.rename({ "iddepartamento": "IdDepto", "departamento": "Departamento" })
         df_extract  = df_extract.with_columns(df_extract['IdDepto'].cast(pl.Int32), df_extract['Departamento'].cast(pl.Utf8))
         return df_extract
 

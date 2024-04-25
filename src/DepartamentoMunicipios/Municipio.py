@@ -9,16 +9,25 @@ class Municipio(Model):
     """ select r.value IdMunicipio,r."text" municipio  from ws_dea.reusablecategoricaloptions r 
        where categoriesid  = 'c0eac36c-1598-dd17-53ed-9fb351d194dd' and  questionnaireid ='f3be9695-9847-4dfc-9f7d-b64790b029cf'  """
     def extract(self) -> pl.DataFrame:
-        path = os.path.join(os.path.dirname(__file__), 'data/departmentsData.json')
-        data = json.load(open(path))
+        query = """ 
+            select r.value IdMunicipio, r.text Municipio, r.parentvalue IdDepto from ws_dea.reusablecategoricaloptions r 
+                where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = 'c0eac36c-1598-dd17-53ed-9fb351d194dd'
+        """
+        df = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgres_connection, engine='connectorx'))
+        df = df.sort("idmunicipio")
 
-        data_municipio = [{"IdMunicipio": y["IdMunicipio"], "Municipio": y["Municipio"], "IdDepto": x["IdDepto"]} for x in data for y in x["Municipios"]]
-        df_municipios = pl.DataFrame(data_municipio)
-        return df_municipios
+        return df
 
     def transform(self):
         df_extract = self.extract()
+
+        df_extract = df_extract.rename({ "idmunicipio": "IdMunicipio", "municipio": "Municipio", "iddepto": "IdDepto" })
         df_extract = df_extract.with_columns(df_extract['IdMunicipio'].cast(pl.Int32), df_extract['Municipio'].cast(pl.Utf8), df_extract['IdDepto'].cast(pl.Int32))
+
+        df_extract = df_extract.with_columns(
+            pl.when(pl.col("Municipio") == "MERCEDES UMA�A").then(pl.lit("MERCEDES UMAÑA")).otherwise(pl.col("Municipio")).alias("Municipio"),
+        )
+        
         return df_extract
 
     def load(self):
