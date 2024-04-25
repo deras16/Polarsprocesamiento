@@ -39,7 +39,6 @@ CREATE TABLE PaisRemesas (
 GO
 CREATE TABLE Productores (
 	[IdFolio] int PRIMARY KEY not null, 
-	[NombProductor] nvarchar(500) not null, 
 	[IdDepto] int not null, 
 	[IdMunicipio] int not null,
 	[TipologiaProd] nvarchar(50) not null,
