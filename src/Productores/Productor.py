@@ -36,7 +36,7 @@ class Productor(Model):
         df_diff = df_transform.join(df_sql_server, on="IdFolio", how="left")
 
         df_diff = df_diff.filter(pl.col("IdDepto_right").is_null()).select(pl.col("IdFolio"), pl.col("IdDepto"), pl.col("IdMunicipio"), pl.col("TipologiaProd"), pl.col("Altitud"), pl.col("Latitud"), pl.col("Longitud"))
-        #print(df_diff)
+
         return df_diff
 
     def transfomation_validations(self, df: pl.DataFrame) -> pl.DataFrame:
@@ -44,8 +44,13 @@ class Productor(Model):
         df = df.with_columns(
             pl.when(pl.col("Departamento") == "CABA�AS").then(pl.lit("CABAÑAS")).otherwise(pl.col("Departamento")).alias("Departamento"),
             pl.when(pl.col("Municipio") == "MERCEDES UMA�A").then(pl.lit("MERCEDES UMAÑA")).otherwise(pl.col("Municipio")).alias("Municipio"),
+            pl.when(pl.col("TipologiaProd") == '1').then(pl.lit("Productor Comercial"))
+                .otherwise(
+                    pl.when(pl.col("TipologiaProd") == '2').then(pl.lit("Productor de Subsistencia"))
+                    .otherwise(pl.lit("No Definido"))
+            ).alias("TipologiaProd")
         )
-        
+
         query_departamentos = """
             select * from Departamento
         """
@@ -58,11 +63,6 @@ class Productor(Model):
         df = df.join(df_departamentos,left_on='Departamento', right_on='Departamento', how='left')
         df = df.join(df_municipios, left_on='Municipio', right_on='Municipio' , how='left').select(["IdFolio", "IdDepto", "IdMunicipio", "TipologiaProd", "Altitud", "Latitud", "Longitud"])
         df = df.unique(subset=["IdFolio"])
-
-        #validate null values
-        df = df.with_columns(
-            pl.when(pl.col("TipologiaProd").is_null()).then(pl.lit("No definido")).otherwise(pl.col("TipologiaProd")).alias("TipologiaProd"),
-        )
 
         df = df.with_columns(
             df['IdFolio'].cast(pl.Int32), df['IdDepto'].cast(pl.Int32), 
