@@ -8,8 +8,38 @@ class Causa(Model):
     
     def extract(self) -> pl.DataFrame:
         query = """      
-            select r.value idcausa, r."text" causa  from ws_dea.reusablecategoricaloptions r where 
-                categoriesid = 'b6a40e0c-4b1e-48fe-8313-6b3c35b35925' and questionnaireid ='f3be9695-9847-4dfc-9f7d-b64790b029cf'
+            select 
+                r.value as IdCausa, 
+                r.text as Causas, 
+            case 
+                when r.text = 'Precios altos de venta de la producción' then 'Mayor'
+                when r.text = 'Precios bajos de los insumos agrícolas' then 'Mayor'
+                when r.text = 'Precios bajos del alquiler de la tierra' then 'Mayor'
+                when r.text = 'Mayor acceso a tierra' then 'Mayor'
+                when r.text = 'Recibe paquete agrícola del MAG' then 'Mayor'
+                when r.text = 'Accesibilidad de mano de obra' then 'Mayor'
+                when r.text = 'Buen acceso a crédito' then 'Mayor'
+                when r.text = 'Buenas expectativas de las condiciones climáticas' then 'Mayor'
+                when r.text = 'Precios bajos de venta de la producción' then 'Menor'
+                when r.text = 'Precios altos de los insumos agrícolas' then 'Menor'
+                when r.text = 'Precios altos del alquiler de la tierra' then 'Menor'
+                when r.text = 'Poco acceso a tierra' then 'Menor'
+                when r.text = 'No recibe paquete agrícola del MAG' then 'Menor'
+                when r.text = 'Mano de obra cara o escasa' then 'Menor'
+                when r.text = 'Falta de acceso a crédito' then 'Menor'
+                when r.text = 'Malas expectativas de las condiciones climáticas' then 'Menor'
+                when r.text = 'Precios estables de venta de la producción' then 'Igual'
+                when r.text = 'Precios estables de los insumos agrícolas' then 'Igual'
+                when r.text = 'Precios estables del alquiler de la tierra' then 'Igual'
+                when r.text = 'Mantiene la misma área para la siembra' then 'Igual'
+                when r.text = 'Mantiene los mismos recursos para producir' then 'Igual'
+                when r.text = 'Acceso a crédito' then 'Igual'
+                when r.text = 'Similares expectativas de las condiciones climáticas' then 'Igual'
+                when r.text = 'Acceso amano de obra estable' then 'Igual'
+                else 'Otro' 
+            end as TipoCausa 
+            from ws_dea.reusablecategoricaloptions r 
+            where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = 'b6a40e0c-4b1e-48fe-8313-6b3c35b35925'
         """
         df = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgres_connection, engine='connectorx'))
         df = df.sort("idcausa")
@@ -18,12 +48,9 @@ class Causa(Model):
 
     def transform(self) -> pl.DataFrame:
         df_extract = self.extract()
-        #convert to sql server
-        df_extract  = df_extract.with_columns(df_extract['idcausa'].cast(pl.Int32), df_extract['causa'].cast(pl.Utf8))
-        df_extract  = df_extract.rename({ "idcausa": "IdCausa", "causa": "Causa" })
+        df_extract  = df_extract.with_columns(df_extract['idcausa'].cast(pl.Int32), df_extract['causas'].cast(pl.Utf8), df_extract['tipocausa'].cast(pl.Utf8))
+        df_extract  = df_extract.rename({ "idcausa": "IdCausa", "causas": "Causa", "tipocausa": "TipoCausa" })
         
-        #add TipoCausa TODO check how to add the final production value to this column
-        df_extract = df_extract.with_columns(pl.lit("Causa").alias("TipoCausa"))
         return df_extract
     
     def load(self):
