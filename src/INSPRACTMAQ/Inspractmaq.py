@@ -9,12 +9,22 @@ class Inspractmaq(Model):
     #TODO: check if the query is correct AND tipo column fill with the correct values
     def extract(self) -> pl.DataFrame:
         query_INSPRACTMAQ = """      
-            select value as IdInsPracMaq, text as InsPracMaq, 'Practica' as Tipo from ws_dea.reusablecategoricaloptions r 
-            where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = '573c5634-9e89-4d6c-b9df-b8ee6f59c93a'
-            union all select value as IdInsPracMaq, text as InsPracMaq, 'Insumo' as Tipo from ws_dea.reusablecategoricaloptions r 
-            where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = 'a117f4fa-973c-417c-9730-a67794f7a732'
-            union all select value as IdInsPracMaq, text as InsPracMaq, 'Revisar' as Tipo 
-            from ws_dea.reusablecategoricaloptions r where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = '71f41838-6868-4d2f-ad31-c830032893b4'
+            select 
+                value as IdInsPracMaq, 
+                text as InsPracMaq, 
+            case 
+                when r.categoriesid = '573c5634-9e89-4d6c-b9df-b8ee6f59c93a' then 'Practica'
+                when r.categoriesid = 'a117f4fa-973c-417c-9730-a67794f7a732' then 'Insumo'
+                when r.categoriesid = '71f41838-6868-4d2f-ad31-c830032893b4' then 'Maquina_Equipo'
+                else 'Otro' 
+            end as Tipo 
+            from 
+                ws_dea.reusablecategoricaloptions r 
+            where 
+                r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+                and (r.categoriesid = '573c5634-9e89-4d6c-b9df-b8ee6f59c93a' 
+                    or r.categoriesid = 'a117f4fa-973c-417c-9730-a67794f7a732' 
+                    or r.categoriesid = '71f41838-6868-4d2f-ad31-c830032893b4')
         """
 
         df = pl.DataFrame(pl.read_database_uri(query=query_INSPRACTMAQ, uri=self.postgres_connection, engine='connectorx'))
