@@ -38,8 +38,7 @@ CREATE TABLE PaisRemesas (
 )
 GO
 CREATE TABLE Productores (
-	[IdFolio] int PRIMARY KEY not null, 
-	[NombProductor] nvarchar(500) not null, 
+	[IdFolio] int PRIMARY KEY not null,  
 	[IdDepto] int not null, 
 	[IdMunicipio] int not null,
 	[TipologiaProd] nvarchar(50) not null,
@@ -49,13 +48,14 @@ CREATE TABLE Productores (
 )
 GO
 CREATE TABLE Portada (
-	[IdPortada] int PRIMARY KEY not null, 
+	[IdPortada] varchar(50) PRIMARY KEY not null, 
 	[Anio] int not null, 
 	[IdFolio] int not null, 
 	[FechaEntrevista] datetime not null, 
 	[Altitud] decimal(9,6) not null,
 	[Latitud] decimal(9,6) not null,
 	[Longitud] decimal(9,6) not null,
+	[Precision] decimal(9,6), 
 	[Recibepqtmag] bit,
 	[IdGrano] int,
 	[Areapqtmag] decimal(6,2),
@@ -63,12 +63,12 @@ CREATE TABLE Portada (
 	[IdMunicipioexp] int not null, 
 	[ResultadoEntrevista] int not null,
 	[OtrosRubros] varchar(500),
-	[TipologiaProductor] varchar(50),
-	[EncRealizadaA] 
+	[TipologiaProductor] int,
+	[EncRealizadaA] nvarchar(100)  
 )
 GO
 CREATE TABLE SiembraExpectativa(
-	[Idportada] int not null,
+	[Idportada] varchar(50) not null,
 	[IdGrano] int not null, 
 	[numexp] int not null,
 	[IdDeptoexp] int not null,
@@ -80,7 +80,7 @@ CREATE TABLE SiembraExpectativa(
 )
 GO
 CREATE TABLE Compara(
-	[IdPortada] int not null,
+	[IdPortada] varchar(50) not null,
 	[AnioCicloAnt] int not null,
 	[IdGrano] int not null,
 	[AreaCicloAnt] decimal(6,2) not null,
@@ -89,7 +89,7 @@ CREATE TABLE Compara(
 )
 GO
 CREATE TABLE CausaSiembra (
-	[IdPortada] int not null,
+	[IdPortada] varchar(50) not null,
 	[IdCausa] int not null 
 )
 GO
@@ -104,10 +104,9 @@ CREATE TABLE OrigenCredito (
 )
 GO
 CREATE TABLE FondosAgricolas (
-	[IdPortada] int not null,
+	[IdPortada] varchar(50) not null,
 	[SolicitoCredito] bit,
 	[IdOrigenCredito] int,
-	[AdelantoCredito] bit,
 	[InversionCredito] decimal(10,2),
 	[RecibeRemesa] bit,
 	[IdIntervalo] int not null,
@@ -121,7 +120,7 @@ CREATE TABLE INSPRACTMAQ (
 )
 GO
 CREATE TABLE INSPRACTMAQSiembra (
-	[IdPortada] int not null,
+	[IdPortada] varchar(50) not null,
 	[IdInsPracMaq] int not null
 )
 GO
@@ -216,5 +215,3 @@ FOREIGN KEY(IdInsPracMaq) REFERENCES INSPRACTMAQ(IdInsPracMaq)
 ALTER TABLE INSPRACTMAQSiembra
 ADD CONSTRAINT FK_PortadaINSPRACTMAQSiembra
 FOREIGN KEY(IdPortada) REFERENCES Portada(IdPortada)
-
-
