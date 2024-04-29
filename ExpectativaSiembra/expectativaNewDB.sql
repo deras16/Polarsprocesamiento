@@ -42,9 +42,9 @@ CREATE TABLE Productores (
 	[IdDepto] int not null, 
 	[IdMunicipio] int not null,
 	[TipologiaProd] nvarchar(50) not null,
-	[Altitud] decimal(9,6) not null,
-	[Latitud] decimal(9,6) not null,
-	[Longitud] decimal(9,6) not null
+	[Altitud] decimal(9,6) null,
+	[Latitud] decimal(9,6) null,
+	[Longitud] decimal(9,6) null
 )
 GO
 CREATE TABLE Portada (
