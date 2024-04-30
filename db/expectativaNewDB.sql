@@ -80,7 +80,9 @@ CREATE TABLE SiembraExpectativa(
 )
 GO
 CREATE TABLE Compara(
+
 	[IdPortada] varchar(50) not null,
+
 	[AnioCicloAnt] int not null,
 	[IdGrano] int not null,
 	[AreaCicloAnt] decimal(6,2) not null,
@@ -89,7 +91,9 @@ CREATE TABLE Compara(
 )
 GO
 CREATE TABLE CausaSiembra (
+
 	[IdPortada] varchar(50) not null,
+
 	[IdCausa] int not null 
 )
 GO
@@ -104,7 +108,9 @@ CREATE TABLE OrigenCredito (
 )
 GO
 CREATE TABLE FondosAgricolas (
+
 	[IdPortada] varchar(50) not null,
+
 	[SolicitoCredito] bit,
 	[IdOrigenCredito] int,
 	[InversionCredito] decimal(10,2),
@@ -121,11 +127,14 @@ CREATE TABLE INSPRACTMAQ (
 GO
 CREATE TABLE INSPRACTMAQSiembra (
 	[IdPortada] varchar(50) not null,
+
 	[IdInsPracMaq] int not null
 )
 GO
 CREATE TABLE EncuestasContestadas (
-	[IdPortada] varchar(50) not null,
+
+	[Idportada] varchar(50) not null,
+
 	[creado_el] datetime default getdate() not null,
 )
 GO

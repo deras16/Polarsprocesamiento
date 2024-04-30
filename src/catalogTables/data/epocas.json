@@ -1,0 +1,26 @@
+[
+    {
+        "idepoca": "1",
+        "epoca":"Invierno"
+    },
+    {
+        "idepoca": "2",
+        "epoca":"Postrera"
+    },
+    {
+        "idepoca": "3",
+        "epoca":"Apante"
+    },
+    {
+        "idepoca": "4",
+        "epoca":"Secano"
+    },
+    {
+        "idepoca": "5",
+        "epoca":"Primera Distrito de Riego"
+    },
+    {
+        "idepoca": "6",
+        "epoca":"Segunda Distrito de Riego"
+    }
+]

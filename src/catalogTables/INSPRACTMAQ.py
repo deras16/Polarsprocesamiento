@@ -2,7 +2,7 @@ import polars as pl
 from utils.Model import Model
 
 
-class Inspractmaq(Model):
+class INSPRACTMAQ(Model):
     def __init__(self):
         super().__init__(table_name="INSPRACTMAQ")
     

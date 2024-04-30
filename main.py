@@ -1,16 +1,15 @@
-from src.PaisRemesas import Pais
-from src.DepartamentoMunicipios import Departamento, Municipio
-from src.Causas import Causa
-from src.INSPRACTMAQ import Inspractmaq as INSPRACTMAQ
-from src.Productores import Productor
-from src.Semillas import Semillas
-if __name__ == '__main__' :   
-    #Pais.Pais().load()
+from src.catalogTables import PaisRemesas, Departamentos, Municipios, Causas, INSPRACTMAQ, GranosBasicos, Epocas, OrigenCredito
+from src.Productores import Productor as Productores
 
-    #Departamento.Departamento().load()
-    #Municipio.Municipio().load()
-    #Causa.Causa().load()
-    #INSPRACTMAQ.Inspractmaq().load()
-    #Productor.Productor().load()
-    #Semillas.Semillas().load()
+if __name__ == '__main__' :   
+    #PaisRemesas.Pais().load()
+    #Departamentos.Departamento().load()
+    #Municipios.Municipio().load()
+    #Causas.Causa().load()
+    #INSPRACTMAQ.INSPRACTMAQ().load()
+    #GranosBasicos.Grano().load()
+    #Epocas.Epoca().load()
+    #OrigenCredito.Credito().load()
+    #Productores.Productor().load()
+
     pass

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Banca privada"
+    },
+    {
+        "id": 2,
+        "name": "Banco de Fomento Agropecuario"
+    },
+    {
+        "id": 3,
+        "name":"Banco Hipotecario"
+    },
+    {
+        "id": 4,
+        "name": "Bandesal"
+    },
+    {
+        "id": 5,
+        "name":"Cooperativa"
+    },
+    {
+        "id": 6,
+        "name": "ONG'S"
+    },
+    {
+        "id": 7,
+        "name": "Otras financieras"
+    },
+    {
+        "id": 8,
+        "name": "Prestamista local (Usurero)"
+    },
+    {
+        "id": 9,
+        "name": "Otro"
+    }
+]

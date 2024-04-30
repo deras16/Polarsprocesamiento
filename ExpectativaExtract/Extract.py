@@ -100,6 +100,12 @@ class Extract():
         dfSiembraExpec = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgreConn, engine='connectorx'))
         return dfSiembraExpec
 
+    def ExtEpoca():
+        epoca = pl.DataFrame(
+            {'IdEpoca':[1,2,3,4,5,6],'Epoca':['Invierno','Postrera','Apante','Secano','Primera Distrito de Riego','Segunda Distrito de Riego']}
+        )
+        return epoca
+    
     def ExtCompara(self):
         query = """ 
                     with CteGranosBasicos(interviewid,idgrano) AS(
