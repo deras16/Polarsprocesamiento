@@ -42,19 +42,20 @@ CREATE TABLE Productores (
 	[IdDepto] int not null, 
 	[IdMunicipio] int not null,
 	[TipologiaProd] nvarchar(50) not null,
-	[Altitud] decimal(9,6) not null,
-	[Latitud] decimal(9,6) not null,
-	[Longitud] decimal(9,6) not null
+	[Altitud] decimal(9,6) null,
+	[Latitud] decimal(9,6) null,
+	[Longitud] decimal(9,6) null
 )
 GO
 CREATE TABLE Portada (
-	[IdPortada] int PRIMARY KEY not null, 
+	[IdPortada] varchar(50) PRIMARY KEY not null, 
 	[Anio] int not null, 
 	[IdFolio] int not null, 
 	[FechaEntrevista] datetime not null, 
 	[Altitud] decimal(9,6) not null,
 	[Latitud] decimal(9,6) not null,
 	[Longitud] decimal(9,6) not null,
+	[Precision] decimal(9,6), 
 	[Recibepqtmag] bit,
 	[IdGrano] int,
 	[Areapqtmag] decimal(6,2),
@@ -62,11 +63,12 @@ CREATE TABLE Portada (
 	[IdMunicipioexp] int not null, 
 	[ResultadoEntrevista] int not null,
 	[OtrosRubros] varchar(500),
-	[TipologiaProductor] varchar(50),
+	[TipologiaProductor] int,
+	[EncRealizadaA] nvarchar(100)  
 )
 GO
 CREATE TABLE SiembraExpectativa(
-	[Idportada] int not null,
+	[Idportada] varchar(50) not null,
 	[IdGrano] int not null, 
 	[numexp] int not null,
 	[IdDeptoexp] int not null,
@@ -78,7 +80,7 @@ CREATE TABLE SiembraExpectativa(
 )
 GO
 CREATE TABLE Compara(
-	[IdPortada] int not null,
+	[Idportada] varchar(50) not null,
 	[AnioCicloAnt] int not null,
 	[IdGrano] int not null,
 	[AreaCicloAnt] decimal(6,2) not null,
@@ -87,7 +89,7 @@ CREATE TABLE Compara(
 )
 GO
 CREATE TABLE CausaSiembra (
-	[IdPortada] int not null,
+	[Idportada] varchar(50) not null,
 	[IdCausa] int not null 
 )
 GO
@@ -102,7 +104,7 @@ CREATE TABLE OrigenCredito (
 )
 GO
 CREATE TABLE FondosAgricolas (
-	[IdPortada] int not null,
+	[Idportada] varchar(50) not null,
 	[SolicitoCredito] bit,
 	[IdOrigenCredito] int,
 	[AdelantoCredito] bit,
@@ -119,12 +121,12 @@ CREATE TABLE INSPRACTMAQ (
 )
 GO
 CREATE TABLE INSPRACTMAQSiembra (
-	[IdPortada] int not null,
+	[Idportada] varchar(50) not null,
 	[IdInsPracMaq] int not null
 )
 GO
 CREATE TABLE EncuestasContestadas (
-	[IdPortada] int not null,
+	[Idportada] varchar(50) not null,
 	[creado_el] datetime default getdate() not null,
 )
 GO
@@ -187,10 +189,6 @@ FOREIGN KEY(IdGrano) REFERENCES GranosBasicos(IdGrano)
 ALTER TABLE Municipio
 ADD CONSTRAINT FK_DeptoMunicipio
 FOREIGN KEY(IdDepto) REFERENCES Departamento(IdDepto)
-
-ALTER TABLE Canton
-ADD CONSTRAINT FK_MunicipioCanton
-FOREIGN KEY(IdMunicipio) REFERENCES Municipio(IdMunicipio)
 
 ALTER TABLE CausaSiembra
 ADD CONSTRAINT FK_CausasCausaSiembra
