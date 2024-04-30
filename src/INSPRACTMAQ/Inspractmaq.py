@@ -4,7 +4,7 @@ from utils.Model import Model
 
 class Inspractmaq(Model):
     def __init__(self):
-        super().__init__(table_name="INSRACTMAQ")
+        super().__init__(table_name="INSPRACTMAQ")
     
     #TODO: check if the query is correct AND tipo column fill with the correct values
     def extract(self) -> pl.DataFrame:
@@ -45,7 +45,7 @@ class Inspractmaq(Model):
         #load on sql server
         df_load = self.__validateData(self.transform())
         if df_load.shape[0] > 0:
-            df_load.write_database(table_name="Inspractmaq", connection=self.mssql_connection, if_table_exists="append")
+            df_load.write_database(table_name=self.table_name, connection=self.mssql_connection, if_table_exists="append")
             print('Inspractmaq Data loaded')
         else:
             print('No data to load')
