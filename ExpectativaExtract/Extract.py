@@ -21,8 +21,10 @@ class Extract():
             'Insumos':"""select value as IdInsPracMaq, text as InsPracMaq, 'Insumo' Tipo from ws_dea.reusablecategoricaloptions r 
                         where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = 'a117f4fa-973c-417c-9730-a67794f7a732'""",
             'Maquinaria':"""select value as IdInsPracMaq, text as InsPracMaq, 'Revisar' Tipo from ws_dea.reusablecategoricaloptions r 
-                        where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = '71f41838-6868-4d2f-ad31-c830032893b4'"""
-
+                        where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = '71f41838-6868-4d2f-ad31-c830032893b4'""",
+            'Practicas': """select value as IdInsPracMaq, text as InsPracMaq, 'Practica' Tipo from ws_dea.reusablecategoricaloptions r 
+                        where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = '573c5634-9e89-4d6c-b9df-b8ee6f59c93a'""",
+            'Semillas': """select value as Idsemilla, text as Semilla from ws_dea.reusablecategoricaloptions r where r.categoriesid = 'f3c93701-b8e5-4d86-b7bc-e1836fe9fdb3'"""
         }
         results = {}
 
@@ -98,6 +100,12 @@ class Extract():
         dfSiembraExpec = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgreConn, engine='connectorx'))
         return dfSiembraExpec
 
+    def ExtEpoca():
+        epoca = pl.DataFrame(
+            {'IdEpoca':[1,2,3,4,5,6],'Epoca':['Invierno','Postrera','Apante','Secano','Primera Distrito de Riego','Segunda Distrito de Riego']}
+        )
+        return epoca
+    
     def ExtCompara(self):
         query = """ 
                     with CteGranosBasicos(interviewid,idgrano) AS(
@@ -142,6 +150,18 @@ class Extract():
                 """
         dfCausasSiembra = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgreConn, engine='connectorx'))
         return dfCausasSiembra
+    
+    def INSPRACTMAQ(self):
+        query = """
+                    select value as IdInsPracMaq, text as InsPracMaq, 'Practica' as Tipo from ws_dea.reusablecategoricaloptions r 
+                    where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = '573c5634-9e89-4d6c-b9df-b8ee6f59c93a'
+                    union all select value as IdInsPracMaq, text as InsPracMaq, 'Insumo' as Tipo from ws_dea.reusablecategoricaloptions r 
+                    where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = 'a117f4fa-973c-417c-9730-a67794f7a732'
+                    union all select value as IdInsPracMaq, text as InsPracMaq, 'Revisar' as Tipo 
+                    from ws_dea.reusablecategoricaloptions r where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = '71f41838-6868-4d2f-ad31-c830032893b4'
+                """
+        dfINSPRACTMAQ = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgreConn, engine='connectorx'))
+        return dfINSPRACTMAQ
 
     def ExtGranoBasico():
         gb = pl.DataFrame(
