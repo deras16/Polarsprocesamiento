@@ -171,7 +171,8 @@ class Extract():
     
     def ExtSemilla():
         semilla = pl.DataFrame(
-            {'IdSemilla':[101,102,103],'Semilla':['Semilla Nacional', 'Semilla Hibrida','Semilla Segregada']}
+            {'IdSemilla':[101,102,103,104,105,106,109],'Semilla':
+             ['Semilla Nacional', 'Semilla Hibrida','Semilla Segregada','Frijol Rojo','Frijol Blanco','Frijol Negro','Semilla Mejorada']}
 
         )
         return semilla
