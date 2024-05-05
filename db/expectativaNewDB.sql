@@ -41,6 +41,7 @@ CREATE TABLE Productores (
 	[IdFolio] int PRIMARY KEY not null,  
 	[IdDepto] int not null, 
 	[IdMunicipio] int not null,
+	[Anio] int not null,
 	[TipologiaProd] nvarchar(50) not null,
 	[Altitud] decimal(9,6) null,
 	[Latitud] decimal(9,6) null,
