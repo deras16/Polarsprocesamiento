@@ -140,9 +140,9 @@ ALTER TABLE Productores
 ADD CONSTRAINT Fk_MuniProductores
 FOREIGN KEY(IdMunicipio) REFERENCES Municipio(IdMunicipio)
 
-ALTER TABLE Portada
-ADD CONSTRAINT FK_ProductPortada
-FOREIGN KEY(IdFolio) REFERENCES Productores(IdFolio)
+-- ALTER TABLE Portada
+-- ADD CONSTRAINT FK_ProductPortada
+-- FOREIGN KEY(IdFolio) REFERENCES Productores(IdFolio)  se comenta debido a que la tabla productores deja de tener una llave primaria
 
 ALTER TABLE Portada
 ADD CONSTRAINT FK_GranoPortada
