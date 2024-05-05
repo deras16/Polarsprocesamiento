@@ -38,7 +38,7 @@ CREATE TABLE PaisRemesas (
 )
 GO
 CREATE TABLE Productores (
-	[IdFolio] int PRIMARY KEY not null,  
+	[IdFolio] int not null,  
 	[IdDepto] int not null, 
 	[IdMunicipio] int not null,
 	[Anio] int not null,
