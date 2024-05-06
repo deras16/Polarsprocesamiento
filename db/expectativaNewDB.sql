@@ -58,8 +58,6 @@ CREATE TABLE Portada (
 	[Longitud] decimal(9,6) null,
 	[Precision] decimal(9,6), 
 	[Recibepqtmag] bit,
-	[IdGrano] int,
-	[Areapqtmag] decimal(6,2),
 	[IdDeptoexplt] int not null,
 	[IdMunicipioexp] int not null, 
 	[ResultadoEntrevista] int not null,
