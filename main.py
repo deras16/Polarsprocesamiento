@@ -1,4 +1,4 @@
-from src.catalogTables import PaisRemesas, Departamentos, Municipios, Causas, INSPRACTMAQ, GranosBasicos, Epocas, OrigenCredito,IntervalosRemesas
+from src.catalogTables import PaisRemesas, Departamentos, Municipios, Causas, INSPRACTMAQ, GranosBasicos, Epocas, OrigenCredito,IntervalosRemesas, Semillas
 from src.Productores import Productor as Productores
 
 if __name__ == '__main__' :   
@@ -12,4 +12,5 @@ if __name__ == '__main__' :
     #OrigenCredito.Credito().load()
     #IntervalosRemesas.IntervaloRemesa().load()
     #Productores.Productor().load()
+    #Semillas.Semilla().load()
     pass

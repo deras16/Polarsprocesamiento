@@ -1,0 +1,46 @@
+[
+    {
+        "id": 101,
+        "name":"Semilla Nacional"
+    },
+    {
+        "id": 102,
+        "name":"Semilla Hibrida"
+    },
+    {
+        "id": 103,
+        "name":"Semilla Segregada"
+    },
+    {
+        "id": 104,
+        "name":"Frijol Rojo"
+    },
+    {
+        "id": 105,
+        "name":"Frijol Blanco"
+    },
+    {
+        "id": 106,
+        "name":"Frijol Negro"
+    },
+    {
+        "id":107,
+        "name":"Sorjo Mejorado"
+    },
+    {
+        "id":108,
+        "name":"Sorjo Nacional"
+    },
+    {
+        "id":109,
+        "name":"Sorjo Segregado"
+    },
+    {
+        "id":410,
+        "name":"Arroz Mejorado"
+    },
+    {
+        "id":411,
+        "name":"Arroz Segregado"
+    }
+]
