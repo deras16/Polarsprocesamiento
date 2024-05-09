@@ -38,9 +38,10 @@ CREATE TABLE PaisRemesas (
 )
 GO
 CREATE TABLE Productores (
-	[IdFolio] int PRIMARY KEY not null,  
+	[IdFolio] int not null,  
 	[IdDepto] int not null, 
 	[IdMunicipio] int not null,
+	[Anio] int not null,
 	[TipologiaProd] nvarchar(50) not null,
 	[Altitud] decimal(9,6) null,
 	[Latitud] decimal(9,6) null,
@@ -51,14 +52,12 @@ CREATE TABLE Portada (
 	[IdPortada] varchar(50) PRIMARY KEY not null, 
 	[Anio] int not null, 
 	[IdFolio] int not null, 
-	[FechaEntrevista] datetime not null, 
-	[Altitud] decimal(9,6) not null,
-	[Latitud] decimal(9,6) not null,
-	[Longitud] decimal(9,6) not null,
+	[FechaEntrevista] datetime null, 
+	[Altitud] decimal(9,6) null,
+	[Latitud] decimal(9,6) null,
+	[Longitud] decimal(9,6) null,
 	[Precision] decimal(9,6), 
 	[Recibepqtmag] bit,
-	[IdGrano] int,
-	[Areapqtmag] decimal(6,2),
 	[IdDeptoexplt] int not null,
 	[IdMunicipioexp] int not null, 
 	[ResultadoEntrevista] int not null,
@@ -80,9 +79,7 @@ CREATE TABLE SiembraExpectativa(
 )
 GO
 CREATE TABLE Compara(
-
 	[IdPortada] varchar(50) not null,
-
 	[AnioCicloAnt] int not null,
 	[IdGrano] int not null,
 	[AreaCicloAnt] decimal(6,2) not null,
@@ -91,9 +88,7 @@ CREATE TABLE Compara(
 )
 GO
 CREATE TABLE CausaSiembra (
-
 	[IdPortada] varchar(50) not null,
-
 	[IdCausa] int not null 
 )
 GO
@@ -108,9 +103,7 @@ CREATE TABLE OrigenCredito (
 )
 GO
 CREATE TABLE FondosAgricolas (
-
 	[IdPortada] varchar(50) not null,
-
 	[SolicitoCredito] bit,
 	[IdOrigenCredito] int,
 	[InversionCredito] decimal(10,2),
@@ -127,7 +120,6 @@ CREATE TABLE INSPRACTMAQ (
 GO
 CREATE TABLE INSPRACTMAQSiembra (
 	[IdPortada] varchar(50) not null,
-
 	[IdInsPracMaq] int not null
 )
 GO
@@ -146,13 +138,13 @@ ALTER TABLE Productores
 ADD CONSTRAINT Fk_MuniProductores
 FOREIGN KEY(IdMunicipio) REFERENCES Municipio(IdMunicipio)
 
-ALTER TABLE Portada
-ADD CONSTRAINT FK_ProductPortada
-FOREIGN KEY(IdFolio) REFERENCES Productores(IdFolio)
+-- ALTER TABLE Portada
+-- ADD CONSTRAINT FK_ProductPortada
+-- FOREIGN KEY(IdFolio) REFERENCES Productores(IdFolio)  se comenta debido a que la tabla productores deja de tener una llave primaria
 
-ALTER TABLE Portada
-ADD CONSTRAINT FK_GranoPortada
-FOREIGN KEY(IdGrano) REFERENCES GranosBasicos(IdGrano)
+-- ALTER TABLE Portada
+-- ADD CONSTRAINT FK_GranoPortada
+-- FOREIGN KEY(IdGrano) REFERENCES GranosBasicos(IdGrano) se elimina porque ya no se ocupara el campo grano
 
 ALTER TABLE Portada
 ADD CONSTRAINT FK_DeptoPortada
@@ -229,4 +221,3 @@ FOREIGN KEY(IdInsPracMaq) REFERENCES INSPRACTMAQ(IdInsPracMaq)
 ALTER TABLE INSPRACTMAQSiembra
 ADD CONSTRAINT FK_PortadaINSPRACTMAQSiembra
 FOREIGN KEY(IdPortada) REFERENCES Portada(IdPortada)
-
