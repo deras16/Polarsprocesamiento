@@ -142,9 +142,9 @@ FOREIGN KEY(IdMunicipio) REFERENCES Municipio(IdMunicipio)
 -- ADD CONSTRAINT FK_ProductPortada
 -- FOREIGN KEY(IdFolio) REFERENCES Productores(IdFolio)  se comenta debido a que la tabla productores deja de tener una llave primaria
 
-ALTER TABLE Portada
-ADD CONSTRAINT FK_GranoPortada
-FOREIGN KEY(IdGrano) REFERENCES GranosBasicos(IdGrano)
+-- ALTER TABLE Portada
+-- ADD CONSTRAINT FK_GranoPortada
+-- FOREIGN KEY(IdGrano) REFERENCES GranosBasicos(IdGrano) se elimina porque ya no se ocupara el campo grano
 
 ALTER TABLE Portada
 ADD CONSTRAINT FK_DeptoPortada
