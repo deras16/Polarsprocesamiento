@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name":"Maiz"
+    },
+    {
+        "id": 2,
+        "name":"Frijol"
+    },
+    {
+        "id": 3,
+        "name":"Sorgo"
+    },
+    {
+        "id": 4,
+        "name":"Arroz"
+    }
+]
