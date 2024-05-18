@@ -47,9 +47,27 @@ class Extract():
         query = """ 
                     select interview__id, extract(YEAR from fecha_entr ) anio, e.folio,e.fecha_entr, geo_est ->> 'Altitude' as Altitude, 
                     geo_est ->> 'Latitude' as Latitude, geo_est ->> 'Longitude' as Longitude, geo_est ->> 'Accuracy' as Precisiongps ,
-                    e.paquete, e.depto_sede,e.mun_sede, e.resultado, e.otros_robros, e.tipo_pro, e.dirigida 
-                    from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
-                    where e.resultado = 1
+                    case 
+                    	when e.paquete = 1 then 1
+                    	when e.paquete = 2 then 0
+                    	else null
+                    end as paquete
+                    ,e.departamento,e.municipio ,e.resultado, e.otros_robros, 
+                    case 
+                    	when e.tipo_pro is null and e.tipo_prost is not null then e.tipo_prost
+                    	when e.tipo_prost is null and e.tipo_pro is not null then e.tipo_pro
+                    	when e.tipo_pro is not null and e.tipo_prost is not null and e.tipo_pro = e.tipo_prost then e.tipo_pro
+                    	else 0
+                    end as TipologiaProd, 
+                    case
+                    	when e.dirigida is null and e.dirigidast is not null then e.dirigidast
+                    	when e.dirigidast is null and e.dirigida is not null then e.dirigida
+                    	when e.dirigida is not null and e.dirigidast is not null and e.dirigida = e.dirigidast then e.dirigida
+                    	else 0
+                    end as dirigida 
+                    from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e
+                    inner join ws_dea.interviewsummaries i on i.interviewid = e.interview__id 
+                    where e.resultado = 1 or resultadost = 1
                 """
         dfPortada = pl.DataFrame(pl.read_database_uri(uri=self.postgreConn, query=query, engine='connectorx'))
         return dfPortada
