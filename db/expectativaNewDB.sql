@@ -1,3 +1,6 @@
+CREATE DATABASE ExpectativaSiembra
+GO
+
 USE ExpectativaSiembra
 GO
 CREATE TABLE [Departamento] (
@@ -62,12 +65,12 @@ CREATE TABLE Portada (
 	[IdMunicipioexp] int not null, 
 	[ResultadoEntrevista] int not null,
 	[OtrosRubros] varchar(500),
-	[TipologiaProductor] int,
+	[TipologiaProductor] nvarchar(50),
 	[EncRealizadaA] nvarchar(100)  
 )
 GO
 CREATE TABLE SiembraExpectativa(
-	[Idportada] varchar(50) not null,
+	[IdPortada] varchar(50) not null,
 	[IdGrano] int not null, 
 	[numexp] int not null,
 	[IdDeptoexp] int not null,
@@ -108,8 +111,8 @@ CREATE TABLE FondosAgricolas (
 	[IdOrigenCredito] int,
 	[InversionCredito] decimal(10,2),
 	[RecibeRemesa] bit,
-	[IdIntervalo] int not null,
-	[IdPais] int not null
+	[IdIntervalo] int,
+	[IdPais] int
 )
 GO
 CREATE TABLE INSPRACTMAQ (
@@ -125,7 +128,7 @@ CREATE TABLE INSPRACTMAQSiembra (
 GO
 CREATE TABLE EncuestasContestadas (
 
-	[Idportada] varchar(50) not null,
+	[IdPortada] varchar(50) not null,
 
 	[creado_el] datetime default getdate() not null,
 )

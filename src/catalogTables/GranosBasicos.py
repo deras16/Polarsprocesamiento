@@ -1,3 +1,5 @@
+import os
+import json
 import polars as pl 
 from utils.Model import Model
 
@@ -6,24 +8,16 @@ class Grano(Model):
         super().__init__(table_name="GranosBasicos")
 
     def extract(self) -> pl.DataFrame:
-        query = """
-            select 
-                value as idgrano, 
-                text as grano 
-            from 
-                ws_dea.reusablecategoricaloptions r 
-            where 
-                r.categoriesid = 'f3c93701-b8e5-4d86-b7bc-e1836fe9fdb3'
-            order by idgrano
-        """
+        path = os.path.join(os.path.dirname(__file__), 'data/granos.json')
+        data = json.load(open(path))
 
-        df = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgres_connection, engine='connectorx'))
+        df = pl.DataFrame(data)
         return df
     
     def transform(self) -> pl.DataFrame:
         df_extract = self.extract()
-        df_extract  = df_extract.with_columns(df_extract['idgrano'].cast(pl.Int32), df_extract['grano'].cast(pl.Utf8))
-        df_extract  = df_extract.rename({ "idgrano": "IdGrano", "grano": "Grano" })
+        df_extract  = df_extract.rename({ "id": "IdGrano", "name": "Grano" })
+        df_extract  = df_extract.with_columns(df_extract['IdGrano'].cast(pl.Int32), df_extract['Grano'].cast(pl.Utf8))
         
         return df_extract
     
@@ -36,8 +30,8 @@ class Grano(Model):
             print('No data to load')
 
     def __validateData(self, df_transform) -> pl.DataFrame:
-        querySQLServer = """
-            select * from GranosBasicos
+        querySQLServer = f"""
+            select * from {self.table_name}
         """
         df_sql_server = pl.DataFrame(pl.read_database_uri(query=querySQLServer, uri=self.mssql_connection, engine='connectorx')) 
 
