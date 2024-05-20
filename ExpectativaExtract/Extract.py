@@ -166,22 +166,22 @@ class Extract():
                     select e.interview__id, e.fecha_entr, ct.idgrano,e.areamaiz AreaCiclAnt, produccionmaiz produccionciclAnt, 
                     compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
                     inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
-                    where ct.idgrano = 1 and e.resultado = 1
+                    where ct.idgrano = 1 and (e.resultado = 1 or e.resultadost = 1)
                     union all 
                     select e.interview__id, e.fecha_entr, ct.idgrano,e.areafrijol AreaCiclAnt, produccionfrijol produccionciclAnt, 
                     compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
                     inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
-                    where ct.idgrano = 2 and e.resultado = 1
+                    where ct.idgrano = 2 and (e.resultado = 1 or e.resultadost = 1)
                     union all 
                     select e.interview__id, e.fecha_entr, ct.idgrano,e.areasorgo AreaCiclAnt, produccionsorgo produccionciclAnt, 
                     compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
                     inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
-                    where ct.idgrano = 3 and e.resultado = 1
+                    where ct.idgrano = 3 and (e.resultado = 1 or e.resultadost = 1)
                     union all 
                     select e.interview__id, e.fecha_entr, ct.idgrano,e.areaarroz AreaCiclAnt, produccionarroz produccionciclAnt, 
                     compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
                     inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
-                    where ct.idgrano = 4 and e.resultado = 1
+                    where ct.idgrano = 4 and (e.resultado = 1 or e.resultadost = 1)
                 """
         dfcompara = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgreConn, engine='connectorx'))
         return dfcompara
