@@ -7,136 +7,48 @@ class PortadaSiembraExpectativas(Model):
     
     def extract(self) -> pl.DataFrame:
         query = """
-            --Nueva consulta para extraer expectativas de siembra      
-                WITH ctesemilla(interviewid, idsemilla, idgrano) AS (
-                    SELECT interviewid, array_agg(idsemilla), idgrano 
-                    FROM (
-                        SELECT er2.interview__id interviewid, unnest(er2.t_semillam) idsemilla, 1 idgrano 
-                        FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_REPOCAM" er2
-                        UNION ALL
-                        SELECT er3.interview__id, unnest(er3.t_semillaf), 2 idgrano
-                        FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_REPOCAF" er3
-                        UNION ALL
-                        SELECT er4.interview__id, unnest(er4.t_semillas), 3 idgrano
-                        FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_REPOCAS" er4
-                        UNION ALL
-                        SELECT er5.interview__id, unnest(er5.t_semillaa), 4 idgrano
-                        FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_REPOCAA" er5 
-                    ) AS t
-                    GROUP BY interviewid, idgrano
-                ), cteGrano(interviewid, idgrano) AS (
-                    SELECT interview__id, unnest(expec) 
-                    FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e2
-                ), cteareaProd(interviewid, areaSiembra, produccion, idgrano) AS (
-                    SELECT interview__id, array_agg(aream) areas, array_agg(produccionm) prod, 1 idgrano 
-                    FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RSEMILLAM" er
-                    GROUP BY interview__id
-                    UNION ALL
-                    SELECT er6.interview__id, array_agg(er6.areaf), array_agg(er6.produccionf), 2 idgrano 
-                    FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RSEMILLAF" er6
-                    GROUP BY er6.interview__id 
-                    UNION ALL
-                    SELECT er7.interview__id, array_agg(er7.areas), array_agg(er7.produccions), 3 idgrano
-                    FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RSEMILLAS" er7
-                    GROUP BY er7.interview__id
-                    UNION ALL
-                    SELECT er8.interview__id, array_agg(er8.areaa), array_agg(er8.producciona), 4 idgrano  
-                    FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RSEMILLAA" er8
-                    GROUP BY er8.interview__id 
-                )	  	  
-                SELECT row_num, llave, ctg.idgrano, e.num_expl_agricm, unnest(t.epoca) epoca, unnest(t.semilla) semilla,
-                    t.depto, t.munici, unnest(t.areaSiembra) AS area, unnest(t.produccion) AS produccion 
-                FROM (
-                    SELECT 
-                        row_number() OVER () AS row_num,
-                        er.interview__id llave,
-                        er.epoca_siembram epoca,
-                        ct.idsemilla semilla,
-                        er.depto_explosm depto,
-                        er.munic_explosm munici,
-                        ctp.areasiembra areaSiembra,
-                        ctp.produccion produccion
-                    FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RMAIZ" er
-                    INNER JOIN ctesemilla ct ON ct.interviewid = er.interview__id AND ct.idgrano = 1
-                    INNER JOIN cteareaProd ctp ON ctp.interviewid = er.interview__id AND ctp.idgrano = 1
-                ) AS t 
-                INNER JOIN cteGrano ctg ON ctg.interviewid = t.llave
-                INNER JOIN "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e ON e.interview__id = t.llave
-                WHERE ctg.idgrano = 1 AND (e.resultado = 1 OR e.resultadost = 1)
-                UNION ALL
-                -- FRIJOL
-                SELECT t.row_num, t.llave, ctg.idgrano, e.num_expl_agricf, unnest(t.epoca) epoca, unnest(t.semilla) semilla,
-                    t.depto, t.munici, unnest(t.areaSiembra) AS area, unnest(t.produccion) AS produccion 
-                FROM (
-                    SELECT 
-                        row_number() OVER () AS row_num,
-                        er2.interview__id llave,
-                        er2.epoca_siembraf epoca,
-                        ct.idsemilla semilla,
-                        er2.depto_explosf depto,
-                        er2.munic_explosf munici,
-                        ctp.areasiembra areaSiembra,
-                        ctp.produccion produccion
-                    FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RFRIJOL" er2
-                    INNER JOIN ctesemilla ct ON ct.interviewid = er2.interview__id AND ct.idgrano = 2 
-                    INNER JOIN cteareaProd ctp ON ctp.interviewid = er2.interview__id AND ctp.idgrano = 2
-                ) AS t 
-                INNER JOIN cteGrano ctg ON ctg.interviewid = t.llave
-                INNER JOIN "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e ON e.interview__id = t.llave
-                WHERE ctg.idgrano = 2 AND (e.resultado = 1 OR e.resultadost = 1)
-                UNION ALL
-                -- SORGO
-                SELECT t.row_num, t.llave, ctg.idgrano, e.num_expl_agrics, unnest(t.epoca) epoca, unnest(t.semilla) semilla,
-                    t.depto, t.munici, unnest(t.areaSiembra) AS area, unnest(t.produccion) AS produccion 
-                FROM (
-                    SELECT 
-                        row_number() OVER () AS row_num,
-                        er9.interview__id llave,
-                        er9.epoca_siembras epoca,
-                        ct.idsemilla semilla,
-                        er9.depto_exploss depto,
-                        er9.munic_exploss munici,
-                        ctp.areasiembra areaSiembra,
-                        ctp.produccion produccion
-                    FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RSORGO" er9 
-                    INNER JOIN ctesemilla ct ON ct.interviewid = er9.interview__id AND ct.idgrano = 3 
-                    INNER JOIN cteareaProd ctp ON ctp.interviewid = er9.interview__id AND ctp.idgrano = 3
-                ) AS t 
-                INNER JOIN cteGrano ctg ON ctg.interviewid = t.llave
-                INNER JOIN "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e ON e.interview__id = t.llave
-                WHERE ctg.idgrano = 3 AND (e.resultado = 1 OR e.resultadost = 1)
-                UNION ALL
-                -- ARROZ 
-                SELECT t.row_num, t.llave, ctg.idgrano, e.num_expl_agrica, unnest(t.epoca) epoca, unnest(t.semilla) semilla,
-                    t.depto, t.munici, unnest(t.areaSiembra) AS area, unnest(t.produccion) AS produccion 
-                FROM (
-                    SELECT 
-                        row_number() OVER () AS row_num,
-                        er9.interview__id llave,
-                        er9.epoca_siembraa epoca,
-                        ct.idsemilla semilla,
-                        er9.depto_explosa depto,
-                        er9.munic_explosa munici,
-                        ctp.areasiembra areaSiembra,
-                        ctp.produccion produccion
-                    FROM "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RARROZ" er9 
-                    INNER JOIN ctesemilla ct ON ct.interviewid = er9.interview__id AND ct.idgrano = 4 
-                    INNER JOIN cteareaProd ctp ON ctp.interviewid = er9.interview__id AND ctp.idgrano = 4
-                ) AS t 
-                INNER JOIN cteGrano ctg ON ctg.interviewid = t.llave
-                INNER JOIN "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e ON e.interview__id = t.llave
-                WHERE ctg.idgrano = 4 AND (e.resultado = 1 OR e.resultadost = 1)
+            with cteGrano(interviewid, idgrano) as(
+                select e.interview__id, unnest(e.expec) from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
+            )
+            select er.interview__id, ct.idgrano, e2.num_expl_agricm, er2.depto_explosm iddepto, er2.munic_explosm idmuni, 
+            er.roster__vector[2] idepoca, er.roster__vector[3] idsemilla, er.aream areaprod, er.produccionm produccion
+            from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RSEMILLAM" er
+            inner join "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RMAIZ" er2 on er2.interview__id = er.interview__id 
+            inner join cteGrano ct on ct.interviewid = er.interview__id
+            inner join "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e2 on e2.interview__id = er.interview__id 
+            where ct.idgrano = 1 and (e2.resultado = 1 or e2.resultadost = 1)
+            union all 
+            select er3.interview__id, ct.idgrano, e3.num_expl_agricf, er4.depto_explosf, er4.munic_explosf, er3.roster__vector[2] idepoca,
+            er3.roster__vector[3] idsemilla, er3.areaf  areaprod, er3.produccionf produccion
+            from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RSEMILLAF" er3 
+            inner join "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RFRIJOL" er4 on er4.interview__id = er3.interview__id 
+            inner join cteGrano ct on ct.interviewid = er3.interview__id
+            inner join "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e3 on e3.interview__id = er3.interview__id 
+            where ct.idgrano = 2 and (e3.resultado = 1 or e3.resultadost = 1)
+            union all
+            select er5.interview__id, ct.idgrano, e4.num_expl_agrics, er6.depto_exploss, er6.munic_exploss, er5.roster__vector[2] idepoca,
+            er5.roster__vector[3] idsemilla, er5.areas areaprod, er5.produccions produccion
+            from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RSEMILLAS" er5
+            inner join "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RSORGO" er6 on er6.interview__id = er5.interview__id 
+            inner join cteGrano ct on ct.interviewid = er5.interview__id
+            inner join "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e4 on e4.interview__id = er5.interview__id 
+            where ct.idgrano = 3 and (e4.resultado = 1 or e4.resultadost = 1)
+            union all
+            select er7.interview__id,ct.idgrano, e5.num_expl_agrica, er8.depto_explosa, er8.munic_explosa, er7.roster__vector[2],
+            er7.roster__vector[3], er7.areaa, er7.producciona
+            from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RSEMILLAA" er7 
+            inner join "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1_RARROZ" er8 on er8.interview__id = er7.interview__id
+            inner join ctegrano ct on ct.interviewid = er7.interview__id
+            inner join "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e5 on e5.interview__id = er7.interview__id 
+            where ct.idgrano = 4 and (e5.resultado = 1 or e5.resultadost = 1)
         """
-        
         df = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgres_connection, engine='connectorx'))
-        #no select row_num
-        df = df.drop("row_num")
         return df
 
     def transform(self) -> pl.DataFrame:
         df = self.extract()
-        df = df.rename({"llave": "IdPortada", "idgrano": "IdGrano", "num_expl_agricm": "numexp",
-                        "epoca": "IdEpoca", "semilla": "IdSemilla", "depto": "IdDeptoexp", "munici": "IdMuniexp", "area": "Area", 
+        df = df.rename({"interview__id": "IdPortada", "idgrano": "IdGrano", "num_expl_agricm": "numexp",
+                        "idepoca": "IdEpoca", "idsemilla": "IdSemilla", "iddepto": "IdDeptoexp", "idmuni": "IdMuniexp", "areaprod": "Area", 
                         "produccion": "Produccion"})
         df = df.with_columns(df['IdPortada'].cast(pl.Utf8), df['IdGrano'].cast(pl.Int32),
                             df['numexp'].cast(pl.Int32), df['IdEpoca'].cast(pl.Int32), df['IdSemilla'].cast(pl.Int32),

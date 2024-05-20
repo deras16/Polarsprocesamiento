@@ -10,22 +10,22 @@ class PortadaCompara(Model):
             with CteGranosBasicos(interviewid,idgrano) AS(
                 select interview__id, unnest(tipo_cul) from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e2 
             )
-            select e.interview__id, extract(YEAR from e.fecha_entr ) anio, ct.idgrano,e.areamaiz AreaCiclAnt, produccionmaiz produccionciclAnt, 
+            select e.interview__id, e.fecha_entr, ct.idgrano,e.areamaiz AreaCiclAnt, produccionmaiz produccionciclAnt, 
             compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
             inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
             where ct.idgrano = 1 and e.resultado = 1
             union all 
-            select e.interview__id, extract(YEAR from e.fecha_entr ) anio, ct.idgrano,e.areafrijol AreaCiclAnt, produccionfrijol produccionciclAnt, 
+            select e.interview__id, e.fecha_entr, ct.idgrano,e.areafrijol AreaCiclAnt, produccionfrijol produccionciclAnt, 
             compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
             inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
             where ct.idgrano = 2 and e.resultado = 1
             union all 
-            select e.interview__id, extract(YEAR from e.fecha_entr ) anio, ct.idgrano,e.areasorgo AreaCiclAnt, produccionsorgo produccionciclAnt, 
+            select e.interview__id, e.fecha_entr, ct.idgrano,e.areasorgo AreaCiclAnt, produccionsorgo produccionciclAnt, 
             compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
             inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
             where ct.idgrano = 3 and e.resultado = 1
             union all 
-            select e.interview__id, extract(YEAR from e.fecha_entr ) anio, ct.idgrano,e.areaarroz AreaCiclAnt, produccionarroz produccionciclAnt, 
+            select e.interview__id, e.fecha_entr, ct.idgrano,e.areaarroz AreaCiclAnt, produccionarroz produccionciclAnt, 
             compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
             inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
             where ct.idgrano = 4 and e.resultado = 1
@@ -35,9 +35,9 @@ class PortadaCompara(Model):
 
     def transform(self) -> pl.DataFrame:
         df = self.extract()
-        df = df.rename({"interview__id": "IdPortada", "anio": "AnioCicloAnt", "idgrano": "IdGrano", 
+        df = df.rename({"interview__id": "IdPortada", "fecha_entr": "Fecha", "idgrano": "IdGrano", 
                         "areaciclant": "AreaCicloAnt", "produccionciclant": "ProduccionCicloAnt", "compareapc": "Resultado"})
-        df = df.with_columns(df['IdPortada'].cast(pl.Utf8), df['AnioCicloAnt'].cast(pl.Int32), df['IdGrano'].cast(pl.Int32), 
+        df = df.with_columns(df['IdPortada'].cast(pl.Utf8), df['Fecha'].cast(pl.Datetime), df['IdGrano'].cast(pl.Int32), 
                              df['AreaCicloAnt'].cast(pl.Float32), df['ProduccionCicloAnt'].cast(pl.Float32), df['Resultado'].cast(pl.Utf8))
         
         #validate nulls

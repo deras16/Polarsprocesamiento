@@ -9,9 +9,9 @@ class Productor(Model):
     def extract(self) -> pl.DataFrame:
         query_productores = """
             select folio, departamento, municipio,extract(YEAR from fecha_entr ) anio,tipo_prod, geo_est ->> 'Altitude' as Altitude, 
-                geo_est ->> 'Latitude' as Latitude, geo_est ->> 'Longitude' as Longitude
-                from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
-                where e.resultado = 1
+            geo_est ->> 'Latitude' as Latitude, geo_est ->> 'Longitude' as Longitude
+            from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
+            where e.resultado = 1 or e.resultadost = 1
         """
         df = pl.DataFrame(pl.read_database_uri(query=query_productores, uri=self.postgres_connection, engine='connectorx'))
         df = df.sort("folio")
