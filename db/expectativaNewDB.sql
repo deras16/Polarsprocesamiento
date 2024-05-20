@@ -83,7 +83,7 @@ CREATE TABLE SiembraExpectativa(
 GO
 CREATE TABLE Compara(
 	[IdPortada] varchar(50) not null,
-	[AnioCicloAnt] int not null,
+	[Fecha] datetime null, 
 	[IdGrano] int not null,
 	[AreaCicloAnt] decimal(6,2) not null,
 	[ProduccionCicloAnt] decimal(6,2),
