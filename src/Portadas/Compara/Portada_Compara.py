@@ -1,73 +1,70 @@
 import polars as pl
 from utils.Model import Model
+from tqdm import tqdm
 
 class PortadaCompara(Model):
     def __init__(self):
-        super().__init__(table_name="Compara")
+        super().__init__(table_name="Compara", id_column="IdPortada")
     
-    def extract(self) -> pl.DataFrame:
-        query = """
+    def extract_query(self) -> str:
+        return """
             with CteGranosBasicos(interviewid,idgrano) AS(
                 select interview__id, unnest(tipo_cul) from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e2 
             )
             select e.interview__id, e.fecha_entr, ct.idgrano,e.areamaiz AreaCiclAnt, produccionmaiz produccionciclAnt, 
             compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
             inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
-            where ct.idgrano = 1 and e.resultado = 1
+            where ct.idgrano = 1 and (e.resultado = 1 or e.resultadost = 1)
             union all 
             select e.interview__id, e.fecha_entr, ct.idgrano,e.areafrijol AreaCiclAnt, produccionfrijol produccionciclAnt, 
             compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
             inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
-            where ct.idgrano = 2 and e.resultado = 1
+            where ct.idgrano = 2 and (e.resultado = 1 or e.resultadost = 1)
             union all 
             select e.interview__id, e.fecha_entr, ct.idgrano,e.areasorgo AreaCiclAnt, produccionsorgo produccionciclAnt, 
             compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
             inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
-            where ct.idgrano = 3 and e.resultado = 1
+            where ct.idgrano = 3 and (e.resultado = 1 or e.resultadost = 1)
             union all 
             select e.interview__id, e.fecha_entr, ct.idgrano,e.areaarroz AreaCiclAnt, produccionarroz produccionciclAnt, 
             compareapc  from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
             inner join CteGranosBasicos ct on e.interview__id = ct.interviewid
-            where ct.idgrano = 4 and e.resultado = 1
+            where ct.idgrano = 4 and (e.resultado = 1 or e.resultadost = 1)
         """
-        df = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgres_connection, engine='connectorx'))
-        return df
 
-    def transform(self) -> pl.DataFrame:
-        df = self.extract()
-        df = df.rename({"interview__id": "IdPortada", "fecha_entr": "Fecha", "idgrano": "IdGrano", 
-                        "areaciclant": "AreaCicloAnt", "produccionciclant": "ProduccionCicloAnt", "compareapc": "Resultado"})
-        df = df.with_columns(df['IdPortada'].cast(pl.Utf8), df['Fecha'].cast(pl.Datetime), df['IdGrano'].cast(pl.Int32), 
-                             df['AreaCicloAnt'].cast(pl.Float32), df['ProduccionCicloAnt'].cast(pl.Float32), df['Resultado'].cast(pl.Utf8))
-        
+    def transform_mappings(self) -> dict:
+        return {
+            "interview__id": ("IdPortada", pl.Utf8),
+            "fecha_entr": ("Fecha", pl.Datetime),
+            "idgrano": ("IdGrano", pl.Int32),
+            "areaciclant": ("AreaCicloAnt", pl.Float32),
+            "produccionciclant": ("ProduccionCicloAnt", pl.Float32),
+            "compareapc": ("Resultado", pl.Utf8)
+        }
+    
+    #Override
+    def transform(self, df: pl.DataFrame) -> pl.DataFrame:
+        df_transformed = super().transform(df)
         #validate nulls
-        df = df.with_columns(
+        df_transformed = df_transformed.with_columns(
             pl.when(pl.col("AreaCicloAnt").is_null()).then(pl.lit(0)).otherwise(pl.col("AreaCicloAnt")).alias('AreaCicloAnt'),
             pl.when(pl.col("ProduccionCicloAnt").is_null()).then(pl.lit(0)).otherwise(pl.col("ProduccionCicloAnt")).alias('ProduccionCicloAnt')
         )
-        return df
+        return df_transformed
         
+    #Override
+    def load(self, df: pl.DataFrame):
+        df_load = super()._check_different_rows(df)
+        df_load = self.__validatePortada(df_load)
+        total_rows = df_load.shape[0]
 
-    def load(self) -> pl.DataFrame:
-        df_load = self.__validateData(self.transform())
-        if df_load.shape[0] > 0:
-            df_load.write_database(table_name=self.table_name, connection=self.mssql_connection, if_table_exists="append")
-            print('Compara Data loaded')
+        if total_rows > 0:
+            with tqdm(total=1, desc=f"Loading {self.table_name} data") as pbar:
+                df_load.write_database(table_name=self.table_name, connection=self.mssql_connection, if_table_exists="append")
+                pbar.update(1)
+            tqdm.write(f"{self.table_name} Data Loading Completed.") 
         else:
-            print('No data to load')
-    
-    def __validateData(self, df_transform: pl.DataFrame) -> pl.DataFrame:
-        querySQLServer = """
-            select * from Compara
-        """
-        df_sql_server = pl.DataFrame(pl.read_database_uri(query=querySQLServer, uri=self.mssql_connection, engine='connectorx'))
-
-        df_result = df_transform.join(df_sql_server, on="IdPortada", how="semi")
-
-        df_filter = df_transform.filter(~df_transform["IdPortada"].is_in(df_result['IdPortada']))
-
-        df = self.__validatePortada(df_filter)
-        return df
+            tqdm.write(f'No data to load for {self.table_name} table.')
     
     def __validatePortada(self, df: pl.DataFrame) -> pl.DataFrame:
         query = """

@@ -1,50 +1,37 @@
 import polars as pl
 from utils.Model import Model
-
+from tqdm import tqdm
 
 class PortadaCausaSiembra(Model):
     def __init__(self):
-        super().__init__(table_name="CausaSiembra")
+        super().__init__(table_name="CausaSiembra", id_column="IdPortada")
 
-    def extract(self) -> pl.DataFrame:
-        query = """
-            select interview__id, unnest(resul) from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e
-            where e.resultado = 1 order by fecha_entr  
-        """
-        df = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgres_connection, engine='connectorx'))
-        return df
-
-
-    def transfom(self) -> pl.DataFrame:
-        df = self.extract()
-        df = df.rename({"interview__id": "IdPortada",  "unnest": "IdCausa"})
-        df = df.with_columns(df['IdPortada'].cast(pl.Utf8), df['IdCausa'].cast(pl.Int32))
-        return df
     
-    def load(self):
-        df  = self.__validateIfExist(self.transfom())
-        if df.shape[0] > 0:
-            df.write_database(table_name=self.table_name, connection=self.mssql_connection, if_table_exists="append")
-            print('CausaSiembra Data loaded')
-        else:
-            print('No data to load')
-
-
-    def __validateIfExist(self, df: pl.DataFrame) -> pl.DataFrame:
-        query = f"""
-            select * from {self.table_name}
+    def extract_query(self) -> str:
+        return """
+            select interview__id, unnest(resul) from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e
+            where e.resultado = 1 or e.resultadost = 1 order by fecha_entr    
         """
-        df_sql_server = pl.DataFrame(pl.read_database_uri(query=query, uri=self.mssql_connection, engine='connectorx'))
-        
-        #return existing rows 
-        df_result = df.join(df_sql_server, on="IdPortada", how="semi")
-        
-        #delete existing rows on df
-        df_filter = df.filter(~df["IdPortada"].is_in(df_result['IdPortada']))
 
-        #validate if IdPortada exist in Portada table
-        df_filter = self.__validatePortada(df_filter)
-        return df_filter
+    def transform_mappings(self) -> dict:
+        return {
+            "interview__id": ("IdPortada", pl.Utf8),
+            "unnest": ("IdCausa", pl.Int32)
+        }
+    
+    def load(self, df: pl.DataFrame):
+        df_load = super()._check_different_rows(df)
+        df_load = self.__validatePortada(df_load)
+        total_rows = df_load.shape[0]
+
+        if total_rows > 0:
+            with tqdm(total=1, desc=f"Loading {self.table_name} data") as pbar:
+                df_load.write_database(table_name=self.table_name, connection=self.mssql_connection, if_table_exists="append")
+                pbar.update(1)
+            tqdm.write(f"{self.table_name} Data Loading Completed.") 
+        else:
+            tqdm.write(f'No data to load for {self.table_name} table.')
+
     
     def __validatePortada(self, df: pl.DataFrame) -> pl.DataFrame:
         query = """

@@ -8,10 +8,10 @@ from src.Portadas.SiembraExpectativa import Portadas_SiembraExpectativas
 
 class Portada(Model):
     def __init__(self):
-        super().__init__(table_name="Portada")
+        super().__init__(table_name="Portada" ,id_column="IdPortada")
 
-    def extract(self) -> pl.DataFrame:
-        query = """
+    def extract_query(self) -> str:
+        return """
             select interview__id, extract(YEAR from fecha_entr ) anio, e.folio,e.fecha_entr, geo_est ->> 'Altitude' as Altitude, 
             geo_est ->> 'Latitude' as Latitude, geo_est ->> 'Longitude' as Longitude, geo_est ->> 'Accuracy' as Precisiongps ,
             case 
@@ -36,36 +36,42 @@ class Portada(Model):
             inner join ws_dea.interviewsummaries i on i.interviewid = e.interview__id 
             where e.resultado = 1 or resultadost = 1
         """
-        df = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgres_connection, engine='connectorx'))
-        return df
-
-    def transform(self) -> pl.DataFrame:
-        df = self.extract()
-        df_transformed = self.__transormationValidations(df)
+    def transform_mappings(self) -> dict:
+        return {
+            "interview__id": ("IdPortada", pl.Utf8),
+            "anio": ("Anio", pl.Int32),
+            "folio": ("IdFolio", pl.Int32),
+            "fecha_entr": ("FechaEntrevista", pl.Datetime),
+            "altitude": ("Altitud", pl.Float32),
+            "latitude": ("Latitud", pl.Float32),
+            "longitude": ("Longitud", pl.Float32),
+            "precisiongps": ("Precision", pl.Float32),
+            "paquete": ("Recibepqtmag", pl.Boolean),
+            "departamento": ("Departamento", pl.Utf8),
+            "municipio": ("Municipio", pl.Utf8),
+            "resultado": ("ResultadoEntrevista", pl.Int32),
+            "otros_robros": ("OtrosRubros", pl.List(pl.Utf8)),
+            "tipologiaprod": ("TipologiaProductor", pl.Utf8),
+            "dirigida": ("EncRealizadaA", pl.Utf8)
+        }
+    #Override
+    def transform(self, df: pl.DataFrame) -> pl.DataFrame:
+        df_transformed = super().transform(df)
+        df_transformed = self.__transormationValidations(df_transformed)
         return df_transformed 
     
-    def load(self) -> pl.DataFrame:
-        df_load = self.__validateData(self.transform())
-        if df_load.shape[0] > 0:
-            df_load.write_database(table_name=self.table_name, connection=self.mssql_connection, if_table_exists="append")
-            print('Portada Data loaded')
-        else:
-            print('No data to load')
+    #belongsToMany relationships
+    """ def loadCausas(self):
+        Portadas_Causas.PortadaCausaSiembra().load()
+    def loadCompara(self):
+        Portada_Compara.PortadaCompara().load()
+    def loadFondosAgricolas(self):
+        Portadas_FondosAgriculas.PortadaFondosAgricolas().load()
+    def loadSiembraExpectativas(self):
+        Portadas_SiembraExpectativas.PortadaSiembraExpectativas().load() """ 
 
+    
     def __transormationValidations(self, df: pl.DataFrame) -> pl.DataFrame:
-        df = df.rename({"interview__id": "IdPortada", "anio": "Anio", "folio": "IdFolio", "fecha_entr": "FechaEntrevista", 
-                        "altitude": "Altitud", "latitude": "Latitud", "longitude": "Longitud", "precisiongps": "Precision", 
-                        "paquete": "Recibepqtmag", "departamento": "Departamento", "municipio": "Municipio", "resultado": "ResultadoEntrevista", 
-                        "otros_robros": "OtrosRubros", "tipologiaprod": "TipologiaProductor", "dirigida": "EncRealizadaA"})
-
-        
-        df = df.with_columns(df['IdPortada'].cast(pl.Utf8), df['Anio'].cast(pl.Int32), df['IdFolio'].cast(pl.Int32), 
-                             df['FechaEntrevista'].cast(pl.Datetime), df['Altitud'].cast(pl.Float32), df['Latitud'].cast(pl.Float32), 
-                             df['Longitud'].cast(pl.Float32), df['Precision'].cast(pl.Float32), df['Recibepqtmag'].cast(pl.Boolean), 
-                             df['Departamento'].cast(pl.Utf8), df['Municipio'].cast(pl.Utf8), df['ResultadoEntrevista'].cast(pl.Int32), 
-                             df['OtrosRubros'].cast(pl.List(pl.Utf8)), df['TipologiaProductor'].cast(pl.Utf8), df['EncRealizadaA'].cast(pl.Utf8))
-        
-
         #convert the list to string TODO: check if this is the correct way to do it
         df = df.with_columns(
             pl.format("[{}]",
@@ -99,30 +105,5 @@ class Portada(Model):
         df = df.unique(subset=["IdPortada"])
         
         df = df.rename({"IdDepto": "IdDeptoexplt", "IdMunicipio": "IdMunicipioexp"})
-
         return df
-
-    def __validateData(self, df_transform) -> pl.DataFrame:
-        querySQLServer = """
-            select * from Portada
-        """
-        df_sql_server = pl.DataFrame(pl.read_database_uri(query=querySQLServer, uri=self.mssql_connection, engine='connectorx'))
-        
-        #return existing rows 
-        df_result = df_transform.join(df_sql_server, on="IdPortada", how="semi")
-
-        #delete existing rows on df
-        df_filter = df_transform.filter(~df_transform["IdPortada"].is_in(df_result['IdPortada']))
-
-        return df_filter
-
-    #belongsToMany relationships
-    def loadCausas(self):
-        Portadas_Causas.PortadaCausaSiembra().load()
-    def loadCompara(self):
-        Portada_Compara.PortadaCompara().load()
-    def loadFondosAgricolas(self):
-        Portadas_FondosAgriculas.PortadaFondosAgricolas().load()
-    def loadSiembraExpectativas(self):
-        Portadas_SiembraExpectativas.PortadaSiembraExpectativas().load() 
  

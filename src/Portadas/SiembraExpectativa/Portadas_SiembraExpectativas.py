@@ -1,12 +1,13 @@
 import polars as pl
+from tqdm import tqdm
 from utils.Model import Model
 
 class PortadaSiembraExpectativas(Model):
     def __init__(self):
-        super().__init__(table_name="SiembraExpectativa")
+        super().__init__(table_name="SiembraExpectativa", id_column="IdPortada")
     
-    def extract(self) -> pl.DataFrame:
-        query = """
+    def extract_query(self) -> str:
+        return """
             with cteGrano(interviewid, idgrano) as(
                 select e.interview__id, unnest(e.expec) from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e 
             )
@@ -42,23 +43,27 @@ class PortadaSiembraExpectativas(Model):
             inner join "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e5 on e5.interview__id = er7.interview__id 
             where ct.idgrano = 4 and (e5.resultado = 1 or e5.resultadost = 1)
         """
-        df = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgres_connection, engine='connectorx'))
-        return df
 
-    def transform(self) -> pl.DataFrame:
-        df = self.extract()
-        df = df.rename({"interview__id": "IdPortada", "idgrano": "IdGrano", "num_expl_agricm": "numexp",
-                        "idepoca": "IdEpoca", "idsemilla": "IdSemilla", "iddepto": "IdDeptoexp", "idmuni": "IdMuniexp", "areaprod": "Area", 
-                        "produccion": "Produccion"})
-        df = df.with_columns(df['IdPortada'].cast(pl.Utf8), df['IdGrano'].cast(pl.Int32),
-                            df['numexp'].cast(pl.Int32), df['IdEpoca'].cast(pl.Int32), df['IdSemilla'].cast(pl.Int32),
-                            df['IdDeptoexp'].cast(pl.Int32), df['IdMuniexp'].cast(pl.Int32), df['Area'].cast(pl.Float32),
-                            df['Produccion'].cast(pl.Float32))
+    def transform_mappings(self) -> dict:
+        return {
+            "interview__id": ("IdPortada", pl.Utf8),
+            "idgrano": ("IdGrano", pl.Int32),
+            "num_expl_agricm": ("numexp", pl.Int32),
+            "idepoca": ("IdEpoca", pl.Int32),
+            "idsemilla": ("IdSemilla", pl.Int32),
+            "iddepto": ("IdDeptoexp", pl.Int32),
+            "idmuni": ("IdMuniexp", pl.Int32),
+            "areaprod": ("Area", pl.Float32),
+            "produccion": ("Produccion", pl.Float32)
+        }
+    #Override
+    def transform(self, df: pl.DataFrame) -> pl.DataFrame:
+        df_transformed = super().transform(df)
         
         #validate data
-        df = df.filter(pl.col("IdSemilla").is_not_null())
+        df_transformed  = df_transformed .filter(pl.col("IdSemilla").is_not_null())
         #validate IdEpoca and IdSemilla
-        df = df.with_columns(
+        df_transformed = df_transformed .with_columns(
             # Modify IdEpoca based on IdSemilla ranges
             pl.when((pl.col("IdSemilla") >= 101) & (pl.col("IdSemilla") <= 109)).then(
                 pl.when(pl.col("IdEpoca").is_null() | (pl.col("IdEpoca") != 1)).then(pl.lit(1)).otherwise(pl.col("IdEpoca"))
@@ -100,30 +105,21 @@ class PortadaSiembraExpectativas(Model):
                 .otherwise(pl.col("IdSemilla")).alias("IdSemilla")
         )
        
-        return df
+        return df_transformed 
 
+    def load(self, df: pl.DataFrame):
+        df_load = super()._check_different_rows(df)
+        df_load = self.__validatePortada(df_load)
+        total_rows = df_load.shape[0]
 
-    def load(self):
-        df_load = self.__validateData(self.transform())
-        if df_load.shape[0] > 0:
-            df_load.write_database(table_name=self.table_name, connection=self.mssql_connection, if_table_exists="append")
-            print('Portada Siembra Expectativa Data loaded')
+        if total_rows > 0:
+            with tqdm(total=1, desc=f"Loading {self.table_name} data") as pbar:
+                df_load.write_database(table_name=self.table_name, connection=self.mssql_connection, if_table_exists="append")
+                pbar.update(1)
+            tqdm.write(f"{self.table_name} Data Loading Completed.") 
         else:
-            print('No data to load')
-
-    def __validateData(self, df_transformed) -> pl.DataFrame:
-        query = f"""
-            select * from {self.table_name}
-        """
-        df_sql_server = pl.DataFrame(pl.read_database_uri(query=query, uri=self.mssql_connection, engine='connectorx'))
-
-        df_result = df_transformed.join(df_sql_server, on="IdPortada", how="semi")
-
-        df_filter = df_transformed.filter(~df_transformed["IdPortada"].is_in(df_result['IdPortada']))
-
-        df = self.__validatePortada(df_filter)
-        return df
-        
+            tqdm.write(f'No data to load for {self.table_name} table.')
+       
     def __validatePortada(self, df: pl.DataFrame) -> pl.DataFrame:
         query = """
             select * from Portada

@@ -4,11 +4,10 @@ from utils.Model import Model
 
 class INSPRACTMAQ(Model):
     def __init__(self):
-        super().__init__(table_name="INSPRACTMAQ")
+        super().__init__(table_name="INSPRACTMAQ", id_column="IdInsPracMaq")
     
-    #TODO: check if the query is correct AND tipo column fill with the correct values
-    def extract(self) -> pl.DataFrame:
-        query_INSPRACTMAQ = """      
+    def extract_query(self) -> str:
+        return """      
             select 
                 value as IdInsPracMaq, 
                 text as InsPracMaq, 
@@ -26,40 +25,18 @@ class INSPRACTMAQ(Model):
                     or r.categoriesid = 'a117f4fa-973c-417c-9730-a67794f7a732' 
                     or r.categoriesid = '71f41838-6868-4d2f-ad31-c830032893b4')
         """
-
-        df = pl.DataFrame(pl.read_database_uri(query=query_INSPRACTMAQ, uri=self.postgres_connection, engine='connectorx'))
-
+    
+    #Override
+    def extract(self) -> pl.DataFrame:
+        df = super().extract()
         #make unique index id for each row
         ids = [ i for i in range(1, df.shape[0] + 1)]
-        df = df.with_columns(pl.Series("IdInsPracMaq", ids))
+        df = df.with_columns(pl.Series("idinspracmaq", ids))
         return df
     
-    def transform(self) -> pl.DataFrame:
-        df_extract = self.extract()
-        df_extract  = df_extract.with_columns(df_extract['IdInsPracMaq'].cast(pl.Int32), df_extract['inspracmaq'].cast(pl.Utf8), df_extract['tipo'].cast(pl.Utf8))
-        df_extract  = df_extract.rename({ "IdInsPracMaq": "IdInsPracMaq", "inspracmaq": "InsPracMaq", "tipo":"Tipo" })
-        
-        return df_extract
-    
-    def load(self):
-        #load on sql server
-        df_load = self.__validateData(self.transform())
-        if df_load.shape[0] > 0:
-            df_load.write_database(table_name=self.table_name, connection=self.mssql_connection, if_table_exists="append")
-            print('Inspractmaq Data loaded')
-        else:
-            print('No data to load')
-
-    def __validateData(self, df_transform) -> pl.DataFrame:
-        querySQLServer = """
-            select * from INSPRACTMAQ
-        """
-        df_sql_server = pl.DataFrame(pl.read_database_uri(query=querySQLServer, uri=self.mssql_connection, engine='connectorx'))
-        
-        #return only different rows on equal dataframes
-        df_diff = df_transform.join(df_sql_server, on="IdInsPracMaq", how="left")
-
-        #select only rows that are different
-        df_diff = df_diff.filter(pl.col("InsPracMaq_right").is_null()).select(pl.col("IdInsPracMaq"), pl.col("InsPracMaq"), pl.col("Tipo"))
-        return df_diff
-        
+    def transform_mappings(self) -> dict:
+        return {
+            "idinspracmaq": ("IdInsPracMaq", pl.Int32),
+            "inspracmaq": ("InsPracMaq", pl.Utf8),
+            "tipo": ("Tipo", pl.Utf8)
+        }
