@@ -198,7 +198,7 @@ class Extract():
     def ExtCausasSiembra(self):
         query = """ 
                     select interview__id, unnest(resul) from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e
-                    where e.resultado = 1
+                    where e.resultado = 1 or e.resultadost = 1
                     order by fecha_entr  
                 """
         dfCausasSiembra = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgreConn, engine='connectorx'))
