@@ -188,9 +188,17 @@ class Extract():
 
     def ExtFondosAgricolas(self):
         query = """ 
-                    select e.interview__id, e.credito, unnest(e.lcredito), e.inversionagricolaactual,e.remesa, e.porc_rem, e.pais  
+                    select e.interview__id, case 
+                        when e.credito = 2 then 0
+                        when e.credito = 1 then 1 
+                        else null
+                    end credito, unnest(e.lcredito), e.inversionagricolaactual,case 
+                        when e.remesa = 2 then 0
+                        when e.remesa = 1 then 1 
+                        else null
+                    end as remesa, e.porc_rem, e.pais  
                     from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e
-                    where e.resultado = 1 
+                    where e.resultado = 1 or e.resultadost = 1 
                 """
         dfFondos = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgreConn, engine='connectorx'))
         return dfFondos
@@ -212,11 +220,38 @@ class Extract():
                     select value as IdInsPracMaq, text as InsPracMaq, 'Insumo' as Tipo from ws_dea.reusablecategoricaloptions r 
                     where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = 'a117f4fa-973c-417c-9730-a67794f7a732'
                     union all 
-                    select value as IdInsPracMaq, text as InsPracMaq, 'Revisar' as Tipo 
+                    select value as IdInsPracMaq, text as InsPracMaq, 'Maquinaria y equipo' as Tipo 
                     from ws_dea.reusablecategoricaloptions r where r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = '71f41838-6868-4d2f-ad31-c830032893b4'
                 """
         dfINSPRACTMAQ = pl.DataFrame(pl.read_database_uri(query=query, uri=self.postgreConn, engine='connectorx'))
         return dfINSPRACTMAQ
+    def ExtInspractMaqSiembra(self):
+        query =""" 
+                    with cteInsumos(interviewid, idinsumo) as(
+                    select e.interview__id, unnest(e.insumos) idinsumo 
+                    from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e
+                    where e.insumos is not null and (e.resultado = 1 or e.resultadost = 1)
+                    ), ctePracticas(interviewid, idpractica) as(
+                    select e2.interview__id, unnest(e2.practicas) idpractica 
+                    from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e2
+                    where e2.practicas is not null and (e2.resultado = 1 or e2.resultadost = 1)
+                    ), cteEquipoMaquinaria(interviewid, idequipomaq) as (
+                    select e3.interview__id, unnest(e3.equipo_y_maquinaria) id 
+                    from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e3
+                    where e3.equipo_y_maquinaria is not null and (e3.resultado = 1 or e3.resultadost = 1)
+                    )
+                    select ctp.interviewid, r."text" inspracmaq, 'Practicas' Tipo from ctePracticas ctp
+                    inner join ws_dea.reusablecategoricaloptions r on r.value = ctp.idpractica and 
+                    r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r.categoriesid = '573c5634-9e89-4d6c-b9df-b8ee6f59c93a'
+                    union all
+                    select cti.interviewid, r2."text", 'Insumos'  from cteInsumos cti
+                    inner join ws_dea.reusablecategoricaloptions r2 on r2.value = cti.idinsumo and  
+                    r2.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r2.categoriesid = 'a117f4fa-973c-417c-9730-a67794f7a732'
+                    union all
+                    select ctem.interviewid, r3."text", 'Maquinaria y equipo'  from cteEquipoMaquinaria ctem
+                    inner join ws_dea.reusablecategoricaloptions r3 on r3.value = ctem.idequipomaq and
+                    r3.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' and r3.categoriesid = '71f41838-6868-4d2f-ad31-c830032893b4'
+               """
 
     def ExtGranoBasico():
         gb = pl.DataFrame(
