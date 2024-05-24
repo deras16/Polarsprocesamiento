@@ -118,7 +118,7 @@ GO
 CREATE TABLE INSPRACTMAQ (
 	[IdInsPracMaq] int PRIMARY KEY not null,
 	[InsPracMaq] nvarchar(500) not null,
-	[Tipo] nvarchar(15)
+	[Tipo] nvarchar(50) null
 )
 GO
 CREATE TABLE INSPRACTMAQSiembra (
