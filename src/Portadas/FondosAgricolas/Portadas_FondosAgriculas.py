@@ -8,9 +8,17 @@ class PortadaFondosAgricolas(Model):
     
     def extract_query(self) -> str:
         return """
-            select e.interview__id, e.credito, unnest(e.lcredito), e.inversionagricolaactual,e.remesa, e.porc_rem, e.pais  
-            from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e
-            where e.resultado = 1 
+            select e.interview__id, case 
+                        when e.credito = 2 then 0
+                        when e.credito = 1 then 1 
+                        else null
+                    end credito, unnest(e.lcredito), e.inversionagricolaactual,case 
+                        when e.remesa = 2 then 0
+                        when e.remesa = 1 then 1 
+                        else null
+                    end as remesa, e.porc_rem, e.pais  
+                    from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e
+                    where e.resultado = 1 or e.resultadost = 1 
         """
     def transform_mappings(self) -> dict:
         return {
@@ -22,27 +30,6 @@ class PortadaFondosAgricolas(Model):
             "porc_rem": ("IdIntervalo", pl.Int32),
             "pais": ("IdPais", pl.Int32)
         }
-    
-    #Override
-    def transform(self, df: pl.DataFrame) -> pl.DataFrame:
-        df_transformed = super().transform(df)
-        
-        #validate booleans
-        df_transformed = df_transformed.with_columns(
-            pl.when(pl.col("SolicitoCredito") == 1).then(pl.lit(True)).otherwise(
-                pl.when(pl.col("SolicitoCredito") == 2).then(pl.lit(False)).otherwise(pl.lit(None))
-            ).alias('SolicitoCredito'),
-            
-            pl.when(pl.col("RecibeRemesa") == 1).then(pl.lit(True)).otherwise(
-                pl.when(pl.col("RecibeRemesa") == 2).then(pl.lit(False)).otherwise(pl.lit(None))
-            ).alias('RecibeRemesa')
-        )
-
-        df_transformed = df_transformed.with_columns(
-            df_transformed['SolicitoCredito'].cast(pl.Boolean), 
-            df_transformed['RecibeRemesa'].cast(pl.Boolean) 
-        )      
-        return df_transformed
     
     #Override
     def load(self, df: pl.DataFrame):
