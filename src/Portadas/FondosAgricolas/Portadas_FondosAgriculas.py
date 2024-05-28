@@ -23,10 +23,10 @@ class PortadaFondosAgricolas(Model):
     def transform_mappings(self) -> dict:
         return {
             "interview__id": ("IdPortada", pl.Utf8),
-            "credito": ("SolicitoCredito", pl.Int32),
+            "credito": ("SolicitoCredito", pl.Boolean),
             "unnest": ("IdOrigenCredito", pl.Int32),
             "inversionagricolaactual": ("InversionCredito", pl.Float32),
-            "remesa": ("RecibeRemesa", pl.Int32),
+            "remesa": ("RecibeRemesa", pl.Boolean),
             "porc_rem": ("IdIntervalo", pl.Int32),
             "pais": ("IdPais", pl.Int32)
         }
