@@ -1,4 +1,5 @@
 # This file is used to run the main functions of the project
+from config.config_file import load_config, save_config
 #Catalog Tables
 from src.catalogTables.PaisRemesas import Pais
 from src.catalogTables.Departamentos import Departamento
@@ -23,6 +24,11 @@ from src.Portadas.SiembraExpectativa.Portadas_SiembraExpectativas import Portada
 from src.Portadas.INSPRACTMACSiembra.Portada_Inspracmaq import PortadaInspracmaq
 
 def load_catalog_tables():
+    config = load_config()
+    if config.getboolean('CONFIG_VARIABLES', 'CATALOG_TABLES_LOADED'):
+        print('Catalog tables already loaded, Skipping...')
+        return
+  
     Departamento().run()
     Municipio().run()
     Pais().run()
@@ -36,6 +42,9 @@ def load_catalog_tables():
     Epoca().run()
     Semilla().run()
     Grano().run()
+    
+    config.set('CONFIG_VARIABLES', 'CATALOG_TABLES_LOADED', 'True')
+    save_config(config)
 
 def load_productores():
     Productor().run()
