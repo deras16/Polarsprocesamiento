@@ -42,6 +42,46 @@ class PortadaSiembraExpectativas(Model):
             inner join ctegrano ct on ct.interviewid = er7.interview__id
             inner join "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e5 on e5.interview__id = er7.interview__id 
             where ct.idgrano = 4 and (e5.resultado = 1 or e5.resultadost = 1)
+            union all 
+            select e.interview__id, 1 idgrano, 1 numexplt,case
+                when e.lugar_sede = 1 then r3.value
+                when e.lugar_sede is null then r3.value
+                else r.value end as iddepto,
+            case 
+                when e.lugar_sede = 1 then r4.value
+                when e.lugar_sede is null then r4.value
+                else r2.value 
+            end as idmunu,7 idepoca,120 idsemilla, e.semilla_maiz area, 0 produccion 
+            from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e
+            left join ws_dea.reusablecategoricaloptions r on r.value = e.depto_sede and r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+            and r.categoriesid = 'eba0ae33-2c7c-458e-9b99-d2ca85729cee'
+            left join ws_dea.reusablecategoricaloptions r3 on r3.text = replace(e.departamento,'�','Ñ') and r3.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+            and r3.categoriesid = 'eba0ae33-2c7c-458e-9b99-d2ca85729cee'
+            left join ws_dea.reusablecategoricaloptions r2 on r2.value = e.mun_sede and r2.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+            and r2.categoriesid = 'c0eac36c-1598-dd17-53ed-9fb351d194dd'
+            left join ws_dea.reusablecategoricaloptions r4 on r4.text = e.municipio and r4.parentvalue = r3.value and r4.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+            and r4.categoriesid = 'c0eac36c-1598-dd17-53ed-9fb351d194dd'
+            where e.semilla_maiz > 0 and (e.resultado = 1 or e.resultadost = 1)                    
+            union all
+            select e.interview__id, 2 idgrano, 1 numexplt,case 
+                when e.lugar_sede = 1 then r5.value 
+                when lugar_sede is null then r5.value  
+                else r.value
+            end as iddepto, case 
+                when e.lugar_sede = 1 then r6.value 
+                when lugar_sede is null then r6.value  
+                else r2.value 
+            end as idmuni, 7 idepoca,121 idsemilla, e.semilla_frijol area, 0 produccion 
+            from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e
+            left join ws_dea.reusablecategoricaloptions r on r.value = e.depto_sede and r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+            and r.categoriesid = 'eba0ae33-2c7c-458e-9b99-d2ca85729cee'
+            left join ws_dea.reusablecategoricaloptions r2 on r2.value = e.mun_sede and r2.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+            and r2.categoriesid = 'c0eac36c-1598-dd17-53ed-9fb351d194dd'
+            left join ws_dea.reusablecategoricaloptions r5 on r5.text = replace(e.departamento,'�','Ñ') and r5.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+            and r5.categoriesid = 'eba0ae33-2c7c-458e-9b99-d2ca85729cee'
+            left join ws_dea.reusablecategoricaloptions r6 on r6.text = e.municipio and r6.parentvalue = r5.value and r6.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+            and r6.categoriesid = 'c0eac36c-1598-dd17-53ed-9fb351d194dd'
+            where e.semilla_frijol > 0 and (e.resultado = 1 or e.resultadost = 1)
         """
 
     def transform_mappings(self) -> dict:
@@ -59,7 +99,6 @@ class PortadaSiembraExpectativas(Model):
     #Override
     def transform(self, df: pl.DataFrame) -> pl.DataFrame:
         df_transformed = super().transform(df)
-        
         #validate data
         df_transformed  = df_transformed .filter(pl.col("IdSemilla").is_not_null())
         #validate IdEpoca and IdSemilla
@@ -80,31 +119,39 @@ class PortadaSiembraExpectativas(Model):
             ).otherwise(pl.col("IdEpoca")).alias('IdEpoca'),
 
             # Modify IdSemilla values based on ranges
-            pl.when(pl.col("IdSemilla") == 201).then(pl.lit(101))
-                .when(pl.col("IdSemilla") == 202).then(pl.lit(102))
-                .when(pl.col("IdSemilla") == 203).then(pl.lit(103))
-                .when(pl.col("IdSemilla") == 204).then(pl.lit(104))
-                .when(pl.col("IdSemilla") == 205).then(pl.lit(105))
-                .when(pl.col("IdSemilla") == 206).then(pl.lit(106))
-                .when(pl.col("IdSemilla") == 207).then(pl.lit(107))
-                .when(pl.col("IdSemilla") == 208).then(pl.lit(108))
-                .when(pl.col("IdSemilla") == 209).then(pl.lit(109))
-                .when(pl.col("IdSemilla") == 301).then(pl.lit(101))
-                .when(pl.col("IdSemilla") == 302).then(pl.lit(102))
-                .when(pl.col("IdSemilla") == 303).then(pl.lit(103))
-                .when(pl.col("IdSemilla") == 304).then(pl.lit(104))
-                .when(pl.col("IdSemilla") == 305).then(pl.lit(105))
-                .when(pl.col("IdSemilla") == 306).then(pl.lit(106))
-                .when(pl.col("IdSemilla") == 307).then(pl.lit(107))
-                .when(pl.col("IdSemilla") == 308).then(pl.lit(108))
-                .when(pl.col("IdSemilla") == 309).then(pl.lit(109))
-                .when(pl.col("IdSemilla") == 510).then(pl.lit(410))
-                .when(pl.col("IdSemilla") == 511).then(pl.lit(411))
-                .when(pl.col("IdSemilla") == 610).then(pl.lit(410))
-                .when(pl.col("IdSemilla") == 611).then(pl.lit(411))
+            # Semilla
+            pl.when(pl.col("IdSemilla") == 201).then(pl.lit(101)) #semilla nacional a semilla nacional
+                .when(pl.col("IdSemilla") == 202).then(pl.lit(102)) #semilla hibrida a semilla hibrida
+                .when(pl.col("IdSemilla") == 203).then(pl.lit(103)) #semilla segregada a semilla segregada
+                .when(pl.col("IdSemilla") == 301).then(pl.lit(101)) #semilla nacional a semilla nacional
+                .when(pl.col("IdSemilla") == 302).then(pl.lit(102)) #semilla hibrida a semilla hibrida
+                .when(pl.col("IdSemilla") == 303).then(pl.lit(103)) #semilla segregada a semilla segregada
+            #Frijol
+                .when(pl.col("IdSemilla") == 304).then(pl.lit(104)) #frijol rojo a frijol rojo
+                .when(pl.col("IdSemilla") == 305).then(pl.lit(105)) #frijol blanco a frijol blanco
+                .when(pl.col("IdSemilla") == 306).then(pl.lit(106)) #frijol negro a frijol negro
+                .when(pl.col("IdSemilla") == 204).then(pl.lit(104)) #frijol rojo a frijol rojo
+                .when(pl.col("IdSemilla") == 205).then(pl.lit(105)) #frijol blanco a frijol blanco
+                .when(pl.col("IdSemilla") == 206).then(pl.lit(106)) #frijol negro a frijol negro
+            #Sorgo
+                .when(pl.col("IdSemilla") == 107).then(pl.lit(109)) #sorgo mejorada a semilla mejorada
+                .when(pl.col("IdSemilla") == 108).then(pl.lit(101)) #sorgo nacional a semilla nacional
+                .when(pl.col("IdSemilla") == 109).then(pl.lit(103)) #sorgo segregada a semilla segregada
+                .when(pl.col("IdSemilla") == 207).then(pl.lit(109)) #sorgo mejorado a semilla mejorada
+                .when(pl.col("IdSemilla") == 208).then(pl.lit(101)) #sorgo nacional a semilla nacional
+                .when(pl.col("IdSemilla") == 209).then(pl.lit(103)) #sorgo segregado a semilla segregada
+                .when(pl.col("IdSemilla") == 307).then(pl.lit(109)) #sorgo mejorado a semilla mejorada
+                .when(pl.col("IdSemilla") == 308).then(pl.lit(101)) #sorgo nacional a semilla nacional
+                .when(pl.col("IdSemilla") == 309).then(pl.lit(103)) #sorgo segregada a semilla segregada
+            #Arroz
+                .when(pl.col("IdSemilla") == 410).then(pl.lit(109)) #arroz mejorado a semilla mejorada
+                .when(pl.col("IdSemilla") == 411).then(pl.lit(103)) #arroz segregado a semilla segregada
+                .when(pl.col("IdSemilla") == 510).then(pl.lit(109)) #arroz mejorado a semilla mejorada
+                .when(pl.col("IdSemilla") == 511).then(pl.lit(103)) #arroz segregado a semilla segregada
+                .when(pl.col("IdSemilla") == 610).then(pl.lit(109)) #arroz mejorado a semilla mejorada
+                .when(pl.col("IdSemilla") == 611).then(pl.lit(103)) #arroz segregado a semilla segregada
                 .otherwise(pl.col("IdSemilla")).alias("IdSemilla")
         )
-       
         return df_transformed 
 
     def load(self, df: pl.DataFrame):
