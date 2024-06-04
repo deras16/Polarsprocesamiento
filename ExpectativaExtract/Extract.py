@@ -111,8 +111,8 @@ class Extract():
                     union all 
                     select e.interview__id, 1 idgrano, 1 numexplt,case
                         when e.lugar_sede = 1 then r3.value
-                        when lugar_sede is null then r3.value
-                        else r.value end as iddepto, 
+                        when e.lugar_sede is null then r3.value
+                        else r.value end as iddepto,
                     case 
                         when e.lugar_sede = 1 then r4.value
                         when e.lugar_sede is null then r4.value
@@ -121,13 +121,13 @@ class Extract():
                     from "hq_dea_3a9df112-2351-459e-97a6-468d1cfaaf91"."EXPGB_2$1" e
                     left join ws_dea.reusablecategoricaloptions r on r.value = e.depto_sede and r.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
                     and r.categoriesid = 'eba0ae33-2c7c-458e-9b99-d2ca85729cee'
-                    left join ws_dea.reusablecategoricaloptions r3 on r3.text = e.departamento and r3.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+                    left join ws_dea.reusablecategoricaloptions r3 on r3.text = replace(e.departamento,'�','Ñ') and r3.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
                     and r3.categoriesid = 'eba0ae33-2c7c-458e-9b99-d2ca85729cee'
                     left join ws_dea.reusablecategoricaloptions r2 on r2.value = e.mun_sede and r2.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
                     and r2.categoriesid = 'c0eac36c-1598-dd17-53ed-9fb351d194dd'
                     left join ws_dea.reusablecategoricaloptions r4 on r4.text = e.municipio and r4.parentvalue = r3.value and r4.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
                     and r4.categoriesid = 'c0eac36c-1598-dd17-53ed-9fb351d194dd'
-                    where e.semilla_maiz > 0 and (e.resultado = 1 or e.resultadost = 1)
+                    where e.semilla_maiz > 0 and (e.resultado = 1 or e.resultadost = 1)                    
                     union all
                     select e.interview__id, 2 idgrano, 1 numexplt,case 
                         when e.lugar_sede = 1 then r5.value 
@@ -143,7 +143,7 @@ class Extract():
                     and r.categoriesid = 'eba0ae33-2c7c-458e-9b99-d2ca85729cee'
                     left join ws_dea.reusablecategoricaloptions r2 on r2.value = e.mun_sede and r2.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
                     and r2.categoriesid = 'c0eac36c-1598-dd17-53ed-9fb351d194dd'
-                    left join ws_dea.reusablecategoricaloptions r5 on r5.text = e.departamento and r5.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
+                    left join ws_dea.reusablecategoricaloptions r5 on r5.text = replace(e.departamento,'�','Ñ') and r5.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
                     and r5.categoriesid = 'eba0ae33-2c7c-458e-9b99-d2ca85729cee'
                     left join ws_dea.reusablecategoricaloptions r6 on r6.text = e.municipio and r6.parentvalue = r5.value and r6.questionnaireid = 'f3be9695-9847-4dfc-9f7d-b64790b029cf' 
                     and r6.categoriesid = 'c0eac36c-1598-dd17-53ed-9fb351d194dd'
