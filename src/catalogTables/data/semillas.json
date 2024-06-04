@@ -24,23 +24,15 @@
         "name":"Frijol Negro"
     },
     {
-        "id":107,
-        "name":"Sorjo Mejorado"
-    },
-    {
-        "id":108,
-        "name":"Sorjo Nacional"
-    },
-    {
         "id":109,
-        "name":"Sorjo Segregado"
+        "name":"Semilla Mejorada"
     },
     {
-        "id":410,
-        "name":"Arroz Mejorado"
+        "id":120,
+        "name":"Semilla Hibrida Mag"
     },
     {
-        "id":411,
-        "name":"Arroz Segregado"
+        "id":121,
+        "name":"Semilla Mejorada Mag"
     }
 ]
