@@ -54,7 +54,7 @@ class PortadaCompara(Model):
         
     #Override
     def load(self, df: pl.DataFrame):
-        df_load = super()._check_different_rows(df)
+        df_load = super().check_different_rows(df)
         df_load = self.__validatePortada(df_load)
         total_rows = df_load.shape[0]
 

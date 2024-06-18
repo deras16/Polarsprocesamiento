@@ -3,7 +3,7 @@ import os
 import polars as pl 
 from utils.Model import Model
 
-class Credito(Model):
+class OrigenCredito(Model):
     def __init__(self):
         super().__init__(table_name="OrigenCredito", id_column="IdOrigenCredito")
 

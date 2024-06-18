@@ -1,7 +1,7 @@
 import polars as pl
 from utils.Model import Model
 
-class Pais(Model):
+class PaisRemesa(Model):
 
     def __init__(self):
         super().__init__(table_name="PaisRemesas", id_column="IdPais")

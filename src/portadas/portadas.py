@@ -1,11 +1,6 @@
 import polars as pl
 from utils.Model import Model
 
-from src.Portadas.CausaSiembras import Portadas_Causas
-from src.Portadas.Compara import Portada_Compara
-from src.Portadas.FondosAgricolas import Portadas_FondosAgriculas
-from src.Portadas.SiembraExpectativa import Portadas_SiembraExpectativas
-
 class Portada(Model):
     def __init__(self):
         super().__init__(table_name="Portada" ,id_column="IdPortada")
@@ -59,18 +54,7 @@ class Portada(Model):
         df_transformed = super().transform(df)
         df_transformed = self.__transormationValidations(df_transformed)
         return df_transformed 
-    
-    #belongsToMany relationships
-    """ def loadCausas(self):
-        Portadas_Causas.PortadaCausaSiembra().load()
-    def loadCompara(self):
-        Portada_Compara.PortadaCompara().load()
-    def loadFondosAgricolas(self):
-        Portadas_FondosAgriculas.PortadaFondosAgricolas().load()
-    def loadSiembraExpectativas(self):
-        Portadas_SiembraExpectativas.PortadaSiembraExpectativas().load() """ 
-
-    
+  
     def __transormationValidations(self, df: pl.DataFrame) -> pl.DataFrame:
         #convert the list to string TODO: check if this is the correct way to do it
         df = df.with_columns(

@@ -1,6 +1,6 @@
 import polars as pl
 from utils.Model import Model
-import os
+
 class Productor(Model):
     def __init__(self):
         super().__init__(table_name="Productores" , id_column="IdFolio")

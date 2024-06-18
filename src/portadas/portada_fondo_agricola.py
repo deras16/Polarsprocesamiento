@@ -2,7 +2,7 @@ import polars as pl
 from tqdm import tqdm
 from utils.Model import Model
 
-class PortadaFondosAgricolas(Model):
+class PortadaFondoAgricola(Model):
     def __init__(self):
         super().__init__(table_name="FondosAgricolas" ,id_column="IdPortada")
     
@@ -33,7 +33,7 @@ class PortadaFondosAgricolas(Model):
     
     #Override
     def load(self, df: pl.DataFrame):
-        df_load = super()._check_different_rows(df)
+        df_load = super().check_different_rows(df)
         df_load = self.__validatePortada(df_load)
         total_rows = df_load.shape[0]
 

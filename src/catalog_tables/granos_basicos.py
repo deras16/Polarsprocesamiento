@@ -3,7 +3,7 @@ import json
 import polars as pl 
 from utils.Model import Model
 
-class Grano(Model):
+class GranoBasico(Model):
     def __init__(self):
         super().__init__(table_name="GranosBasicos" ,id_column="IdGrano")
 
