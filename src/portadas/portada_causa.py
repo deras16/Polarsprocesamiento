@@ -34,6 +34,13 @@ class PortadaCausa(Model):
 
     
     def __validatePortada(self, df: pl.DataFrame) -> pl.DataFrame:
+        """
+            Validate if the IdPortada exists in the Portada table
+            Args:
+                df (pl.DataFrame): The data to be validated
+            Returns:
+                pl.DataFrame: The validated data
+        """
         query = """
             select * from Portada
         """
