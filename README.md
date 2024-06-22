@@ -4,9 +4,9 @@ This is the in-depth documentation for the ETL process applied to the Crop Expec
 - [Introduction](#introduction)
 - [Requirements List](#requirements)
 - [Installation](#installation)
-    - [Python](#python)
-    - [Virtual Environment (Optional)](#virtualenv)
-    - [Install Packages](#packages)
+    - [Python](#python-(recommended-version-3.x))
+    - [Virtual Environment (Optional)](#virtual-environment-(optional))
+    - [Install Packages](#install-packages)
     - [.env Config](#env-config)
     - [Running the Project](#run-project)
 - [Project Structure](#project-structure)
@@ -96,7 +96,7 @@ Copying the `.env` file
 ```
 After creating the .env copy, we need to configure it with the PostgreSQL and SQLServer server credentials.
 
-### Running the Project
+### Run Project
 #### Windows
 ```bash
   python run.py
