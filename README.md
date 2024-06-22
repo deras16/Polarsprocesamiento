@@ -4,8 +4,8 @@ This is the in-depth documentation for the ETL process applied to the Crop Expec
 - [Introduction](#introduction)
 - [Requirements List](#requirements)
 - [Installation](#installation)
-    - [Python](#python-(recommended-version-3.x))
-    - [Virtual Environment (Optional)](#virtual-environment-(optional))
+    - [Python](#python)
+    - [Virtual Environment (Optional)](#virtual-environment-optional)
     - [Install Packages](#install-packages)
     - [.env Config](#env-config)
     - [Running the Project](#run-project)
@@ -30,7 +30,7 @@ This project is developed in Python, using the Polars library for data extractio
 - **.env Config** [configuration](#env-config)
 
 # Installation
-## Python (Recommended version 3.X)
+## Python
 Quick guide to installing Python on the most common operating systems
 - [Install on Windows](#Windows)
 - [Install on Linux](#Linux)
@@ -60,7 +60,7 @@ Quick guide to installing Python on the most common operating systems
   - Install EPEL package: `sudo yum install -y epel-release`.
   - Install PIP: `sudo yum install -y python3-pip`.
 
-## Virtual Environment (Optional)
+## Virtual Environment Optional
 The venv module allows you to create lightweight "virtual environments", each with its own independent set of Python packages installed in its own project directories separate from the Python installed on the computer.
 ```bash
   python -m venv <virtual-environment-name>
