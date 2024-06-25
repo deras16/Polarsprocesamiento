@@ -52,11 +52,11 @@ class Portada(Model):
     #Override
     def transform(self, df: pl.DataFrame) -> pl.DataFrame:
         df_transformed = super().transform(df)
-        df_transformed = self.__transormationValidations(df_transformed)
+        df_transformed = self.__transformationValidations(df_transformed)
         return df_transformed 
   
-    def __transormationValidations(self, df: pl.DataFrame) -> pl.DataFrame:
-        #convert the list to string TODO: check if this is the correct way to do it
+    def __transformationValidations(self, df: pl.DataFrame) -> pl.DataFrame:
+        
         df = df.with_columns(
             pl.format("[{}]",
                 pl.col("OtrosRubros").cast(pl.List(pl.Utf8)).list.join(", ")).alias('OtrosRubros'),

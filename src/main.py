@@ -21,7 +21,7 @@ from src.portadas.portada_causa import PortadaCausa
 from src.portadas.portada_compara import PortadaCompara
 from src.portadas.portada_fondo_agricola import PortadaFondoAgricola
 from src.portadas.portada_siembra_expectativa import PortadaSiembraExpectativa
-from src.portadas.portada_inspracmaq import PortadaInspracmaq
+from src.portadas.portada_inspractmaq import PortadaInspractmaq
 
 
 def load_catalog_tables():
@@ -65,7 +65,7 @@ def load_portadas():
     PortadaCompara().run()
     PortadaFondoAgricola().run()
     PortadaSiembraExpectativa().run()
-    PortadaInspracmaq().run()
+    PortadaInspractmaq().run()
 
 def main():
     """

@@ -2,7 +2,7 @@ import polars as pl
 from utils.Model import Model
 from tqdm import tqdm
 import re
-class PortadaInspracmaq(Model):
+class PortadaInspractmaq(Model):
     def __init__(self):
         super().__init__(table_name="INSPRACTMAQSiembra", id_column="IdPortada")
     
