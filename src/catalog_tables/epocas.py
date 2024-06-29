@@ -12,8 +12,10 @@ class Epoca(Model):
     #Override
     def extract(self) -> pl.DataFrame:
         path = os.path.join(os.path.dirname(__file__), 'data/epocas.json')
-        data = json.load(open(path))
-
+        
+        with open(path, 'r') as file:
+            data = json.load(file)
+        
         df = pl.DataFrame(data)
         return df
     

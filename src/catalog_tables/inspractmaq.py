@@ -14,7 +14,10 @@ class INSPRACTMAQ(Model):
     #Override
     def extract(self) -> pl.DataFrame:
         path = os.path.join(os.path.dirname(__file__), 'data/INSPRACTMAQ.json')
-        data = json.load(open(path, encoding='utf-8'))
+        
+        with open(path, 'r',encoding='utf-8') as file:
+            data = json.load(file)
+
         df = pl.DataFrame(data)
         return df
     
